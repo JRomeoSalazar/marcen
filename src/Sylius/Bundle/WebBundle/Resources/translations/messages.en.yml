@@ -271,6 +271,9 @@ sylius:
             email: Email
             firstName: First name
             lastName: Last name
+    frontend:
+        close: Close
+        disclaimer: Disclaimer
     gallery:
         next: Next
         previous: Previous

@@ -101,6 +101,9 @@
             <div class="footer">
                 <p class="text-muted">
                     &copy; Sylius, 2011 - {{ 'now'|date('Y') }}.
+                    &middot; <a href="{{ path('sylius_disclaimer') }}" target="_blank" title="{{ 'sylius.frontend.disclaimer'|trans }}">
+                        {{ 'sylius.frontend.disclaimer'|trans }}
+                    </a>
                 </p>
                 {{ knp_menu_render('sylius.frontend.social', {'template': 'SyliusWebBundle:Frontend:menu.html.twig'}) }}
             </div>

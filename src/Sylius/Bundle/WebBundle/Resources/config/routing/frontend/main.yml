@@ -5,6 +5,12 @@ sylius_homepage:
     pattern: /
     defaults: { _controller: sylius.controller.frontend.homepage:mainAction }
 
+sylius_disclaimer:
+    pattern:  /disclaimer
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template: SyliusWebBundle:Frontend/Homepage:disclaimer.html.twig
+
 sylius_currency:
     resource: @SyliusWebBundle/Resources/config/routing/frontend/currency.yml
     prefix: /currency

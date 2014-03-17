@@ -119,6 +119,9 @@
                 </option>
             </constraint>
         </property>
+        <property name="disclaimer">
+            <constraint name="Sylius\Bundle\CoreBundle\Validator\Constraints\IsTrue" />
+        </property>
     </class>
 
     <class name="Sylius\Bundle\CoreBundle\Model\Group">

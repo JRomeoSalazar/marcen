@@ -73,6 +73,9 @@ sylius:
     user:
       billing_address: Dirección de facturación
       different_billing_address: Usar una dirección diferente para la facturación?
+      disclaimer:
+        self: Aviso Legal
+        label: He leído y acepto el %aviso%
       enabled: Activado
       first_name: Nombre
       groups: Grupos

@@ -266,6 +266,9 @@ sylius:
       email: Correo electrónico
       firstName: Nombre
       lastName: Apellidos
+  frontend:
+    close: Cerrar
+    disclaimer: Aviso Legal
   gallery:
     next: Siguiente
     previous: Anterior

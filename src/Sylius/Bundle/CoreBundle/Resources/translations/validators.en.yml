@@ -9,6 +9,8 @@ sylius:
             not_blank: Please enter locale code.
             unique: This locale already exists.
     user:
+        disclaimer:
+            is_true: You must accept Disclaimer
         first_name:
             max: First name must be not be longer than {{ limit }} characters.
             min: First name must be at least {{ limit }} characters long.
