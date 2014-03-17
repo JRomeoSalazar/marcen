@@ -125,4 +125,18 @@ interface UserInterface extends BaseUserInterface, TimestampableInterface
      * @return Boolean
      */
     public function hasAddress(AddressInterface $address);
+
+    /**
+     * Get disclaimer.
+     *
+     * @return boolean
+     */
+    public function getDisclaimer();
+
+    /**
+     * Set disclaimer.
+     *
+     * @param boolean $disclaimer
+     */
+    public function setDisclaimer($disclaimer);
 }
