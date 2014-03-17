@@ -51,7 +51,10 @@
         "symfony-cmf/block-bundle":             "1.0.*",
         "symfony-cmf/content-bundle":           "1.0.*",
         "symfony-cmf/routing-bundle":           "1.1.*",
-        "symfony-cmf/menu-bundle":              "1.0.*"
+        "symfony-cmf/menu-bundle":              "1.0.*",
+        "jackalope/jackalope-doctrine-dbal":    "1.0.*",
+        "doctrine/phpcr-bundle":                "1.0.*",
+        "doctrine/phpcr-odm":                   "1.0.*"
     },
     "require-dev": {
         "behat/behat":                       "~2.4",
