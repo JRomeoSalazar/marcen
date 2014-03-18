@@ -175,3 +175,17 @@ cmf_routing:
         generic_controller: cmf_content.controller:indexAction
         persistence:
             phpcr: ~
+
+jms_i18n_routing:
+    default_locale: "%sylius.locale%"
+    locales: [es, en]
+    strategy: prefix_except_default
+
+stfalcon_tinymce:
+        include_jquery: false
+        tinymce_jquery: false
+        selector: ".tinymce"
+        language: "%sylius.locale%"
+        theme:
+            simple:
+                theme: "modern"

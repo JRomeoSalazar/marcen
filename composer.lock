@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "9b9ff4136212a7e733c79c7e5fcce4a7",
+    "hash": "a9cc7e3f341ec6e2546699a7f328737f",
     "packages": [
         {
             "name": "ajbdev/authorizenet-php-api",
@@ -894,6 +894,63 @@
             "time": "2013-12-04 16:07:15"
         },
         {
+            "name": "friendsofsymfony/jsrouting-bundle",
+            "version": "dev-new-response",
+            "target-dir": "FOS/JsRoutingBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfSymfony/FOSJsRoutingBundle.git",
+                "reference": "f6d1e5b22543f249c6357977a64de0fcaa482130"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSJsRoutingBundle/zipball/f6d1e5b22543f249c6357977a64de0fcaa482130",
+                "reference": "f6d1e5b22543f249c6357977a64de0fcaa482130",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "symfony/console": "~2.3",
+                "symfony/framework-bundle": "~2.3",
+                "symfony/serializer": "~2.0",
+                "willdurand/jsonp-callback-validator": "~1.0"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "FOS\\JsRoutingBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "William Durand",
+                    "email": "william.durand1@gmail.com",
+                    "homepage": "http://www.willdurand.fr"
+                },
+                {
+                    "name": "FriendsOfSymfony Community",
+                    "homepage": "https://github.com/friendsofsymfony/FOSJsRoutingBundle/contributors"
+                }
+            ],
+            "description": "A pretty nice way to expose your Symfony2 routing to client applications.",
+            "homepage": "http://friendsofsymfony.github.com",
+            "keywords": [
+                "Js Routing",
+                "javascript",
+                "routing"
+            ],
+            "time": "2014-01-24 09:28:23"
+        },
+        {
             "name": "friendsofsymfony/rest-bundle",
             "version": "1.3.1",
             "target-dir": "FOS/RestBundle",
@@ -978,12 +1035,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSUserBundle.git",
-                "reference": "9b8bbbcf50620f7c8af9c7588d9fe29247c2fa42"
+                "reference": "f8e9255eedc91bc53195de288c9fe640719b2817"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/9b8bbbcf50620f7c8af9c7588d9fe29247c2fa42",
-                "reference": "9b8bbbcf50620f7c8af9c7588d9fe29247c2fa42",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/f8e9255eedc91bc53195de288c9fe640719b2817",
+                "reference": "f8e9255eedc91bc53195de288c9fe640719b2817",
                 "shasum": ""
             },
             "require": {
@@ -1038,7 +1095,7 @@
             "keywords": [
                 "User management"
             ],
-            "time": "2014-03-16 19:14:47"
+            "time": "2014-03-18 08:55:34"
         },
         {
             "name": "gedmo/doctrine-extensions",
@@ -1317,6 +1374,86 @@
                 "stream"
             ],
             "time": "2014-01-28 22:14:17"
+        },
+        {
+            "name": "h4cc/wkhtmltopdf-amd64",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/h4cc/wkhtmltopdf-amd64.git",
+                "reference": "ebaa56a8ba0ae70a147ee70d544abf743db290d3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/h4cc/wkhtmltopdf-amd64/zipball/ebaa56a8ba0ae70a147ee70d544abf743db290d3",
+                "reference": "ebaa56a8ba0ae70a147ee70d544abf743db290d3",
+                "shasum": ""
+            },
+            "bin": [
+                "bin/wkhtmltopdf-amd64"
+            ],
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL Version 3"
+            ],
+            "authors": [
+                {
+                    "name": "Julius Beckmann",
+                    "email": "github@h4cc.de"
+                }
+            ],
+            "description": "Convert html to pdf using webkit (qtwebkit). Static linked linux binary for amd64 systems.",
+            "homepage": "http://wkhtmltopdf.org/",
+            "keywords": [
+                "binary",
+                "convert",
+                "pdf",
+                "snapshot",
+                "thumbnail",
+                "wkhtmltopdf"
+            ],
+            "time": "2014-02-11 21:33:07"
+        },
+        {
+            "name": "h4cc/wkhtmltopdf-i386",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/h4cc/wkhtmltopdf-i386.git",
+                "reference": "7afbb1468b65305b940fce9c8a9574cb7c0f17b4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/h4cc/wkhtmltopdf-i386/zipball/7afbb1468b65305b940fce9c8a9574cb7c0f17b4",
+                "reference": "7afbb1468b65305b940fce9c8a9574cb7c0f17b4",
+                "shasum": ""
+            },
+            "bin": [
+                "bin/wkhtmltopdf-i386"
+            ],
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL Version 3"
+            ],
+            "authors": [
+                {
+                    "name": "Julius Beckmann",
+                    "email": "github@h4cc.de"
+                }
+            ],
+            "description": "Convert html to pdf using webkit (qtwebkit). Static linked linux binary for i386 systems.",
+            "homepage": "http://wkhtmltopdf.org/",
+            "keywords": [
+                "binary",
+                "convert",
+                "pdf",
+                "snapshot",
+                "thumbnail",
+                "wkhtmltopdf"
+            ],
+            "time": "2014-02-11 22:00:57"
         },
         {
             "name": "hwi/oauth-bundle",
@@ -1698,6 +1835,74 @@
                 "sql"
             ],
             "time": "2014-01-12 16:20:24"
+        },
+        {
+            "name": "jms/i18n-routing-bundle",
+            "version": "dev-master",
+            "target-dir": "JMS/I18nRoutingBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/schmittjoh/JMSI18nRoutingBundle.git",
+                "reference": "781e44ed7f84462bdec1823c5e4bae5549c31da2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/schmittjoh/JMSI18nRoutingBundle/zipball/781e44ed7f84462bdec1823c5e4bae5549c31da2",
+                "reference": "781e44ed7f84462bdec1823c5e4bae5549c31da2",
+                "shasum": ""
+            },
+            "require": {
+                "jms/translation-bundle": "~1.0",
+                "symfony/framework-bundle": "~2.1"
+            },
+            "require-dev": {
+                "jms/di-extra-bundle": "*",
+                "sensio/framework-extra-bundle": "<2.1.5",
+                "symfony/browser-kit": "<2.1.5",
+                "symfony/class-loader": "<2.1.5",
+                "symfony/css-selector": "<2.1.5",
+                "symfony/finder": "<2.1.5",
+                "symfony/form": "<2.1.5",
+                "symfony/framework-bundle": "<2.1.5",
+                "symfony/http-foundation": "<2.1.5",
+                "symfony/http-kernel": "<2.1.5",
+                "symfony/process": "<2.1.5",
+                "symfony/routing": "<2.1.5",
+                "symfony/twig-bundle": "<2.1.5",
+                "symfony/validator": "<2.1.5",
+                "symfony/yaml": "<2.1.5"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "JMS\\I18nRoutingBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache2"
+            ],
+            "authors": [
+                {
+                    "name": "Johannes M. Schmitt",
+                    "email": "schmittjoh@gmail.com",
+                    "homepage": "http://jmsyst.com",
+                    "role": "Developer of wrapped JMSSerializerBundle"
+                }
+            ],
+            "description": "This bundle allows you to create i18n routes.",
+            "homepage": "http://jmsyst.com/bundles/JMSI18nRoutingBundle",
+            "keywords": [
+                "multilanguage",
+                "routing",
+                "translation"
+            ],
+            "time": "2014-02-24 11:42:02"
         },
         {
             "name": "jms/metadata",
@@ -3654,6 +3859,64 @@
             "time": "2014-02-14 14:24:51"
         },
         {
+            "name": "stfalcon/tinymce-bundle",
+            "version": "dev-master",
+            "target-dir": "Stfalcon/Bundle/TinymceBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/stfalcon/TinymceBundle.git",
+                "reference": "7d52006d55ab4ac086a163354ab3e4a49cbfa4df"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/stfalcon/TinymceBundle/zipball/7d52006d55ab4ac086a163354ab3e4a49cbfa4df",
+                "reference": "7d52006d55ab4ac086a163354ab3e4a49cbfa4df",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "symfony/symfony": ">=2.1"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Stfalcon\\Bundle\\TinymceBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Stepan Tanasiychuk",
+                    "email": "ceo@stfalcon.com",
+                    "homepage": "http://blog.stfalcon.com"
+                },
+                {
+                    "name": "Igor Negrutsa",
+                    "email": "progi2007@gmail.com",
+                    "homepage": "http://igor-negrutsa.info"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://github.com/stfalcon/TinymceBundle/contributors"
+                }
+            ],
+            "description": "This Bundle integrates TinyMCE WYSIWYG editor into a Symfony2 project.",
+            "keywords": [
+                "editor",
+                "tinymce",
+                "wysiwyg"
+            ],
+            "time": "2014-03-14 08:38:24"
+        },
+        {
             "name": "stof/doctrine-extensions-bundle",
             "version": "v1.1.0",
             "target-dir": "Stof/DoctrineExtensionsBundle",
@@ -5506,12 +5769,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/phpspec.git",
-                "reference": "42ddd6e40da1d7db28b3c2be9b859fcd907579df"
+                "reference": "df7495ab5bfc5c4a10e8d8ff55369fc88da53f92"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/phpspec/zipball/42ddd6e40da1d7db28b3c2be9b859fcd907579df",
-                "reference": "42ddd6e40da1d7db28b3c2be9b859fcd907579df",
+                "url": "https://api.github.com/repos/phpspec/phpspec/zipball/df7495ab5bfc5c4a10e8d8ff55369fc88da53f92",
+                "reference": "df7495ab5bfc5c4a10e8d8ff55369fc88da53f92",
                 "shasum": ""
             },
             "require": {
@@ -5571,7 +5834,7 @@
                 "testing",
                 "tests"
             ],
-            "time": "2014-03-11 17:11:28"
+            "time": "2014-03-17 15:54:55"
         },
         {
             "name": "phpspec/prophecy",
@@ -6003,12 +6266,17 @@
     "stability-flags": {
         "doctrine/doctrine-bundle": 20,
         "doctrine/doctrine-cache-bundle": 20,
+        "friendsofsymfony/jsrouting-bundle": 20,
         "friendsofsymfony/user-bundle": 20,
+        "h4cc/wkhtmltopdf-amd64": 20,
+        "h4cc/wkhtmltopdf-i386": 20,
+        "jms/i18n-routing-bundle": 20,
         "knplabs/knp-gaufrette-bundle": 20,
         "knplabs/knp-snappy-bundle": 20,
         "mathiasverraes/money": 20,
         "white-october/pagerfanta-bundle": 20,
         "pagerfanta/pagerfanta": 20,
+        "stfalcon/tinymce-bundle": 20,
         "phpspec/phpspec": 20
     },
     "platform": {
