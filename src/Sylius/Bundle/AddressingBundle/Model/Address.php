@@ -42,6 +42,13 @@ class Address implements AddressInterface
     protected $lastName;
 
     /**
+     * DNI
+     *
+     * @var string
+     */
+    protected $dni;
+
+    /**
      * Company.
      *
      * @var string
@@ -142,6 +149,24 @@ class Address implements AddressInterface
     public function setLastName($lastName)
     {
         $this->lastName = $lastName;
+
+        return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getDni()
+    {
+        return $this->dni;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setDni($dni)
+    {
+        $this->dni = $dni;
 
         return $this;
     }

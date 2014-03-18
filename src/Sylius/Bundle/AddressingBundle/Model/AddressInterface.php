@@ -47,6 +47,20 @@ interface AddressInterface
     public function setLastName($lastName);
 
     /**
+     * Get dni.
+     *
+     * @return string
+     */
+    public function getDni();
+
+    /**
+     * Set dni.
+     *
+     * @param string $dni
+     */
+    public function setDni($dni);
+
+    /**
      * Get company.
      *
      * @return string
