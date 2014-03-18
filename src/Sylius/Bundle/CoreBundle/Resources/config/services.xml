@@ -478,6 +478,11 @@
             <argument>%sylius.money.locale%</argument>
             <tag name="twig.extension" />
         </service>
+
+        <!-- JMSi18nRountingBundle Symfony CMF ChainRouter compatibility -->
+        <service id="jms_i18n_routing.router" class="%jms_i18n_routing.router.class%">
+            <tag name="router" priority="200" />
+        </service>
     </services>
 
 </container>
