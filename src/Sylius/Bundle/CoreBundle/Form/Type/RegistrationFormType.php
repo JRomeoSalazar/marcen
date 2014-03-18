@@ -12,7 +12,7 @@
 namespace Sylius\Bundle\CoreBundle\Form\Type;
 
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Cmf\Component\Routing\ChainRouter;
+use JMS\I18nRoutingBundle\Router\I18nRouter as Router;
 use Symfony\Component\Translation\TranslatorInterface;
 use FOS\UserBundle\Form\Type\RegistrationFormType as BaseType;
 
@@ -21,7 +21,7 @@ class RegistrationFormType extends BaseType
     protected $translator;
     protected $router;
 
-    public function __construct($class, TranslatorInterface $translator, ChainRouter $router)
+    public function __construct($class, TranslatorInterface $translator, Router $router)
     {
         $this->translator = $translator;
         $this->router = $router;
