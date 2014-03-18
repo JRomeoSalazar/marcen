@@ -47,6 +47,12 @@
                 <option name="groups">sylius</option>
             </constraint>
         </property>
+        <property name="dni">
+            <constraint name="Sylius\Bundle\AddressingBundle\Validator\Constraints\DNI">
+                <option name="message">sylius.address.dni.dni</option>
+                <option name="groups">sylius</option>
+            </constraint>
+        </property>
         <property name="country">
             <constraint name="NotBlank">
                 <option name="message">sylius.address.country.not_blank</option>
