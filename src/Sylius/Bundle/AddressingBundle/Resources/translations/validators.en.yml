@@ -6,6 +6,8 @@ sylius:
             not_blank: Please enter city.
         country:
             not_blank: Please select country.
+        dni:
+            dni: Please enter a correct ID
         first_name:
             max_length: First name must not be longer than 255 characters|First name must not be longer than 255 characters.
             min_length: First name must be at least 2 characters long|First name must be at least 2 characters long.

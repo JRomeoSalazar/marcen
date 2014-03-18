@@ -9,6 +9,8 @@ sylius:
       not_blank: Introduzca la ciudad.
     country:
       not_blank: Seleccione un país.
+    dni:
+      dni: Por favor introduzca un DNI válido
     first_name:
       max_length: El nombre debe contener menos de 255 caracteres|El nombre debe contener menos de 255 caracteres.
       min_length: El nombre debe tener al menos 2 caracteres|El nombre debe tener al menos 2 caracteres.

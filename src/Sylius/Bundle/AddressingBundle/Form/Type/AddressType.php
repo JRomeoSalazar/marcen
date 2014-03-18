@@ -70,6 +70,10 @@ class AddressType extends AbstractType
             ->add('lastName', 'text', array(
                 'label' => 'sylius.form.address.last_name'
             ))
+            ->add('dni', 'text', array(
+                'required' => true,
+                'label' => 'sylius.form.address.dni'
+            ))
             ->add('company', 'text', array(
                 'required' => false,
                 'label'    => 'sylius.form.address.company'
