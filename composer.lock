@@ -3,7 +3,11 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
+<<<<<<< HEAD
     "hash": "a9cc7e3f341ec6e2546699a7f328737f",
+=======
+    "hash": "0312fd719b5a89aa913ca8eb958e94ab",
+>>>>>>> Issue #1137 resolved. Update composer fails because of CMF component
     "packages": [
         {
             "name": "ajbdev/authorizenet-php-api",
@@ -1374,6 +1378,7 @@
                 "stream"
             ],
             "time": "2014-01-28 22:14:17"
+<<<<<<< HEAD
         },
         {
             "name": "h4cc/wkhtmltopdf-amd64",
@@ -1454,6 +1459,8 @@
                 "wkhtmltopdf"
             ],
             "time": "2014-02-11 22:00:57"
+=======
+>>>>>>> Issue #1137 resolved. Update composer fails because of CMF component
         },
         {
             "name": "hwi/oauth-bundle",
@@ -3857,6 +3864,7 @@
                 "sonata"
             ],
             "time": "2014-02-14 14:24:51"
+<<<<<<< HEAD
         },
         {
             "name": "stfalcon/tinymce-bundle",
@@ -3915,6 +3923,8 @@
                 "wysiwyg"
             ],
             "time": "2014-03-14 08:38:24"
+=======
+>>>>>>> Issue #1137 resolved. Update composer fails because of CMF component
         },
         {
             "name": "stof/doctrine-extensions-bundle",
@@ -6276,7 +6286,10 @@
         "mathiasverraes/money": 20,
         "white-october/pagerfanta-bundle": 20,
         "pagerfanta/pagerfanta": 20,
+<<<<<<< HEAD
         "stfalcon/tinymce-bundle": 20,
+=======
+>>>>>>> Issue #1137 resolved. Update composer fails because of CMF component
         "phpspec/phpspec": 20
     },
     "platform": {
