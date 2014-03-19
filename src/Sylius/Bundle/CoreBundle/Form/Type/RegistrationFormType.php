@@ -12,7 +12,7 @@
 namespace Sylius\Bundle\CoreBundle\Form\Type;
 
 use Symfony\Component\Form\FormBuilderInterface;
-use JMS\I18nRoutingBundle\Router\I18nRouter as Router;
+use Symfony\Cmf\Component\Routing\ChainRouter as Router;
 use Symfony\Component\Translation\TranslatorInterface;
 use FOS\UserBundle\Form\Type\RegistrationFormType as BaseType;
 

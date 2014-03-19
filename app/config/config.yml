@@ -175,6 +175,9 @@ cmf_routing:
         generic_controller: cmf_content.controller:indexAction
         persistence:
             phpcr: ~
+    chain:
+        routers_by_id:
+            jms_i18n_routing.router: 300
 
 jms_i18n_routing:
     default_locale: "%sylius.locale%"
