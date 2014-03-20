@@ -18,8 +18,8 @@
             <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css" type="text/css" />
             <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" type="text/css" />
             {% stylesheets output='assets/compiled/frontend.css' filter='cssrewrite'
-                '@SyliusWebBundle/Resources/assets/css/frontend.css'
-                '@SyliusWebBundle/Resources/assets/css/blueimp-gallery.css'
+                'bundles/syliusweb/css/frontend.css'
+                'bundles/syliusweb/css/blueimp-gallery.css'
             %}
                 <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
             {% endstylesheets %}
@@ -117,9 +117,9 @@
             <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
             <script src="{{ path('fos_js_routing_js', {"callback": "fos.Router.setData"}) }}"></script>
         {% javascripts output='assets/compiled/frontend.js'
-            '@SyliusWebBundle/Resources/assets/js/jquery.blueimp-gallery.min.js'
-            '@SyliusWebBundle/Resources/assets/js/confirm-modal.js'
-            '@SyliusWebBundle/Resources/assets/js/frontend.js'
+            'bundles/syliusweb/js/jquery.blueimp-gallery.min.js'
+            'bundles/syliusweb/js/confirm-modal.js'
+            'bundles/syliusweb/js/frontend.js'
         %}
             <script type="text/javascript" src="{{ asset_url }}"></script>
         {% endjavascripts %}
