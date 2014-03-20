@@ -4,10 +4,14 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
 <<<<<<< HEAD
+<<<<<<< HEAD
     "hash": "a9cc7e3f341ec6e2546699a7f328737f",
 =======
     "hash": "0312fd719b5a89aa913ca8eb958e94ab",
 >>>>>>> Issue #1137 resolved. Update composer fails because of CMF component
+=======
+    "hash": "0312fd719b5a89aa913ca8eb958e94ab",
+>>>>>>> 36acfb366b311f943469b84efaa2190a6eb29664
     "packages": [
         {
             "name": "ajbdev/authorizenet-php-api",
@@ -1379,6 +1383,7 @@
             ],
             "time": "2014-01-28 22:14:17"
 <<<<<<< HEAD
+<<<<<<< HEAD
         },
         {
             "name": "h4cc/wkhtmltopdf-amd64",
@@ -1461,6 +1466,8 @@
             "time": "2014-02-11 22:00:57"
 =======
 >>>>>>> Issue #1137 resolved. Update composer fails because of CMF component
+=======
+>>>>>>> 36acfb366b311f943469b84efaa2190a6eb29664
         },
         {
             "name": "hwi/oauth-bundle",
@@ -3865,6 +3872,7 @@
             ],
             "time": "2014-02-14 14:24:51"
 <<<<<<< HEAD
+<<<<<<< HEAD
         },
         {
             "name": "stfalcon/tinymce-bundle",
@@ -3925,6 +3933,8 @@
             "time": "2014-03-14 08:38:24"
 =======
 >>>>>>> Issue #1137 resolved. Update composer fails because of CMF component
+=======
+>>>>>>> 36acfb366b311f943469b84efaa2190a6eb29664
         },
         {
             "name": "stof/doctrine-extensions-bundle",
@@ -6287,9 +6297,12 @@
         "white-october/pagerfanta-bundle": 20,
         "pagerfanta/pagerfanta": 20,
 <<<<<<< HEAD
+<<<<<<< HEAD
         "stfalcon/tinymce-bundle": 20,
 =======
 >>>>>>> Issue #1137 resolved. Update composer fails because of CMF component
+=======
+>>>>>>> 36acfb366b311f943469b84efaa2190a6eb29664
         "phpspec/phpspec": 20
     },
     "platform": {
