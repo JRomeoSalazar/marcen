@@ -71,6 +71,9 @@ class PurchaseStep extends CheckoutStep
             );
         }
 
+        // Lanzamos el evento para actualizar la cantidad total del pedido en el pago (sólo si state == 'completed').
+        $this->dispatchCheckoutEvent(SyliusCheckoutEvents::FINALIZE_PRE_COMPLETE, $order);
+
         $this->getDoctrine()->getManager()->flush();
 
         if ($previousState !== $payment->getState()) {

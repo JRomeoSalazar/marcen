@@ -86,7 +86,11 @@ class OrderPaymentListener
         }
 
         $payment->setCurrency($order->getCurrency());
-        $payment->setAmount($order->getTotal());
+
+        // Si el estado es 'completed' actualizamos la cantidad total del pedido en el pago
+        if (PaymentInterface::STATE_COMPLETED === $payment->getState()) {
+            $payment->setAmount($order->getTotal());
+        }
     }
 
     public function updateOrderOnPayment(GenericEvent $event)
@@ -106,10 +110,13 @@ class OrderPaymentListener
             throw new \Exception(sprintf('Cannot retrieve Order from Payment with id %s', $payment->getId()));
         }
 
+        // Actualiza las unidades de inventario y los envios "ready"
         if (PaymentInterface::STATE_COMPLETED === $payment->getState()) {
             $this->dispatcher->dispatch(SyliusOrderEvents::PRE_PAY, new GenericEvent($order, $event->getArguments()));
-            $this->dispatcher->dispatch(SyliusOrderEvents::POST_PAY, new GenericEvent($order, $event->getArguments()));
         }
+
+        // Actualiza el estado del pago y del pedido en la orden
+        $this->dispatcher->dispatch(SyliusOrderEvents::POST_PAY, new GenericEvent($order, $event->getArguments()));
     }
 
     /**
