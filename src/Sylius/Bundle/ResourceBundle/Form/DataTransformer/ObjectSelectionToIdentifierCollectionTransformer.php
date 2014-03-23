@@ -9,20 +9,33 @@
  * file that was distributed with this source code.
  */
 
-namespace Sylius\Bundle\TaxonomiesBundle\Form\DataTransformer;
+namespace Sylius\Bundle\ResourceBundle\Form\DataTransformer;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Symfony\Component\Form\DataTransformerInterface;
 use Symfony\Component\Form\Exception\UnexpectedTypeException;
 
-class TaxonSelectionToIdentifierCollectionTransformer implements DataTransformerInterface
+class ObjectSelectionToIdentifierCollectionTransformer implements DataTransformerInterface
 {
-    private $taxonomies;
+    /**
+     * @var object[]
+     */
+    protected $objects;
 
-    public function __construct(array $taxonomies)
+    /**
+     * @var boolean
+     */
+    protected $saveObjects;
+
+    /**
+     * @param object[] $objects
+     * @param boolean  $saveObjects
+     */
+    public function __construct(array $objects, $saveObjects = true)
     {
-        $this->taxonomies = $taxonomies;
+        $this->objects = $objects;
+        $this->saveObjects = $saveObjects;
     }
 
     /**
@@ -54,14 +67,22 @@ class TaxonSelectionToIdentifierCollectionTransformer implements DataTransformer
             throw new UnexpectedTypeException($value, '\Traversable or \ArrayAccess');
         }
 
-        $taxons = new ArrayCollection();
+        $collection = new ArrayCollection();
 
-        foreach ($value as $taxonomy) {
-            foreach ($taxonomy as $taxon) {
-                $taxons->add($taxon->getId());
+        foreach ($value as $objects) {
+            if (null === $objects) {
+                continue;
+            }
+
+            if (is_array($objects)) {
+                foreach ($objects as $object) {
+                    $collection->add($this->saveObjects ? $object : $object->getId());
+                }
+            } else {
+                $collection->add($this->saveObjects ? $objects : $objects->getId());
             }
         }
 
-        return $taxons;
+        return $collection;
     }
 }

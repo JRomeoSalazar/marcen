@@ -93,6 +93,26 @@ class OrderPaymentListener
         }
     }
 
+    /**
+     * Get the order from event and void payment.
+     *
+     * @param GenericEvent $event
+     *
+     * @throws \InvalidArgumentException
+     */
+    public function voidOrderPayment(GenericEvent $event)
+    {
+        $order = $event->getSubject();
+
+        if (!$order instanceof OrderInterface) {
+            throw new \InvalidArgumentException(
+                'Order payment listener requires event subject to be instance of "Sylius\Bundle\CoreBundle\Model\OrderInterface"'
+            );
+        }
+
+        $order->getPayment()->setState(PaymentInterface::STATE_VOID);
+    }
+
     public function updateOrderOnPayment(GenericEvent $event)
     {
         $payment = $event->getSubject();
@@ -120,7 +140,7 @@ class OrderPaymentListener
     }
 
     /**
-     * @param GenericEvent $event
+     * @param  GenericEvent              $event
      * @return OrderInterface
      * @throws \InvalidArgumentException
      */
