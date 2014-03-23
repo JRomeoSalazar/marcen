@@ -58,9 +58,13 @@ class PurchaseListener
                 break;
 
             case PaymentInterface::STATE_PROCESSING:
-            case PaymentInterface::STATE_PENDING:
                 $type = 'notice';
                 $message = 'sylius.checkout.processing';
+                break;
+
+            case PaymentInterface::STATE_PENDING:
+                $type = 'notice';
+                $message = 'sylius.checkout.pending';
                 break;
 
             case PaymentInterface::STATE_VOID:

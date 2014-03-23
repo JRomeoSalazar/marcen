@@ -86,11 +86,7 @@ class OrderPaymentListener
         }
 
         $payment->setCurrency($order->getCurrency());
-
-        // Si el estado es 'completed' actualizamos la cantidad total del pedido en el pago
-        if (PaymentInterface::STATE_COMPLETED === $payment->getState()) {
-            $payment->setAmount($order->getTotal());
-        }
+        $payment->setAmount($order->getTotal());
     }
 
     /**

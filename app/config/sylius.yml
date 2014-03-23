@@ -83,8 +83,11 @@ sylius_payments:
             controller: Sylius\Bundle\CoreBundle\Controller\PaymentController
     gateways:
         dummy: Test
-        stripe: Stripe
-        be2bill: Be2Bill
+        #stripe: Stripe
+        #be2bill: Be2Bill
+        paypal_express_checkout: PayPal Express
+        contrareembolso: Contra Reembolso
+        transferencia: Transferencia Bancaria
 
 sylius_payum: ~
 

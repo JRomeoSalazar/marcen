@@ -29,6 +29,10 @@
         <parameter key="sylius.payum.dummy.action.capture_order.class">Sylius\Bundle\PayumBundle\Payum\Dummy\Action\CaptureOrderAction</parameter>
         <parameter key="sylius.payum.dummy.action.order_status.class">Sylius\Bundle\PayumBundle\Payum\Dummy\Action\OrderStatusAction</parameter>
 
+        <parameter key="sylius.payum.manual.action.order_status.class">Sylius\Bundle\PayumBundle\Payum\Manual\Action\OrderStatusAction</parameter>
+
+        <parameter key="sylius.payum.manual.action.order_status.class">Sylius\Bundle\PayumBundle\Payum\Manual\Action\OrderStatusAction</parameter>
+
         <parameter key="sylius.payum.action.order_status.class">Sylius\Bundle\PayumBundle\Payum\Action\OrderStatusAction</parameter>
         <parameter key="sylius.payum.action.obtain_credit_card.class">Sylius\Bundle\PayumBundle\Payum\Action\ObtainCreditCardAction</parameter>
         <parameter key="sylius.payum.action.execute_same_request_with_payment_details.class">Sylius\Bundle\PayumBundle\Payum\Action\ExecuteSameRequestWithPaymentDetailsAction</parameter>
@@ -76,6 +80,9 @@
         <!-- dummy -->
         <service id="sylius.payum.dummy.action.capture_order" class="%sylius.payum.dummy.action.capture_order.class%" />
         <service id="sylius.payum.dummy.action.order_status" class="%sylius.payum.dummy.action.order_status.class%" />
+
+        <!-- Manual -->
+        <service id="sylius.payum.manual.action.order_status" class="%sylius.payum.manual.action.order_status.class%" />
     </services>
 
 </container>

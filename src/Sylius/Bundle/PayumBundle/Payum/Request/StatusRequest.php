@@ -101,7 +101,7 @@ class StatusRequest extends BaseStatusRequest
      */
     public function markPending()
     {
-        $this->status = PaymentInterface::STATE_PROCESSING;
+        $this->status = PaymentInterface::STATE_PENDING;
     }
 
     /**

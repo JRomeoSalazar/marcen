@@ -103,3 +103,31 @@ payum:
                 Sylius\Bundle\PaymentsBundle\Model\Payment:
                     doctrine:
                         driver: orm
+
+        contrareembolso:
+            custom:
+                actions:
+                    - sylius.payum.dummy.action.capture_order
+                    - sylius.payum.manual.action.order_status
+
+            storages:
+                Sylius\Bundle\CoreBundle\Model\Order:
+                    doctrine:
+                        driver: orm
+                Sylius\Bundle\PaymentsBundle\Model\Payment:
+                    doctrine:
+                        driver: orm
+
+        transferencia:
+            custom:
+                actions:
+                    - sylius.payum.dummy.action.capture_order
+                    - sylius.payum.manual.action.order_status
+
+            storages:
+                Sylius\Bundle\CoreBundle\Model\Order:
+                    doctrine:
+                        driver: orm
+                Sylius\Bundle\PaymentsBundle\Model\Payment:
+                    doctrine:
+                        driver: orm
