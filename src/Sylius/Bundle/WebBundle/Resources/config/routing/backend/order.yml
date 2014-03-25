@@ -64,3 +64,9 @@ sylius_backend_order_release_inventory:
     methods: [PUT]
     defaults:
         _controller: sylius.controller.order:releaseInventoryAction
+
+sylius_backend_order_complete_payment:
+    pattern: /{id}/complete-payment
+    methods: [GET]
+    defaults:
+        _controller: sylius.controller.order:completePaymentAction

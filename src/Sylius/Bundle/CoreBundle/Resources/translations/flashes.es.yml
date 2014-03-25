@@ -12,3 +12,5 @@ sylius:
     failed: Tu pago ha sido rechazado.
     unknown: Error de pago desconocido.
     out_of_stock: 'Sólo hay %quantity% %name% en stock.'
+  payment:
+    success: Pago completado correctamente

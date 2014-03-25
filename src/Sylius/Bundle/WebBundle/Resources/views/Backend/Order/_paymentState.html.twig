@@ -1,7 +1,8 @@
 {% set state = order.paymentState %}
 {% set label = 'primary' %}
+{% set gateway = null == order.payment.method ? 'undefined' : order.payment.method.gateway %}
 
-{% if 'pending' == state %}
+{% if 'pending' == state and 'contrareembolso' != gateway %}
     {% set label = 'warning' %}
 {% elseif 'completed' == state %}
     {% set label = 'success' %}
@@ -9,4 +10,14 @@
     {% set label = 'danger' %}
 {% endif %}
 
-<span class="label label-{{ label }}">{{ state|title }}</span>
+{% set title = gateway == 'contrareembolso' and state == 'pending' ? 'sylius.payment.state.contrareembolso.self' : gateway == 'transferencia' and state == 'pending' ? 'sylius.payment.state.transferencia.self' : 'sylius.payment.state.' ~ state %}
+
+{% if state == 'pending' %}
+	{% if gateway == 'contrareembolso' or gateway == 'transferencia' %}
+		<a href="{{ path('sylius_backend_order_complete_payment', {'id': order.id}) }}" class="no-underline">
+			<span class="label label-{{ label }} {{ gateway }}" data-txt="{{ title|trans|title }}" data-alter="{{ ('sylius.payment.state.' ~ gateway ~ '.alter')|trans|title }}">{{ title|trans|title }}</span>
+		</a>
+	{% endif %}
+{% else %}
+	<span class="label label-{{ label }}">{{ title|trans|title }}</span>
+{% endif %}

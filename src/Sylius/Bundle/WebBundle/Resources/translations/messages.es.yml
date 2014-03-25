@@ -432,10 +432,16 @@ sylius:
       0: Estado
       checkout: Completar pedido
       completed: Completado
+      contrareembolso:
+        self: Contrareembolso
+        alter: Pagado C. Reembolso
       failed: Fallido
       new: Nuevo
       pending: Pendiente
       processing: Procesando
+      transferencia:
+        self: Pendiente Transferencia
+        alter: Pagado Transferencia
       unknown: Desconocido
       void: Vacío
     update_header: Editar pago

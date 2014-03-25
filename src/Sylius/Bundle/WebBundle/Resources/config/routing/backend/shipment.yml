@@ -22,7 +22,7 @@ sylius_backend_shipment_update:
         _controller: sylius.controller.shipment:updateAction
         _sylius:
             template: SyliusWebBundle:Backend/Shipment:update.html.twig
-            redirect: sylius_backend_shipment_show
+            redirect: sylius_backend_order_index
 
 sylius_backend_shipment_delete:
     pattern: /{id}

@@ -438,10 +438,16 @@ sylius:
             0: State
             checkout: Checkout
             completed: Completed
+            contrareembolso:
+                self: Cash on Delivery
+                alter: COD Paid
             failed: Failed
             new: New
             pending: Pending
             processing: Processing
+            transferencia:
+                self: Pending Bank Transfer
+                alter: Paid Bank Transfer
             unknown: Unknown
             void: Void
         update_header: Editing payment
