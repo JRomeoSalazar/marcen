@@ -55,6 +55,7 @@ class ShipmentType extends AbstractType
                 'label'   => 'sylius.form.shipment.state',
                 'choices' => array(
                     ShipmentInterface::STATE_CHECKOUT   => 'sylius.form.shipment.states.checkout',
+                    ShipmentInterface::STATE_ONHOLD     => 'sylius.form.shipment.states.onhold',
                     ShipmentInterface::STATE_PENDING    => 'sylius.form.shipment.states.pending',
                     ShipmentInterface::STATE_READY      => 'sylius.form.shipment.states.ready',
                     ShipmentInterface::STATE_SHIPPED    => 'sylius.form.shipment.states.shipped',

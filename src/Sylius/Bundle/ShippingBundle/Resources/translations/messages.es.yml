@@ -11,12 +11,14 @@ sylius:
     shipment:
       state: Estado
       states:
+        cancelled:  Cancelado
         checkout: Completar pedido
         dispatched: despachado
+        onhold: En espera
         pending: Pendiente
         ready: Listo
-        shipped: Enviado
         returned: Devuelto
+        shipped: Enviado
       tracking_code: Código de seguimiento
     shipping_calculator:
       flat_rate_configuration:

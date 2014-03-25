@@ -4,15 +4,6 @@
 {% from 'SyliusWebBundle:Backend/Macros:misc.html.twig' import pagination %}
 {% from 'SyliusWebBundle:Backend/Order:macros.html.twig' import list %}
 
-{% block stylesheets %}
-{{ parent() }}
-<style type="text/css">
-    a.no-underline:hover {
-        text-decoration: none;
-    }
-</style>
-{% endblock %}
-
 {% block topbar %}
 <ol class="breadcrumb">
     <li>{{ 'sylius.breadcrumb.sales'|trans }}</li>
