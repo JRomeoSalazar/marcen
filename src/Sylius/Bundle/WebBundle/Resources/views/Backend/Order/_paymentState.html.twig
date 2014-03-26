@@ -14,7 +14,7 @@
 
 {% if state == 'pending' %}
 	{% if gateway == 'contrareembolso' or gateway == 'transferencia' %}
-		<a href="{{ path('sylius_backend_order_complete_payment', {'id': order.id}) }}" class="no-underline">
+		<a href="{{ path('sylius_backend_order_complete_payment', {'id': order.id}) }}" class="nounderline">
 			<span class="label label-{{ label }} {{ gateway }}" data-txt="{{ title|trans|title }}" data-alter="{{ ('sylius.payment.state.' ~ gateway ~ '.alter')|trans|title }}">{{ title|trans|title }}</span>
 		</a>
 	{% endif %}

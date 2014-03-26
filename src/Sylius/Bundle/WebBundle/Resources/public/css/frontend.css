@@ -149,3 +149,7 @@ a.oauth-login {
 a.oauth-login:hover {
     text-decoration: none;
 }
+
+a.nounderline {
+    text-decoration: none;
+}

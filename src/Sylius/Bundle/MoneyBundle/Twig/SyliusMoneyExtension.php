@@ -31,7 +31,8 @@ class SyliusMoneyExtension extends \Twig_Extension
         $this->converter       = $converter;
         $this->formatter       = new \NumberFormatter($locale ?: \Locale::getDefault(), \NumberFormatter::CURRENCY);
         
-        $pattern = "¤#,##0.00;-¤#,##0.00";
+        //$pattern = "¤#,##0.00;-¤#,##0.00";
+        $pattern = "##0.00,¤#;##0.00,-¤#";
         $this->formatter->setPattern($pattern);
     }
 

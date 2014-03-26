@@ -572,3 +572,8 @@ input[type="file"] {
     border-top-color: #333;
     color: #333;
 }
+
+a.nounderline {
+    text-decoration: none;
+}
+

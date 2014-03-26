@@ -5,7 +5,8 @@
         </a>
     </div>
     <div class="col-md-9">
-        <a href="{{ path('sylius_product_show', {'slug': product.slug}) }}" class="btn btn-link"><h3>{{ product.name }}</h3></a>
+        <a href="{{ path('sylius_product_show', {'slug': product.slug}) }}" class="nounderline"><h3>{{ product.name }}</h3></a>
+        <h4><span class="label label-primary">{{ sylius_calculate_price(product)|sylius_price }}</span></h4>
         <p>{{ product.shortDescription|default('sylius.product.no_description'|trans)|raw }}</p>
 
         <hr>
