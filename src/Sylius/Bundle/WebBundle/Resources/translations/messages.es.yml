@@ -3,7 +3,7 @@
 
 email:
   order_confirmation:
-    subject: Sujeto
+    subject: Confirmación de pedido
     text: "Su pedido número <strong>%number%</strong> se ha realizado correctamente, puede consultar los detalles de su pedido en la siguiente dirección:"
 sylius:
   account:

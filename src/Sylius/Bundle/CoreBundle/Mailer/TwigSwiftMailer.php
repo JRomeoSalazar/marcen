@@ -53,7 +53,7 @@ class TwigSwiftMailer implements TwigMailerInterface
             ->setFrom($fromEmail)
             ->setTo($toEmail);
 
-        $logo = $message->embed(\Swift_Image::fromPath('bundles/syliusweb/images/web/logo.png'));
+        $logo = $message->embed(\Swift_Image::fromPath('bundles/syliusweb/img/logo.png'));
 
         $context['logo'] = $logo;
 

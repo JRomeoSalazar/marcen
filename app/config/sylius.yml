@@ -3,17 +3,17 @@ sylius_core:
     emails:
         enabled: true
         from_email:
-            address: admin@sylius.es
+            address: jromeosalazar@gmail.com
             sender_name: Sylius Admin
         order_confirmation:
             enabled: true
-            template: 'SyliusWebBundle:Frontend/Shop/Email:orderConfirmation.html.twig'
+            template: 'SyliusWebBundle:Frontend/Email:orderConfirmation.html.twig'
             from_email:
-                address: orders@ktsport.es
-                sender_name: KTSport Orders
+                address: jromeosalazar@gmail.com
+                sender_name: Sylius Orders
         #customer_welcome:
         #    enabled: false
-        #    template: 'SyliusWebBundle:Frontend/Shop/Email:customerWelcome.html.twig'
+        #    template: 'SyliusWebBundle:Frontend/Email:customerWelcome.html.twig'
         #    from_email:
         #        address:
         #        sender_name:
