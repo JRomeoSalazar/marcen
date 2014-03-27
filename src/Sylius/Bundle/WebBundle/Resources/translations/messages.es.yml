@@ -337,6 +337,7 @@ sylius:
     values: Valores
   order:
     billing_address: Dirección de facturación
+    comentario: Comentarios del cliente
     create: Añadir pedido
     create_header: Nuevo pedido
     created_at: Fecha de creación
