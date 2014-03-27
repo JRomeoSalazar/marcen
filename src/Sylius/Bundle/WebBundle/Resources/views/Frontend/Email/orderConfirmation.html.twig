@@ -3,5 +3,15 @@
     {{ 'email.order_confirmation.subject'|trans }}
     {% endautoescape %}
 {% endblock %}
-{% block body_text %}{% endblock %}
-{% block body_html %}{% endblock %}
+
+{% block body_text %}
+	<img src="{{ logo }}" alt="Sylius Logo" />
+	{{ 'email.order_confirmation.text'|trans({'%number%': order.number})|raw }}
+	{{ app.request.scheme ~ '://' ~ app.request.httpHost ~ path('sylius_account_order_show', { 'number': order.number }) }}
+{% endblock %}
+
+{% block body_html %}
+	<img src="{{ logo }}" alt="Sylius Logo" />
+	<p>{{ 'email.order_confirmation.text'|trans({'%number%': order.number})|raw }}</p>
+	<p>{{ app.request.scheme ~ '://' ~ app.request.httpHost ~ path('sylius_account_order_show', { 'number': order.number }) }}</p>
+{% endblock %}

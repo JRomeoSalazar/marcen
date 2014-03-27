@@ -47,13 +47,18 @@ class TwigSwiftMailer implements TwigMailerInterface
         $template = $this->twig->loadTemplate($templateName);
 
         $subject = $template->renderBlock('subject', $context);
-        $textBody = $template->renderBlock('body_text', $context);
-        $htmlBody = $template->renderBlock('body_html', $context);
 
         $message = \Swift_Message::newInstance()
             ->setSubject($subject)
             ->setFrom($fromEmail)
             ->setTo($toEmail);
+
+        $logo = $message->embed(\Swift_Image::fromPath('bundles/syliusweb/images/web/logo.png'));
+
+        $context['logo'] = $logo;
+
+        $textBody = $template->renderBlock('body_text', $context);
+        $htmlBody = $template->renderBlock('body_html', $context);
 
         if (!empty($htmlBody)) {
             $message->setBody($htmlBody, 'text/html')

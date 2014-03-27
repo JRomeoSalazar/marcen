@@ -1,6 +1,7 @@
 email:
     order_confirmation:
         subject: email.order_confirmation.subject
+        text: "Your order number <strong>%number%</strong> has been completed successfully. You can see order details at:"
 sylius:
     account:
         address:
