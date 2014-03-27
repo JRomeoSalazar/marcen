@@ -249,6 +249,21 @@ interface OrderInterface extends CartInterface, PromotionSubjectInterface
     public function setShippingState($state);
 
     /**
+     * Get comentario.
+     *
+     * @return string
+     */
+    public function getComentario();
+
+    /**
+     * Set comentario.
+     *
+     * @param string $comentario
+     * @return OrderInterface
+     */
+    public function setComentario($comentario);
+
+    /**
      * Has any pending inventory?
      *
      * @return Boolean

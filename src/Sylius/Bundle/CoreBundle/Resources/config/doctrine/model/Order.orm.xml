@@ -44,6 +44,7 @@
         <field name="currency" length="3" />
         <field type="string" name="paymentState" column="payment_state" />
         <field type="string" name="shippingState" column="shipping_state" />
+        <field type="text" name="comentario" column="comentario" nullable="true" />
         
         <many-to-many field="promotions" target-entity="Sylius\Bundle\PromotionsBundle\Model\PromotionInterface">
             <join-table name="sylius_promotion_order">

@@ -31,6 +31,8 @@ sylius:
     locale:
       code: Código
       enabled: Activado
+    order:
+      comentario: Comentarios:
     order_filter:
       created_at_from: Desde
       created_at_to: Hasta

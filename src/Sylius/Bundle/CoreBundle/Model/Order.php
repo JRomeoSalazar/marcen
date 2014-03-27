@@ -99,6 +99,13 @@ class Order extends Cart implements OrderInterface
     protected $promotions;
 
     /**
+     * Order comentario.
+     *
+     * @var string
+     */
+    protected $comentario;
+
+    /**
      * Constructor.
      */
     public function __construct()
@@ -446,6 +453,24 @@ class Order extends Cart implements OrderInterface
     public function setShippingState($state)
     {
         $this->shippingState = $state;
+
+        return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getComentario()
+    {
+        return $this->comentario;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setComentario($comentario)
+    {
+        $this->comentario = $comentario;
 
         return $this;
     }

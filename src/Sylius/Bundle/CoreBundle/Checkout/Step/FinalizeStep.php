@@ -15,6 +15,7 @@ use Sylius\Bundle\CoreBundle\Checkout\SyliusCheckoutEvents;
 use Sylius\Bundle\CoreBundle\Model\OrderInterface;
 use Sylius\Bundle\FlowBundle\Process\Context\ProcessContextInterface;
 use Sylius\Bundle\OrderBundle\SyliusOrderEvents;
+use Symfony\Component\Form\FormInterface;
 
 /**
  * Final checkout step.
@@ -31,7 +32,9 @@ class FinalizeStep extends CheckoutStep
         $order = $this->getCurrentCart();
         $this->dispatchCheckoutEvent(SyliusCheckoutEvents::FINALIZE_INITIALIZE, $order);
 
-        return $this->renderStep($context, $order);
+        $form = $this->createCheckoutFinalizeForm($order);
+
+        return $this->renderStep($context, $order, $form);
     }
 
     /**
@@ -39,21 +42,31 @@ class FinalizeStep extends CheckoutStep
      */
     public function forwardAction(ProcessContextInterface $context)
     {
+        $request = $this->getRequest();
+
         $order = $this->getCurrentCart();
         $this->dispatchCheckoutEvent(SyliusCheckoutEvents::FINALIZE_INITIALIZE, $order);
 
-        $order->setUser($this->getUser());
+        $form = $this->createCheckoutFinalizeForm($order);
 
-        $this->completeOrder($order);
+        if ($request->isMethod('POST') && $form->bind($request)->isValid()) {
 
-        return $this->complete();
+            $order->setUser($this->getUser());
+
+            $this->completeOrder($order);
+
+            return $this->complete();
+        }
+
+        return $this->renderStep($context, $order, $form);
     }
 
-    protected function renderStep(ProcessContextInterface $context, OrderInterface $order)
+    protected function renderStep(ProcessContextInterface $context, OrderInterface $order, FormInterface $form)
     {
         return $this->render('SyliusWebBundle:Frontend/Checkout/Step:finalize.html.twig', array(
             'context' => $context,
-            'order'   => $order
+            'order'   => $order,
+            'form'    => $form->createView()
         ));
     }
 
@@ -73,5 +86,15 @@ class FinalizeStep extends CheckoutStep
 
         $this->dispatchCheckoutEvent(SyliusCheckoutEvents::FINALIZE_COMPLETE, $order);
         $this->dispatchCheckoutEvent(SyliusOrderEvents::POST_CREATE, $order);
+    }
+
+    /**
+     * Create the finalize form.
+     *
+     * @param OrderInterface $order
+     */
+    private function createCheckoutFinalizeForm(OrderInterface $order)
+    {
+        return $this->createForm('sylius_checkout_finalize', $order);
     }
 }

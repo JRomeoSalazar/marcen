@@ -42,6 +42,8 @@
             <dd>{{ order.createdAt|date }}</dd>
             <dt>Email</dt>
             <dd>{{ order.user.email }}</dd>
+            <dt>{{ 'sylius.order.comentario'|trans }}</dt>
+            <dd>{{ order.comentario }}</dd>
         </dl>
     </div>
     <div class="col col-md-3">

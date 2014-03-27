@@ -27,6 +27,8 @@ sylius:
         locale:
             code: Code
             enabled: Enabled
+        order:
+            comentario: Comments:
         order_filter:
             created_at_from: From
             created_at_to: To
