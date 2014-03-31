@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+        Sylius - Modern ecommerce for Symfony2
+    </title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Sylius is modern ecommerce solution for PHP. Based on the Symfony2 framework.">
+    <meta name="keywords" content="Sylius - Modern ecommerce for Symfony2">
+
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Open+Sans:300italic,400,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- stylesheets... -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" type="text/css" />
+    <link rel="stylesheet" href="public/css/frontend.css" type="text/css" />
+    <link rel="stylesheet" href="public/css/blueimp-gallery.css" type="text/css" />
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="masthead pull-right">
+
+        <!-- sylius.frontend.main -->
+        <ul class="nav nav-pills">
+          <li class="first">
+            <a href="#"><i class="icon-shopping-cart icon-large"></i> Ver carrito (2) 19,99 €</a>
+          </li>
+          <li>
+            <a href="#"><i class="icon-lock icon-large"></i> Iniciar sesión</a>
+          </li>
+          <li class="last">
+            <a href="#"><i class="icon-user icon-large"></i> Registrarse</a>
+          </li>
+        </ul>
+        <!--*********************-->
+
+      </div>
+      <h1 class="logo">
+        <a href="{{ path('sylius_homepage') }}" title="{{ 'sylius.logo'|trans }}">
+          <span>Sylius</span>
+        </a>
+      </h1>
+      <hr>
+      <div class="row">
+        <div class="col-md-3" id="sidebar">
+          <h4>Comprado por</h4><br>
+
+          <!-- sylius.frontend.taxonomies -->
+          <ul class="nav">
+            <li class="first">
+              <span class="nav-header">Category</span>
+              <ul class="nav nav-list menu_level_1">
+                <li class="first"><a href=""><i class="icon-angle-right"></i> T-Shirts</a></li>
+                <li><a href=""><i class="icon-angle-right"></i> Stickers</a></li>
+                <li><a href=""><i class="icon-angle-right"></i> Mugs</a></li>
+                <li class="last"><a href=""><i class="icon-angle-right"></i> Books</a></li>
+              </ul>
+            </li>
+            <li class="last">
+              <span class="nav-header">Brand</span>
+              <ul class="nav nav-list menu_level_1">
+                <li class="first"><a href="#"><i class="icon-angle-right"></i> Supertees</a></li>
+                <li><a href="#"><i class="icon-angle-right"></i> StickyPicky</a></li>
+                <li><a href="#"><i class="icon-angle-right"></i> Mugland</a></li>
+                <li class="last"><a href="#"><i class="icon-angle-right"></i> Bookmania</a></li>
+              </ul>
+            </li>
+          </ul>
+          <!--******************************-->
+
+          <!-- sylius_partial_product_latest -->
+          <h4>Novedades</h4>
+          <ul>
+            <li>
+              <a href="#" class="btn btn-link">
+                <img class="thumbnail" src="public/img/product/thumbnail/latest-1.jpeg" />
+                <h4>T-Shirt "explicabo"</h4>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="btn btn-link">
+                <img class="thumbnail" src="public/img/product/thumbnail/latest-2.jpeg" />
+                <h4>T-Shirt "et"</h4>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="btn btn-link">
+                <img class="thumbnail" src="public/img/product/thumbnail/latest-3.jpeg" />
+                <h4>Book "Et" by Emiliano Weimann Sr.</h4>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="btn btn-link">
+                <img class="thumbnail" src="public/img/product/thumbnail/latest-4.jpeg" />
+                <h4>Sticker "alias"</h4>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="btn btn-link">
+                <img class="thumbnail" src="public/img/product/thumbnail/latest-5.jpeg" />
+                <h4>Sticker "consequtuur"</h4>
+              </a>
+            </li>
+          </ul>
+          <!--******************************-->
+
+          <!-- sonata_block_render '/cms/blocks/contact' -->
+          <div id="block-cms-blocks-contact" class="cmf-block cmf-block-simple">
+            <h1>Contact us</h1>
+            <p></p>
+            <p>Call us +82(8)7903742286!</p>
+            <p>Earum minima veritatis aut nihil unde autem neque. Dolor perspiciatis sit perferendis vel minima eos id. Et dolor inventore neque enim inventore. Necessitatibus maxime porro id.</p>
+          </div>
+          <!--******************************-->
+
+          <!-- cmf_children(cmf_find('/cms/pages')) -->
+          <h2>Links</h2>
+          <ul>
+            <li>
+              <a href="#">Terms of service</a>
+            </li>
+            <li>
+              <a href="#">About us</a>
+            </li>
+          </ul>
+          <!--******************************-->
+
+        </div>
+        <div class="col-md-9">
+          <!-- block content -->      
+          <div class="jumbotron">
+              <h1>Bienvenido a Sylius</h1>
+              <p class="lead">ecommerce para Symfony2</p>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="product-box">
+                <a href="#">
+                  <h4>T-Shirt "explicabo"</h4>
+                </a>
+                <a href="#">
+                  <img src="public/img/product/singlebox/singlebox-1.jpeg" class="img-rounded img-responsive" />
+                  <span class="label label-primary">59,56 €</span>
+                  <button class="btn btn-success btn-xs pull-right">
+                    <i class="icon-shopping-cart icon-white"></i> Añadir al carrito
+                  </button>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="product-box">
+                <a href="#">
+                  <h4>T-Shirt "et"</h4>
+                </a>
+                <a href="#">
+                  <img src="public/img/product/singlebox/singlebox-2.jpeg" class="img-rounded img-responsive" />
+                  <span class="label label-primary">59,56 €</span>
+                  <button class="btn btn-success btn-xs pull-right">
+                    <i class="icon-shopping-cart icon-white"></i> Añadir al carrito
+                  </button>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="product-box">
+                <a href="#">
+                  <h4>Book "Et" by Emiliano</h4>
+                </a>
+                <a href="#">
+                  <img src="public/img/product/singlebox/singlebox-3.jpeg" class="img-rounded img-responsive" />
+                  <span class="label label-primary">59,56 €</span>
+                  <button class="btn btn-success btn-xs pull-right">
+                    <i class="icon-shopping-cart icon-white"></i> Añadir al carrito
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="product-box">
+                <a href="#">
+                  <h4>T-Shirt "explicabo"</h4>
+                </a>
+                <a href="#">
+                  <img src="public/img/product/singlebox/singlebox-1.jpeg" class="img-rounded img-responsive" />
+                  <span class="label label-primary">59,56 €</span>
+                  <button class="btn btn-success btn-xs pull-right">
+                    <i class="icon-shopping-cart icon-white"></i> Añadir al carrito
+                  </button>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="product-box">
+                <a href="#">
+                  <h4>T-Shirt "et"</h4>
+                </a>
+                <a href="#">
+                  <img src="public/img/product/singlebox/singlebox-2.jpeg" class="img-rounded img-responsive" />
+                  <span class="label label-primary">59,56 €</span>
+                  <button class="btn btn-success btn-xs pull-right">
+                    <i class="icon-shopping-cart icon-white"></i> Añadir al carrito
+                  </button>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="product-box">
+                <a href="#">
+                  <h4>Book "Et" by Emiliano</h4>
+                </a>
+                <a href="#">
+                  <img src="public/img/product/singlebox/singlebox-3.jpeg" class="img-rounded img-responsive" />
+                  <span class="label label-primary">59,56 €</span>
+                  <button class="btn btn-success btn-xs pull-right">
+                    <i class="icon-shopping-cart icon-white"></i> Añadir al carrito
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="product-box">
+                <a href="#">
+                  <h4>T-Shirt "explicabo"</h4>
+                </a>
+                <a href="#">
+                  <img src="public/img/product/singlebox/singlebox-1.jpeg" class="img-rounded img-responsive" />
+                  <span class="label label-primary">59,56 €</span>
+                  <button class="btn btn-success btn-xs pull-right">
+                    <i class="icon-shopping-cart icon-white"></i> Añadir al carrito
+                  </button>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="product-box">
+                <a href="#">
+                  <h4>T-Shirt "et"</h4>
+                </a>
+                <a href="#">
+                  <img src="public/img/product/singlebox/singlebox-2.jpeg" class="img-rounded img-responsive" />
+                  <span class="label label-primary">59,56 €</span>
+                  <button class="btn btn-success btn-xs pull-right">
+                    <i class="icon-shopping-cart icon-white"></i> Añadir al carrito
+                  </button>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="product-box">
+                <a href="#">
+                  <h4>Book "Et" by Emiliano</h4>
+                </a>
+                <a href="#">
+                  <img src="public/img/product/singlebox/singlebox-3.jpeg" class="img-rounded img-responsive" />
+                  <span class="label label-primary">59,56 €</span>
+                  <button class="btn btn-success btn-xs pull-right">
+                    <i class="icon-shopping-cart icon-white"></i> Añadir al carrito
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!--******************************-->
+        </div>
+      </div>
+
+      <hr>
+
+      <!-- sonata_block_render '/cms/blocks/block-1-2-3' -->
+      <div class="row">
+        <div class="col-md-4">
+          <div id="block-cms-blocks-block-1" class="cmf-block cmf-block-simple">
+            <h1>Uuummmm, this is a tasty burger!</h1>
+            <p>Now that we know who you are, I know who I am. I'm not a mistake! It all makes sense! In a comic, you know how you can tell who the arch-villain's going to be? He's the exact opposite of the hero. And most times they're friends, like you and me! I should've known way back when... You know why, David? Because of the kids. They called me Mr Glass. </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div id="block-cms-blocks-block-2" class="cmf-block cmf-block-simple">
+            <h1>Is she dead, yes or no?</h1>
+            <p>Now that we know who you are, I know who I am. I'm not a mistake! It all makes sense! In a comic, you know how you can tell who the arch-villain's going to be? He's the exact opposite of the hero. And most times they're friends, like you and me! I should've known way back when... You know why, David? Because of the kids. They called me Mr Glass. </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div id="block-cms-blocks-block-3" class="cmf-block cmf-block-simple">
+            <h1>Hold on to your butts</h1>
+            <p>My money's in that office, right? If she start giving me some bullshit about it ain't there, and we got to go someplace else and get it, I'm gonna shoot you in the head then and there. Then I'm gonna shoot that bitch in the kneecaps, find out where my goddamn money is. She gonna tell me too. Hey, look at me when I'm talking to you, motherfucker. You listen: we go in there, and that nigga Winston or anybody else is in there, you the first motherfucker to get shot. You understand? </p>
+          </div>
+        </div>
+      </div>
+      <!--***********************************************-->
+
+      <hr>
+
+      <!-- block footer -->
+      <div class="footer">
+        <p class="text-muted">
+          &copy; Sylius, 2011 - 2014.
+          &middot;
+          <a href="#" target="_blank" title="{{ 'sylius.frontend.disclaimer'|trans }}">
+            Aviso Legal
+          </a>
+        </p>
+
+        <!-- sylius.frontend.social -->
+        <ul class="nav nav-pills pull-right">
+          <li class="first"><a href="#"><i class="icon-github-sign icon-large"></i></a></li>
+          <li><a href="#"><i class="icon-twitter-sign icon-large"></i></a></li>
+          <li class="last"><a href="#"><i class="icon-facebook-sign icon-large"></i></a></li>
+        </ul>
+        <!--************************-->
+
+      </div>
+      <!--***********************************************-->
+    </div>
+
+    <!-- javascripts... -->
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="public/js/jquery.blueimp-gallery.min.js"></script>
+    <script type="text/javascript" src="public/js/confirm-modal.js"></script>
+    <script type="text/javascript" src="public/js/frontend.js"></script>
+  </body>
+</html>
