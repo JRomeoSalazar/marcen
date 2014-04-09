@@ -9,20 +9,16 @@
  * file that was distributed with this source code.
  */
 
-use Symfony\Component\Config\Loader\LoaderInterface;
-use Symfony\Component\HttpKernel\Kernel;
+use Sylius\Bundle\CoreBundle\Kernel\SyliusKernel;
 
 /**
  * Sylius kernel.
  *
  * @author Paweł Jędrzejewski <pjedrzejewski@diweb.pl>
  */
-class AppKernel extends Kernel
+class AppKernel extends SyliusKernel
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function registerBundles()
+    public function getDir()
     {
         $bundles = array(
             // Sylius bundles.
@@ -151,5 +147,7 @@ class AppKernel extends Kernel
         }
 
         return $bundles;
+        
+        return __DIR__;
     }
 }
