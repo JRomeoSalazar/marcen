@@ -21,7 +21,7 @@ use Symfony\Component\HttpKernel\Kernel;
  */
 abstract class SyliusKernel extends Kernel
 {
-    const VERSION = '0.9.0';
+    const VERSION = '0.10.0-dev';
 
     /**
      * {@inheritdoc}
@@ -35,15 +35,16 @@ abstract class SyliusKernel extends Kernel
             new \Sylius\Bundle\SettingsBundle\SyliusSettingsBundle(),
             new \Sylius\Bundle\CartBundle\SyliusCartBundle(),
             new \Sylius\Bundle\ProductBundle\SyliusProductBundle(),
-            new \Sylius\Bundle\VariableProductBundle\SyliusVariableProductBundle(),
+            new \Sylius\Bundle\VariationBundle\SyliusVariationBundle(),
+            new \Sylius\Bundle\AttributeBundle\SyliusAttributeBundle(),
             new \Sylius\Bundle\TaxationBundle\SyliusTaxationBundle(),
             new \Sylius\Bundle\ShippingBundle\SyliusShippingBundle(),
-            new \Sylius\Bundle\PaymentsBundle\SyliusPaymentsBundle(),
+            new \Sylius\Bundle\PaymentBundle\SyliusPaymentBundle(),
             new \Sylius\Bundle\PayumBundle\SyliusPayumBundle(),
-            new \Sylius\Bundle\PromotionsBundle\SyliusPromotionsBundle(),
+            new \Sylius\Bundle\PromotionBundle\SyliusPromotionBundle(),
             new \Sylius\Bundle\AddressingBundle\SyliusAddressingBundle(),
             new \Sylius\Bundle\InventoryBundle\SyliusInventoryBundle(),
-            new \Sylius\Bundle\TaxonomiesBundle\SyliusTaxonomiesBundle(),
+            new \Sylius\Bundle\TaxonomyBundle\SyliusTaxonomyBundle(),
             new \Sylius\Bundle\FlowBundle\SyliusFlowBundle(),
 
             new \Sylius\Bundle\CoreBundle\SyliusCoreBundle(),
@@ -58,6 +59,7 @@ abstract class SyliusKernel extends Kernel
             new \Symfony\Cmf\Bundle\MenuBundle\CmfMenuBundle(),
 
             new \Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
+            new \Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
             new \Doctrine\Bundle\PHPCRBundle\DoctrinePHPCRBundle(),
             new \Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new \Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
@@ -70,11 +72,13 @@ abstract class SyliusKernel extends Kernel
             new \Liip\ImagineBundle\LiipImagineBundle(),
             new \Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new \Knp\Bundle\GaufretteBundle\KnpGaufretteBundle(),
-            new \JMS\SerializerBundle\JMSSerializerBundle($this),
+            new \JMS\SerializerBundle\JMSSerializerBundle(),
             new \HWI\Bundle\OAuthBundle\HWIOAuthBundle(),
+            new \FOS\JsRoutingBundle\FOSJsRoutingBundle(),
             new \FOS\RestBundle\FOSRestBundle(),
             new \FOS\UserBundle\FOSUserBundle(),
             new \WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle(),
+            new \Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle(),
             new \Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
             new \JMS\TranslationBundle\JMSTranslationBundle(),
             new \Knp\Bundle\SnappyBundle\KnpSnappyBundle(),

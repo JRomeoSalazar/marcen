@@ -13,10 +13,10 @@ namespace Sylius\Bundle\WebBundle\Behat;
 
 use Behat\Behat\Context\Step;
 use Behat\Gherkin\Node\TableNode;
-use Behat\Mink\Exception\ElementNotFoundException;
-use Behat\MinkExtension\Context\MinkContext;
 use Behat\Mink\Driver\Selenium2Driver;
+use Behat\Mink\Exception\ElementNotFoundException;
 use Behat\Mink\Exception\ExpectationException;
+use Behat\MinkExtension\Context\MinkContext;
 use Behat\Symfony2Extension\Context\KernelAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpKernel\KernelInterface;
@@ -400,7 +400,7 @@ class WebUser extends MinkContext implements KernelAwareInterface
     {
         $product = $this->getDataContext()->findOneByName('product', $name);
 
-        $this->getSession()->visit($this->generatePageUrl('sylius_backend_variant_create', array('productId' => $product->getId())));
+        $this->getSession()->visit($this->generatePageUrl('sylius_backend_product_variant_create', array('productId' => $product->getId())));
     }
 
     /**
@@ -410,7 +410,7 @@ class WebUser extends MinkContext implements KernelAwareInterface
     {
         $product = $this->getDataContext()->findOneByName('product', $name);
 
-        $this->assertSession()->addressEquals($this->generatePageUrl('sylius_backend_variant_create', array('productId' => $product->getId())));
+        $this->assertSession()->addressEquals($this->generatePageUrl('sylius_backend_product_variant_create', array('productId' => $product->getId())));
         $this->assertStatusCodeEquals(200);
     }
 

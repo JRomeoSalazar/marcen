@@ -11,8 +11,8 @@
 
 namespace Sylius\Bundle\MoneyBundle\Twig;
 
-use Sylius\Bundle\MoneyBundle\Context\CurrencyContextInterface;
-use Sylius\Bundle\MoneyBundle\Converter\CurrencyConverterInterface;
+use Sylius\Component\Money\Context\CurrencyContextInterface;
+use Sylius\Component\Money\Converter\CurrencyConverterInterface;
 
 /**
  * Sylius money Twig helper.
@@ -30,10 +30,14 @@ class SyliusMoneyExtension extends \Twig_Extension
         $this->currencyContext = $currencyContext;
         $this->converter       = $converter;
         $this->formatter       = new \NumberFormatter($locale ?: \Locale::getDefault(), \NumberFormatter::CURRENCY);
+<<<<<<< HEAD
         
         //$pattern = "¤#,##0.00;-¤#,##0.00";
         $pattern = "##0.00,¤#;##0.00,-¤#";
         $this->formatter->setPattern($pattern);
+=======
+        $this->formatter->setPattern("¤#,##0.00;-¤#,##0.00");
+>>>>>>> master
     }
 
     /**

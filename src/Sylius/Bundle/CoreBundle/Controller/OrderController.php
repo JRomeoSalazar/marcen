@@ -17,10 +17,11 @@ use Sylius\Bundle\CoreBundle\OrderProcessing\StateResolver;
 use Sylius\Bundle\CoreBundle\SyliusOrderEvents;
 use Sylius\Bundle\PaymentsBundle\Model\PaymentInterface;
 use Sylius\Bundle\PaymentsBundle\SyliusPaymentEvents;
+use Sylius\Component\Core\SyliusOrderEvents;
+use Symfony\Component\EventDispatcher\GenericEvent;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-use Symfony\Component\EventDispatcher\GenericEvent;
 
 class OrderController extends ResourceController
 {
@@ -55,13 +56,15 @@ class OrderController extends ResourceController
     }
 
     /**
+     * @param Request $request
+     *
      * @return Response
      *
      * @throws NotFoundHttpException
      */
-    public function releaseInventoryAction()
+    public function releaseInventoryAction(Request $request)
     {
-        $order = $this->findOr404($this->getRequest());
+        $order = $this->findOr404($request);
 
         $this->get('event_dispatcher')->dispatch(SyliusOrderEvents::PRE_RELEASE, new GenericEvent($order));
 

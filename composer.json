@@ -26,6 +26,8 @@
         "doctrine/phpcr-bundle":                "1.0.*",
         "doctrine/phpcr-odm":                   "1.0.*",
         "friendsofsymfony/jsrouting-bundle":    "dev-new-response",
+        "doctrine/migrations":                  "dev-master",
+        "doctrine/doctrine-migrations-bundle":  "dev-master",
         "friendsofsymfony/rest-bundle":         "~1.0",
         "friendsofsymfony/user-bundle":         "2.0.*@dev",
         "h4cc/wkhtmltopdf-amd64":               "dev-master",
