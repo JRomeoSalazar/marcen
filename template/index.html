@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+        Sylius - Modern ecommerce for Symfony2
+    </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Sylius is modern ecommerce solution for PHP. Based on the Symfony2 framework.">
+    <meta name="keywords" content="Sylius - Modern ecommerce for Symfony2">
+
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Open+Sans:300italic,400,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- stylesheets... -->
+    <link rel="stylesheet" href="public/css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" type="text/css" />
+    <link rel="stylesheet" href="public/css/frontend.css" type="text/css" />
+    <link rel="stylesheet" href="public/css/blueimp-gallery.css" type="text/css" />
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Mostrar menú de navegación</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <img src="public/img/web/merida-bikes-logo-h.png" class="merida-bikes-logo" alt="Merida Bikes Logo" />
+          <a class="ciclos-marcen-logo" href="{{ path('sylius_homepage') }}" title="{{ 'sylius.logo'|trans }}">
+            <h1>
+              <img src="public/img/web/ciclos-marcen-logo.png" alt="Ciclos Marcen Logo" />
+            </h1>
+          </a>
+        </div>
+        <div class="collapse navbar-collapse pull-right">
+
+          <!-- sylius.frontend.main -->
+          <ul class="nav navbar-nav sylius-frontend-main">
+            <li class="first">
+              <a href="#"><i class="icon-shopping-cart icon-large"></i> Ver carrito (2) 19,99 €</a>
+            </li>
+            <li>
+              <a href="#"><i class="icon-lock icon-large"></i> Iniciar sesión</a>
+            </li>
+            <li class="last">
+              <a href="#"><i class="icon-user icon-large"></i> Registrarse</a>
+            </li>
+          </ul>
+          <!--*********************-->
+
+          <!-- search -->
+          <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Buscar" maxlength="20">
+            </div>
+            <button type="submit" class="btn btn-default"><i class="icon-search"></i></button>
+          </form>
+          <!--************************-->
+
+          <!-- sylius.frontend.social -->
+          <ul class="nav navbar-nav sylius-frontend-social">
+            <li class="first"><a href="#" class="facebook"><i class="icon-facebook icon-large"></i></a></li>
+            <li class="last"><a href="#" class="twitter"><i class="icon-twitter icon-large"></i></a></li>
+          </ul>
+          <!--************************-->
+
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3" id="sidebar">
+
+          <!-- contacto -->
+          <div class="panel panel-contact">
+            <div class="panel-body">
+              <p><i class="icon-fixed-width icon-phone icon-large"></i> 976 426 040</p>
+              <p><i class="icon-fixed-width icon-envelope icon-large"></i> info@ciclosmarcen.com</p>
+            </div>
+          </div>
+          
+          <!-- sylius.frontend.taxonomies -->
+          <ul class="taxonomies">
+            <li class="first">
+              <span class="nav-header">Category</span>
+              <ul class="nav nav-pills nav-stacked menu_level_1">
+                <li class="first"><a href=""></i>T-Shirts</a></li>
+                <li><a href=""></i>Stickers</a></li>
+                <li class="active"><a href=""></i>Mugs</a></li>
+                <li class="last"><a href=""></i>Books</a></li>
+              </ul>
+            </li>
+            <li class="last">
+              <span class="nav-header">Brand</span>
+              <ul class="nav nav-pills nav-stacked menu_level_1">
+                <li class="first"><a href="#"></i>Supertees</a></li>
+                <li><a href="#"></i>StickyPicky</a></li>
+                <li><a href="#"></i>Mugland</a></li>
+                <li class="last"><a href="#"></i>Bookmania</a></li>
+              </ul>
+            </li>
+          </ul>
+          <!--******************************-->
+
+          <!-- sylius_partial_product_latest -->
+          <h4 class="newest-header">Novedades</h4>
+          <ul class="newest">
+            <li>
+              <a href="#" class="btn btn-link">
+                <img class="thumbnail" src="public/img/product/thumbnail/latest-1.jpeg" />
+                <h4>T-Shirt "explicabo"</h4>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="btn btn-link">
+                <img class="thumbnail" src="public/img/product/thumbnail/latest-2.jpeg" />
+                <h4>T-Shirt "et"</h4>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="btn btn-link">
+                <img class="thumbnail" src="public/img/product/thumbnail/latest-3.jpeg" />
+                <h4>Book "Et" by Emiliano Weimann Sr.</h4>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="btn btn-link">
+                <img class="thumbnail" src="public/img/product/thumbnail/latest-4.jpeg" />
+                <h4>Sticker "alias"</h4>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="btn btn-link">
+                <img class="thumbnail" src="public/img/product/thumbnail/latest-5.jpeg" />
+                <h4>Sticker "consequtuur"</h4>
+              </a>
+            </li>
+          </ul>
+          <!--******************************-->
+
+          <!-- sonata_block_render '/cms/blocks/contact' -->
+          <!--<div id="block-cms-blocks-contact" class="cmf-block cmf-block-simple">
+            <h1>Contact us</h1>
+            <p></p>
+            <p>Call us +82(8)7903742286!</p>
+            <p>Earum minima veritatis aut nihil unde autem neque. Dolor perspiciatis sit perferendis vel minima eos id. Et dolor inventore neque enim inventore. Necessitatibus maxime porro id.</p>
+          </div>-->
+          <!--******************************-->
+
+          <!-- cmf_children(cmf_find('/cms/pages')) -->
+          <!--<h2>Links</h2>
+          <ul>
+            <li>
+              <a href="#">Terms of service</a>
+            </li>
+            <li>
+              <a href="#">About us</a>
+            </li>
+          </ul>-->
+          <!--******************************-->
+
+        </div>
+        <div class="col-md-9">
+          <!-- block content -->
+
+          <!-- carousel -->     
+          <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+              <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+              <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+
+              <div class="item active">
+                <img src="public/img/slider/polar-rc3-cs500.jpg" alt="slider-1">
+                <div class="carousel-caption">
+                  <h3>Slider 1</h3>
+                  <p>Texto de slider 1</p>
+                </div>
+              </div>
+              <div class="item">
+                <img data-src="holder.js/850x400/text:Slide 2" alt="slider-2">
+                <div class="carousel-caption">
+                  <h3>Slider 2</h3>
+                  <p>Texto de slider 2</p>
+                </div>
+              </div>
+              <div class="item">
+                <img data-src="holder.js/850x400/text:Slide 3" alt="slider-3">
+                <div class="carousel-caption">
+                  <h3>Slider 3</h3>
+                  <p>Texto de slider 3</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Controls -->
+            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+              <i class="glyphicon glyphicon-chevron-left icon-chevron-left"></i>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+              <i class="glyphicon glyphicon-chevron-right icon-chevron-right"></i>
+            </a>
+          </div>
+          <!--****************************-->
+
+          <!-- sylius_partial_product_latest -->
+          <h3 class="product-latest-header">Últimos productos</h3>
+          <div class="row product-latest">
+            <div class="col-md-4">
+              <div class="product-box">
+                <a href="#">
+                  <img src="public/img/product/singlebox/singlebox-1.jpeg" class="img-rounded img-responsive" />
+                  <h4>T-Shirt "explicabo"</h4>
+                  <span class="label label-primary">59,56 €</span>
+                  <button class="btn btn-success btn-xs pull-right">
+                    <i class="icon-shopping-cart icon-white"></i> Añadir al carrito
+                  </button>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="product-box">
+                <a href="#">
+                  <img src="public/img/product/singlebox/singlebox-2.jpeg" class="img-rounded img-responsive" />
+                  <h4>T-Shirt "et"</h4>
+                  <span class="label label-primary">59,56 €</span>
+                  <button class="btn btn-success btn-xs pull-right">
+                    <i class="icon-shopping-cart icon-white"></i> Añadir al carrito
+                  </button>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="product-box">
+                <a href="#">
+                  <img src="public/img/product/singlebox/singlebox-3.jpeg" class="img-rounded img-responsive" />
+                  <h4>Book "Et" by Emiliano</h4>
+                  <span class="label label-primary">59,56 €</span>
+                  <button class="btn btn-success btn-xs pull-right">
+                    <i class="icon-shopping-cart icon-white"></i> Añadir al carrito
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="product-box">
+                <a href="#">
+                  <img src="public/img/product/singlebox/singlebox-1.jpeg" class="img-rounded img-responsive" />
+                  <h4>T-Shirt "explicabo"</h4>
+                  <span class="label label-primary">59,56 €</span>
+                  <button class="btn btn-success btn-xs pull-right">
+                    <i class="icon-shopping-cart icon-white"></i> Añadir al carrito
+                  </button>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="product-box">
+                <a href="#">
+                  <img src="public/img/product/singlebox/singlebox-2.jpeg" class="img-rounded img-responsive" />
+                  <h4>T-Shirt "et"</h4>
+                  <span class="label label-primary">59,56 €</span>
+                  <button class="btn btn-success btn-xs pull-right">
+                    <i class="icon-shopping-cart icon-white"></i> Añadir al carrito
+                  </button>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="product-box">
+                <a href="#">
+                  <img src="public/img/product/singlebox/singlebox-3.jpeg" class="img-rounded img-responsive" />
+                  <h4>Book "Et" by Emiliano</h4>
+                  <span class="label label-primary">59,56 €</span>
+                  <button class="btn btn-success btn-xs pull-right">
+                    <i class="icon-shopping-cart icon-white"></i> Añadir al carrito
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="product-box">
+                <a href="#">
+                  <img src="public/img/product/singlebox/singlebox-1.jpeg" class="img-rounded img-responsive" />
+                  <h4>T-Shirt "explicabo"</h4>
+                  <span class="label label-primary">59,56 €</span>
+                  <button class="btn btn-success btn-xs pull-right">
+                    <i class="icon-shopping-cart icon-white"></i> Añadir al carrito
+                  </button>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="product-box">
+                <a href="#">
+                  <img src="public/img/product/singlebox/singlebox-2.jpeg" class="img-rounded img-responsive" />
+                  <h4>T-Shirt "et"</h4>
+                  <span class="label label-primary">59,56 €</span>
+                  <button class="btn btn-success btn-xs pull-right">
+                    <i class="icon-shopping-cart icon-white"></i> Añadir al carrito
+                  </button>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="product-box">
+                <a href="#">
+                  <img src="public/img/product/singlebox/singlebox-3.jpeg" class="img-rounded img-responsive" />
+                  <h4>Book "Et" by Emiliano</h4>
+                  <span class="label label-primary">59,56 €</span>
+                  <button class="btn btn-success btn-xs pull-right">
+                    <i class="icon-shopping-cart icon-white"></i> Añadir al carrito
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!--******************************-->
+        </div>
+      </div>
+
+      <hr>
+
+      <!-- sonata_block_render '/cms/blocks/block-1-2-3' -->
+      <!--<div class="row">
+        <div class="col-md-4">
+          <div id="block-cms-blocks-block-1" class="cmf-block cmf-block-simple">
+            <h1>Uuummmm, this is a tasty burger!</h1>
+            <p>Now that we know who you are, I know who I am. I'm not a mistake! It all makes sense! In a comic, you know how you can tell who the arch-villain's going to be? He's the exact opposite of the hero. And most times they're friends, like you and me! I should've known way back when... You know why, David? Because of the kids. They called me Mr Glass. </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div id="block-cms-blocks-block-2" class="cmf-block cmf-block-simple">
+            <h1>Is she dead, yes or no?</h1>
+            <p>Now that we know who you are, I know who I am. I'm not a mistake! It all makes sense! In a comic, you know how you can tell who the arch-villain's going to be? He's the exact opposite of the hero. And most times they're friends, like you and me! I should've known way back when... You know why, David? Because of the kids. They called me Mr Glass. </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div id="block-cms-blocks-block-3" class="cmf-block cmf-block-simple">
+            <h1>Hold on to your butts</h1>
+            <p>My money's in that office, right? If she start giving me some bullshit about it ain't there, and we got to go someplace else and get it, I'm gonna shoot you in the head then and there. Then I'm gonna shoot that bitch in the kneecaps, find out where my goddamn money is. She gonna tell me too. Hey, look at me when I'm talking to you, motherfucker. You listen: we go in there, and that nigga Winston or anybody else is in there, you the first motherfucker to get shot. You understand? </p>
+          </div>
+        </div>
+      </div>-->
+      <!--***********************************************-->
+    </div>
+
+    <!-- block footer -->
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <!-- taxonomies -->
+            <ul class="list-unstyled">
+              <li><strong>Category</strong>
+                <ul class="list-unstyled nested">
+                  <li><i class="icon-angle-right"></i> <a href="#" title="T-Shirts">T-Shirts</a></li>
+                  <li><i class="icon-angle-right"></i> <a href="#" title="T-Shirts">Stickers</a></li>
+                  <li><i class="icon-angle-right"></i> <a href="#" title="T-Shirts">Mugs</a></li>
+                  <li><i class="icon-angle-right"></i> <a href="#" title="T-Shirts">Books</a></li>
+                </ul>
+              </li>
+              <li><strong>Brand</strong>
+                <ul class="list-unstyled nested">
+                  <li><i class="icon-angle-right"></i> <a href="#" title="T-Shirts">Supertees</a></li>
+                  <li><i class="icon-angle-right"></i> <a href="#" title="T-Shirts">StickyPicky</a></li>
+                  <li><i class="icon-angle-right"></i> <a href="#" title="T-Shirts">Mugland</a></li>
+                  <li><i class="icon-angle-right"></i> <a href="#" title="T-Shirts">Bookmania</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-4">
+            <!-- sylius.frontend.social -->
+            <h5>Contacto</h5>
+            <ul class="list-unstyled">
+              <li class="first"><a href="http://www.facebook.com/ciclosmarcen" title="Facebook Ciclos Marcen" target="_blank"><i class="icon-fixed-width icon-facebook-sign icon-large"></i> facebook.com/ciclosmarcen</a></li>
+              <li class="last"><a href="https://twitter.com/CiclosMarcen" title="Twitter Ciclos Marcen" target="_blank"><i class="icon-fixed-width icon-twitter-sign icon-large"></i> twitter.com/CiclosMarcen</a></li>
+              <li><i class="icon-fixed-width icon-phone icon-large"></i> 976 426 040</li>
+              <li><i class="icon-fixed-width icon-envelope icon-large"></i> <a href="mailto:info@ciclosmarcen.com" title="email Ciclos Marcen">info@ciclosmarcen.com</a></li>
+              <li><i class="icon-fixed-width icon-home icon-large"></i> C/Reina Fabiola, 20</li>
+            </ul>
+            <!--************************-->
+          </div>
+
+          <div class="col-md-4">
+            <!-- colaboradores -->
+            <h5>Colaboradores</h5>
+            <ul class="list-unstyled">
+              <li class="first"><a href="http://www.merida-bikes.com.es/" title="Merida Bikes España" target="_blank"><img src="public/img/web/merida-bikes-logo-white-h.png" class="merida-bikes-logo" alt="Merida Bikes Logo" /></a></li>
+              <li class="last"><a href="http://www.shimano.com/" title="Shimano" target="_blank"><img src="public/img/web/shimano-logo.png" class="shimano-logo" alt="Shinano Logo" /></a></li>
+            </ul>
+            <!--************************-->
+          </div>
+        </div>
+        <!-- brand -->
+        <p class="brand">
+          &copy; Ciclos Marcen, 2007 - 2014
+          &middot;
+          <a href="#" target="_blank" title="{{ 'sylius.frontend.disclaimer'|trans }}">
+            Aviso Legal
+          </a>
+          <img src="public/img/web/logotipo_paypal_pagos.png" alt="Compra con PayPal" class="paypal" />
+        </p>
+        <!--*********-->
+      </div>
+    </div>
+    <!--***********************************************-->
+
+    <!-- javascripts... -->
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="public/js/jquery.blueimp-gallery.min.js"></script>
+    <script type="text/javascript" src="public/js/confirm-modal.js"></script>
+    <script type="text/javascript" src="public/js/frontend.js"></script>
+    <script type="text/javascript" src="public/js/holder.js"></script>
+  </body>
+</html>
