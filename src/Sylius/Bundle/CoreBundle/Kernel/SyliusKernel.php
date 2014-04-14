@@ -55,6 +55,7 @@ abstract class SyliusKernel extends Kernel
             new \Symfony\Cmf\Bundle\CoreBundle\CmfCoreBundle(),
             new \Symfony\Cmf\Bundle\BlockBundle\CmfBlockBundle(),
             new \Symfony\Cmf\Bundle\ContentBundle\CmfContentBundle(),
+            new \JMS\I18nRoutingBundle\JMSI18nRoutingBundle(),
             new \Symfony\Cmf\Bundle\RoutingBundle\CmfRoutingBundle(),
             new \Symfony\Cmf\Bundle\MenuBundle\CmfMenuBundle(),
 
