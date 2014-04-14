@@ -1,5 +1,0 @@
-{% set state = order.shippingState %}
-
-<a href="{{ path('sylius_backend_shipment_update', {'id': order.shipments[0].id}) }}" class="nounderline">
-	{{ misc.shipment_state(state) }}
-</a>
