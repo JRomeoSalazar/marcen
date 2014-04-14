@@ -292,3 +292,25 @@ a.oauth-login:hover {
 a.nounderline {
   text-decoration: none;
 }
+/*** Media Queries ***/
+/* Extra Small devices (phones, less than 768px) */
+@media (max-width: 768px) {
+  div.navbar div.container div.navbar-collapse form.navbar-form div.form-group {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+  }
+  div.navbar div.container div.navbar-collapse form.navbar-form div.form-group input.form-control {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+  }
+}
+/* Small devices (tablets, 768px and up) */
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  div.navbar div.container div.navbar-collapse {
+    float: right !important;
+  }
+}
+/* Large devices (large desktops, 1200px and up) */
