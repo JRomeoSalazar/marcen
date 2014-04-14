@@ -222,10 +222,11 @@ div.footer div.container div.row div.col-md-4 > h5 {
 }
 div.footer div.container div.row div.col-md-4 > ul.list-unstyled > li {
   margin-top: 1em;
+}
+div.footer div.container div.row div.col-md-4 > ul.list-unstyled > li span.nested-header {
   font-weight: bold;
 }
 div.footer div.container div.row div.col-md-4 > ul.list-unstyled > li ul.nested {
-  font-weight: normal;
   padding-left: 10px;
 }
 div.footer div.container p.brand {

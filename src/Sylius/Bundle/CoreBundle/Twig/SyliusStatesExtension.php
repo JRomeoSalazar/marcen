@@ -11,8 +11,8 @@
 
 namespace Sylius\Bundle\CoreBundle\Twig;
 
-use Sylius\Bundle\PaymentsBundle\Model\PaymentInterface;
-use Sylius\Bundle\CoreBundle\Model\OrderShippingStates;
+use Sylius\Component\Core\Model\OrderShippingStates;
+use Sylius\Component\Payment\Model\PaymentInterface;
 use Symfony\Component\Translation\TranslatorInterface;
 
 /**

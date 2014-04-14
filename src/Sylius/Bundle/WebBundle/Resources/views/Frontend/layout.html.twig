@@ -130,26 +130,9 @@
         <div class="footer">
           <div class="container">
             <div class="row">
-              <!-- taxonomies -->
               <div class="col-md-4">
-                <ul class="list-unstyled">
-                  <li><strong>Category</strong>
-                    <ul class="list-unstyled nested">
-                      <li><i class="icon-angle-right"></i> <a href="#" title="T-Shirts">T-Shirts</a></li>
-                      <li><i class="icon-angle-right"></i> <a href="#" title="T-Shirts">Stickers</a></li>
-                      <li><i class="icon-angle-right"></i> <a href="#" title="T-Shirts">Mugs</a></li>
-                      <li><i class="icon-angle-right"></i> <a href="#" title="T-Shirts">Books</a></li>
-                    </ul>
-                  </li>
-                  <li><strong>Brand</strong>
-                    <ul class="list-unstyled nested">
-                      <li><i class="icon-angle-right"></i> <a href="#" title="T-Shirts">Supertees</a></li>
-                      <li><i class="icon-angle-right"></i> <a href="#" title="T-Shirts">StickyPicky</a></li>
-                      <li><i class="icon-angle-right"></i> <a href="#" title="T-Shirts">Mugland</a></li>
-                      <li><i class="icon-angle-right"></i> <a href="#" title="T-Shirts">Bookmania</a></li>
-                    </ul>
-                  </li>
-                </ul>
+                <!-- footer taxonomies -->
+                {{ knp_menu_render('sylius.frontend.taxons', {'template': 'SyliusWebBundle:Frontend:menu.html.twig'}) }}
               </div>
               <!-- contacto -->
               <div class="col-md-4">

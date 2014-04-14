@@ -257,6 +257,50 @@ class FrontendMenuBuilder extends MenuBuilder
     }
 
     /**
+     * Builds frontend footer taxonomies menu.
+     *
+     * @param Request $request
+     *
+     * @return ItemInterface
+     */
+    public function createTaxonsMenu(Request $request)
+    {
+        $menu = $this->factory->createItem('root', array(
+            'childrenAttributes' => array(
+                'class' => 'list-unstyled'
+            )
+        ));
+
+        $childOptions = array(
+            'childrenAttributes' => array('class' => 'list-unstyled nested'),
+            'labelAttributes'    => array('class' => 'nested-header'),
+        );
+
+        $taxonomies = $this->taxonomyRepository->findAll();
+
+        foreach ($taxonomies as $taxonomy) {
+            $child = $menu->addChild($taxonomy->getName(), $childOptions);
+
+            $this->createTaxonsMenuNode($child, $taxonomy->getRoot());
+        }
+
+        return $menu;
+    }
+
+    private function createTaxonsMenuNode(ItemInterface $menu, TaxonInterface $taxon)
+    {
+        foreach ($taxon->getChildren() as $child) {
+            $childMenu = $menu->addChild($child->getName(), array(
+                'route'           => 'sylius_product_index_by_taxon',
+                'routeParameters' => array('permalink' => $child->getPermalink()),
+                'labelAttributes' => array('icon' => 'icon-angle-right', 'iconOnly' => false)
+            ));
+
+            $this->createTaxonomiesMenuNode($childMenu, $child);
+        }
+    }
+
+    /**
      * Builds frontend social menu.
      *
      * @param Request $request
