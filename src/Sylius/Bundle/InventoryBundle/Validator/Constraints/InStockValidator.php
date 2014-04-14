@@ -11,7 +11,7 @@
 
 namespace Sylius\Bundle\InventoryBundle\Validator\Constraints;
 
-use Sylius\Bundle\InventoryBundle\Checker\AvailabilityCheckerInterface;
+use Sylius\Component\Inventory\Checker\AvailabilityCheckerInterface;
 use Symfony\Component\PropertyAccess\PropertyAccess;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
