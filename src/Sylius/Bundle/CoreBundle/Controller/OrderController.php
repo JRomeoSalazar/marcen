@@ -14,7 +14,6 @@ namespace Sylius\Bundle\CoreBundle\Controller;
 use Sylius\Bundle\ResourceBundle\Controller\ResourceController;
 use Sylius\Bundle\CoreBundle\Checkout\SyliusCheckoutEvents;
 use Sylius\Bundle\CoreBundle\OrderProcessing\StateResolver;
-use Sylius\Bundle\CoreBundle\SyliusOrderEvents;
 use Sylius\Bundle\PaymentsBundle\SyliusPaymentEvents;
 use Sylius\Component\Core\SyliusOrderEvents;
 use Sylius\Component\Payment\Model\PaymentInterface;
