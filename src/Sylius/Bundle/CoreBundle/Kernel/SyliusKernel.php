@@ -103,7 +103,7 @@ abstract class SyliusKernel extends Kernel
      */
     public function registerContainerConfiguration(LoaderInterface $loader)
     {
-        $appDir = $this->getAppDir();
+        $appDir = $this->getRootDir();
 
         $loader->load($appDir.'/config/config_'.$this->environment.'.yml');
 
