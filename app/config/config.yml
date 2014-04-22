@@ -26,6 +26,7 @@ twig:
 
 assetic:
     debug:          %kernel.debug%
+    read_from:      "%kernel.root_dir%/../www"
     use_controller: false
     bundles:        ['SyliusWebBundle']
     filters:
@@ -87,14 +88,15 @@ knp_gaufrette:
     adapters:
         sylius_image:
             local:
-                directory:  %kernel.root_dir%/../web/media/image
+                directory:  %kernel.root_dir%/../www/media/image
                 create:     true
     filesystems:
         sylius_image:
             adapter: sylius_image
 
 liip_imagine:
-    data_root: %kernel.root_dir%/../web/media/image
+    web_root: %kernel.root_dir%/../www
+    data_root: %kernel.root_dir%/../www/media/image
     filter_sets:
         sylius_small:
             filters:

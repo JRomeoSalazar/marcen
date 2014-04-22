@@ -8,11 +8,11 @@ app/config/*.local.yml
 app/config/deploy.rb
 behat.yml
 
-web/bundles/*
-web/css/*
-web/js/*
-web/assets/compiled/*
-web/media/*
+www/bundles/*
+www/css/*
+www/js/*
+www/assets/compiled/*
+www/media/*
 
 bin/behat
 bin/doctrine*
