@@ -100,7 +100,7 @@ class FrontendMenuBuilder extends MenuBuilder
     {
         $menu = $this->factory->createItem('root', array(
             'childrenAttributes' => array(
-                'class' => 'nav nav-pills'
+                'class' => 'nav navbar-nav sylius-frontend-main'
             )
         ));
 
@@ -217,12 +217,12 @@ class FrontendMenuBuilder extends MenuBuilder
     {
         $menu = $this->factory->createItem('root', array(
             'childrenAttributes' => array(
-                'class' => 'nav'
+                'class' => 'taxonomies'
             )
         ));
 
         $childOptions = array(
-            'childrenAttributes' => array('class' => 'nav nav-list'),
+            'childrenAttributes' => array('class' => 'nav nav-pills nav-stacked'),
             'labelAttributes'    => array('class' => 'nav-header'),
         );
 
@@ -246,12 +246,55 @@ class FrontendMenuBuilder extends MenuBuilder
         foreach ($taxon->getChildren() as $child) {
             $childMenu = $menu->addChild($child->getName(), array(
                 'route'           => 'sylius_product_index_by_taxon',
-                'routeParameters' => array('permalink' => $child->getPermalink()),
-                'labelAttributes' => array('icon' => 'icon-angle-right')
+                'routeParameters' => array('permalink' => $child->getPermalink())
             ));
             if ($child->getPath()) {
                 $childMenu->setLabelAttribute('data-image', $child->getPath());
             }
+
+            $this->createTaxonomiesMenuNode($childMenu, $child);
+        }
+    }
+
+    /**
+     * Builds frontend footer taxonomies menu.
+     *
+     * @param Request $request
+     *
+     * @return ItemInterface
+     */
+    public function createTaxonsMenu(Request $request)
+    {
+        $menu = $this->factory->createItem('root', array(
+            'childrenAttributes' => array(
+                'class' => 'list-unstyled'
+            )
+        ));
+
+        $childOptions = array(
+            'childrenAttributes' => array('class' => 'list-unstyled nested'),
+            'labelAttributes'    => array('class' => 'nested-header'),
+        );
+
+        $taxonomies = $this->taxonomyRepository->findAll();
+
+        foreach ($taxonomies as $taxonomy) {
+            $child = $menu->addChild($taxonomy->getName(), $childOptions);
+
+            $this->createTaxonsMenuNode($child, $taxonomy->getRoot());
+        }
+
+        return $menu;
+    }
+
+    private function createTaxonsMenuNode(ItemInterface $menu, TaxonInterface $taxon)
+    {
+        foreach ($taxon->getChildren() as $child) {
+            $childMenu = $menu->addChild($child->getName(), array(
+                'route'           => 'sylius_product_index_by_taxon',
+                'routeParameters' => array('permalink' => $child->getPermalink()),
+                'labelAttributes' => array('icon' => 'icon-angle-right', 'iconOnly' => false)
+            ));
 
             $this->createTaxonomiesMenuNode($childMenu, $child);
         }
@@ -268,25 +311,80 @@ class FrontendMenuBuilder extends MenuBuilder
     {
         $menu = $this->factory->createItem('root', array(
             'childrenAttributes' => array(
-                'class' => 'nav nav-pills pull-right'
+                'class' => 'nav navbar-nav sylius-frontend-social'
             )
         ));
 
-        $menu->addChild('github', array(
-            'uri' => 'https://github.com/Sylius',
-            'linkAttributes' => array('title' => $this->translate('sylius.frontend.menu.social.github')),
-            'labelAttributes' => array('icon' => 'icon-github-sign icon-large', 'iconOnly' => true)
+        $menu->addChild('facebook', array(
+            'uri' => 'http://facebook.com/ciclosmarcen',
+            'linkAttributes' => array(
+                'title' => 'Facebook Ciclos Marcen',
+                'class' => 'facebook',
+                'target' => '_blank'
+                ),
+            'labelAttributes' => array('icon' => 'icon-facebook icon-large', 'iconOnly' => true)
         ));
         $menu->addChild('twitter', array(
-            'uri' => 'https://twitter.com/Sylius',
-            'linkAttributes' => array('title' => $this->translate('sylius.frontend.menu.social.twitter')),
-            'labelAttributes' => array('icon' => 'icon-twitter-sign icon-large', 'iconOnly' => true)
+            'uri' => 'https://twitter.com/CiclosMarcen',
+            'linkAttributes' => array(
+                'title' => 'Twitter Ciclos Marcen',
+                'class' => 'twitter',
+                'target' => '_blank'
+                ),
+            'labelAttributes' => array('icon' => 'icon-twitter icon-large', 'iconOnly' => true)
         ));
+
+        return $menu;
+    }
+
+    /**
+     * Builds frontend contact menu.
+     *
+     * @param Request $request
+     *
+     * @return ItemInterface
+     */
+    public function createContactMenu(Request $request)
+    {
+        $menu = $this->factory->createItem('root', array(
+            'childrenAttributes' => array(
+                'class' => 'list-unstyled'
+            )
+        ));
+
         $menu->addChild('facebook', array(
-            'uri' => 'http://facebook.com/SyliusEcommerce',
-            'linkAttributes' => array('title' => $this->translate('sylius.frontend.menu.social.facebook')),
-            'labelAttributes' => array('icon' => 'icon-facebook-sign icon-large', 'iconOnly' => true)
-        ));
+            'uri' => 'http://facebook.com/ciclosmarcen',
+            'linkAttributes' => array(
+                'title' => 'Facebook Ciclos Marcen',
+                'class' => 'facebook',
+                'target' => '_blank'
+                ),
+            'labelAttributes' => array('icon' => 'icon-fixed-width icon-facebook-sign icon-large', 'iconOnly' => false)
+        ))->setLabel('facebook.com/ciclosmarcen');
+
+        $menu->addChild('twitter', array(
+            'uri' => 'https://twitter.com/CiclosMarcen',
+            'linkAttributes' => array(
+                'title' => 'Twitter Ciclos Marcen',
+                'class' => 'twitter',
+                'target' => '_blank'
+                ),
+            'labelAttributes' => array('icon' => 'icon-fixed-width icon-twitter-sign icon-large', 'iconOnly' => false)
+        ))->setLabel('twitter.com/CiclosMarcen');
+
+        $menu->addChild('phone', array(
+            'labelAttributes' => array('icon' => 'icon-fixed-width icon-phone icon-large', 'iconOnly' => false)
+        ))->setLabel('976 426 040');
+
+        $menu->addChild('mail', array(
+            'uri' => 'mailto:info@ciclosmarcen.com',
+            'linkAttributes' => array('title' => 'Email Ciclos Marcen'),
+            'labelAttributes' => array('icon' => 'icon-fixed-width icon-envelope icon-large', 'iconOnly' => false)
+        ))->setLabel('info@ciclosmarcen.com');
+
+        $menu->addChild('address', array(
+            'labelAttributes' => array('icon' => 'icon-fixed-width icon-home icon-large', 'iconOnly' => false)
+        ))->setLabel('C/Reina Fabiola, 20');
 
         return $menu;
     }

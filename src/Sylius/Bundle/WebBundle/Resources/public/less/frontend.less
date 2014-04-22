@@ -1,0 +1,346 @@
+// Core variables and mixins
+@import "variables.less";
+@import "mixins.less";
+
+// Mixins
+.border-radius (@radius: 5px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius:    @radius;
+  border-radius:         @radius;
+
+  -moz-background-clip:    padding;
+  -webkit-background-clip: padding-box;
+  background-clip:         padding-box;
+}
+
+// Buttons
+button.btn-special,
+a.btn-special {
+  .button-variant(#fff; @orange-special; @orange-special-dark);
+}
+
+body {
+  background-color: @gray-lighter;
+  padding-top: 75px;
+  font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+div.navbar {
+  background-color: white;
+  border-top: solid 3px @green-merida;
+  margin-bottom: 20px;
+  @shadow: 0px 0px 10px 0px rgba(30,30,30,0.6);
+  .box-shadow(@shadow);
+
+  div.container {
+
+    div.navbar-header {
+      button.navbar-toggle {
+        span.sr-only {}
+        span.icon-bar {}
+      }
+      
+      a.ciclos-marcen-logo {
+        &:hover, &:focus {
+          text-decoration: none;   
+        }
+        h1 {
+          height: @navbar-height;
+          display: inline-block;
+          *display: inline;
+          margin: 0px 0px 0px 0.5em;
+          padding: 0px;
+          zoom: 1;
+          img {
+              max-width: 130px;
+          }
+        }
+      }
+    }
+
+    div.navbar-collapse {
+      ul.sylius-frontend-main {}
+
+      form.navbar-form {
+        padding-right: 5px;
+        div.form-group {
+          input {
+            border: none;
+            color: @gray-lighter;
+            padding-right: 27px;
+            width: 177px;
+            .border-radius (16px);
+            background-color: #a3acb2;
+            &:focus {
+              .box-shadow(none);
+              background-color: #66757f;
+            }
+            &::-webkit-input-placeholder { /* WebKit browsers */
+              color: lighten(#000, 85%);;
+            }
+            &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+              color: lighten(#000, 85%);;
+            }
+            &::-moz-placeholder { /* Mozilla Firefox 19+ */
+              color: lighten(#000, 85%);;
+            }
+            &:-ms-input-placeholder { /* Internet Explorer 10+ */
+              color: lighten(#000, 85%);;
+            }
+          }
+        }
+        button {
+          margin-left: -40px;
+          border: none;
+          background: none;
+          color: white;
+        }
+      }
+
+      ul.sylius-frontend-social {
+        li > a.facebook {
+          color: @facebook-color;
+          padding-right: 10px;
+          &:hover,
+          &:focus {
+            color: darken(@facebook-color, 10%);
+          }
+        }
+        li > a.twitter {
+          color: @twitter-color;
+          padding-left: 10px; 
+          &:hover,
+          &:focus {
+            color: darken(@twitter-color, 10%);
+          }
+        }
+      }
+    }
+  }
+}
+
+div#sidebar {
+  div.panel-contact {
+    .panel-variant(darken(@green-merida, 10%); @panel-default-text; @panel-default-heading-bg; @panel-default-border);
+    background-color: @green-merida;
+    div.panel-body {
+      p {
+        font-weight: bold;
+        &:last-child {
+          margin-bottom: 0px;
+        }
+      }
+    }
+  }
+
+  ul { /* general */
+    background-color: white;
+    list-style: none;
+    margin-left: 0;
+    padding: 0;
+
+    li {
+      a {
+        color: @green-merida-dark;
+        &:hover,
+        &:focus {color:darken(@green-merida-dark, 10%);}
+      }
+    }
+
+    &.taxonomies {
+      span.nav-header {
+        .button-size(@padding-large-vertical; @padding-large-horizontal; @font-size-large; @line-height-large; 0px);
+        background-color: @gray-light;
+        border-bottom: 2px solid @green-merida;
+        color: white;
+        display: block;
+        font-weight: bold;
+        text-align: center;
+        text-transform: uppercase;
+      }
+      ul.nav-stacked {
+        li {
+          &.active {
+            a {
+              background-color: @green-merida;
+              color: @gray-dark;
+            }
+          }
+          a {
+            text-align: center;
+            .border-radius (0px);
+            img.menu-thumbnail {
+              float: none;
+              margin-right: 0;
+            }
+          }
+        }
+      }
+    }
+
+    &.newest {
+      overflow: hidden; /* newest */
+      li {
+        &:first-child {
+          a {margin-top:14px;}
+        }
+        &:last-child {
+          a img {margin-bottom:14px;}
+        }
+        a {
+          &:hover {
+            text-decoration: none;
+          }
+          img {
+            float: left;
+            margin-right: 10px;
+          }
+          h4 {
+            font-size: 15px;
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+  h4.newest-header {
+    .button-size(@padding-large-vertical; @padding-large-horizontal; @font-size-large; @line-height-large; 0px);
+    background-color: @gray-light;
+    border-bottom: 2px solid @green-merida;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 1.5em 0px 0px 0px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
+
+h3.product-latest-header {
+  font-weight: bold;
+  margin-top: 2em;
+  text-transform: uppercase;
+  color: @green-merida-dark;
+}
+
+div.product-box {
+  margin-bottom: 3em;
+  a {
+    text-decoration: none;
+    img {
+      margin-bottom: 5px;
+    }
+    h4 {
+      color: @gray-dark;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-align: center;
+    }
+  }
+}
+
+div.footer {
+  color: @gray-light;
+  background-color: @gray-darker;
+  a {
+    color: @gray-light;
+    &:hover,
+    &:focus {
+      color: @gray-lighter;
+    }
+  }
+  div.container {
+    div.row {
+      div.col-md-4 {
+        > h5 {
+          margin-top: 1em;
+          font-weight: bold;
+        }
+        > ul.list-unstyled {
+          > li {
+            margin-top: 1em;
+            span.nested-header {
+              font-weight: bold;
+            }
+            ul.nested {
+              padding-left: 10px;
+            }
+          }
+        }
+      }
+    }
+
+    p.brand {
+      margin-top: 1em;
+      text-align: center;
+      a {
+        color: @green-merida;
+        &:hover,
+        &:focus {
+          color: @green-merida-dark;
+        }
+      }
+      img.paypal {
+        display: inline-block;
+        *display: block;
+        margin-left: 1em;
+        zoom: 1;
+      }
+    }
+  }
+}
+
+
+
+.marketing {
+    margin: 60px 0;
+    p + h4 {
+        margin-top: 28px;
+    }
+}
+
+th {
+    background-color: #f1f1f1;
+}
+
+.form-actions {
+    padding: 10px;
+    text-align: center;
+    background-color: #f1f1f1;
+    border-top: 3px solid #ddd;
+}
+
+div.currency-menu {
+    margin-right: 50px;
+}
+
+.checkout-new-customer form, .checkout-existing-customer form {
+    margin-top: 20px;
+}
+
+.checkout-new-customer .form-group {
+    clear: both;
+    margin-bottom: 10px;
+    overflow: auto;
+}
+
+.checkout-new-customer .form-group > .control-label, .address-container .form-group > .control-label {
+    padding-left: 0;
+    padding-right: 0;
+    width: 25%;
+}
+
+.checkout-new-customer .form-group > .col-lg-10, .address-container .form-group > .col-lg-10 {
+    width: 75%;
+}
+
+a.oauth-login {
+    margin-right: 8px;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+a.nounderline {
+    text-decoration: none;
+}

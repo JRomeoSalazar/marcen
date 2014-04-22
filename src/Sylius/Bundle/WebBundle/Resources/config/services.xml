@@ -84,6 +84,10 @@
             <argument type="service" id="request" />
             <tag name="knp_menu.menu" alias="sylius.frontend.taxonomies" />
         </service>
+        <service id="sylius.menu.frontend.taxons" class="Knp\Menu\MenuItem" factory-service="sylius.menu_builder.frontend" factory-method="createTaxonsMenu" scope="request">
+            <argument type="service" id="request" />
+            <tag name="knp_menu.menu" alias="sylius.frontend.taxons" />
+        </service>
         <service id="sylius.menu.frontend.account" class="Knp\Menu\MenuItem" factory-service="sylius.menu_builder.frontend" factory-method="createAccountMenu" scope="request">
             <argument type="service" id="request" />
             <tag name="knp_menu.menu" alias="sylius.frontend.account" />
@@ -91,6 +95,10 @@
         <service id="sylius.menu.frontend.social" class="Knp\Menu\MenuItem" factory-service="sylius.menu_builder.frontend" factory-method="createSocialMenu" scope="request">
             <argument type="service" id="request" />
             <tag name="knp_menu.menu" alias="sylius.frontend.social" />
+        </service>
+        <service id="sylius.menu.frontend.contact" class="Knp\Menu\MenuItem" factory-service="sylius.menu_builder.frontend" factory-method="createContactMenu" scope="request">
+            <argument type="service" id="request" />
+            <tag name="knp_menu.menu" alias="sylius.frontend.contact" />
         </service>
 
         <service id="sylius.menu.backend.main" class="Knp\Menu\MenuItem" factory-service="sylius.menu_builder.backend" factory-method="createMainMenu" scope="request">

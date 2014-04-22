@@ -102,7 +102,7 @@ class OrderPaymentListener
 
         if (!$order instanceof OrderInterface) {
             throw new \InvalidArgumentException(
-                'Order payment listener requires event subject to be instance of "Sylius\Bundle\CoreBundle\Model\OrderInterface"'
+                'Order payment listener requires event subject to be instance of "Sylius\Component\Core\Model\OrderInterface"'
             );
         }
 

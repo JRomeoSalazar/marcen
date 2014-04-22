@@ -2,7 +2,7 @@
 
 {% import 'SyliusWebBundle:Frontend/Macros:alerts.html.twig' as alerts %}
 
-{% form_theme form _self %}
+{% form_theme form 'SyliusWebBundle:Frontend/Cart/Form:fields.html.twig' %}
 
 {% block content %}
 <div class="page-header">
@@ -66,8 +66,12 @@
 </table>
 
 <div class="well well-sm">
-    {{ form_row(form.promotionCoupon, {'label_attr': {'class': 'col-lg-12'}}) }}
-    <button type="submit" class="btn btn-primary btn-sm">{{ 'sylius.cart.summary.add_coupon'|trans }}</button>
+    {{ form_row(form.promotionCoupon, {'label_attr': {'style': 'display:block'}}) }}
+    <div class="row">
+        <div class="col-lg-12">
+            <button type="submit" class="btn btn-primary btn-sm pull-right">{{ 'sylius.cart.summary.add_coupon'|trans }}</button>
+        </div>
+    </div>
 </div>
 
 {{ form_rest(form) }}

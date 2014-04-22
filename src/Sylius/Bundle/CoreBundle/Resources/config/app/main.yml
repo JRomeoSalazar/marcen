@@ -20,12 +20,18 @@ knp_gaufrette:
 liip_imagine:
     data_root: %kernel.root_dir%/../web/media/image
     filter_sets:
+        sylius_x_small:
+            filters:
+                thumbnail: { size: [50, 40], mode: outbound }
         sylius_small:
             filters:
                 thumbnail: { size: [120, 90], mode: outbound }
         sylius_medium:
             filters:
                 thumbnail: { size: [240, 180], mode: outbound }
+        sylius_product_box:
+            filters:
+                thumbnail: { size: [262, 160], mode: outbound }
         sylius_large:
             filters:
                 thumbnail: { size: [640, 480], mode: outbound }
@@ -61,7 +67,7 @@ fos_user:
     firewall_name: main
     user_class: %sylius.model.user.class%
     group:
-        group_class: Sylius\Bundle\CoreBundle\Model\Group
+        group_class: Sylius\Component\Core\Model\Group
     profile:
         form:
             type: sylius_user_profile

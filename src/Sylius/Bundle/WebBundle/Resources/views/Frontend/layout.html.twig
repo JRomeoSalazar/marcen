@@ -1,130 +1,185 @@
 <!DOCTYPE html>
 {% set settings = sylius_settings_all('general') %}
 <html>
-    <head>
-        <title>
-            {% block title %}
-                {{ settings.title|default('sylius.meta.frontend_title'|trans) }}
-            {% endblock %}
-        </title>
-        <meta charset="UTF-8">
-        <meta name="description" content="{{ settings.meta_description|default('sylius.meta.frontend_description'|trans) }}">
-        <meta name="keywords" content="{{ settings.meta_keywords|default('sylius.meta.frontend_keywords'|trans) }}">
+  <head>
+    <title>
+      {% block title %}
+        {{ settings.title|default('sylius.meta.frontend_title'|trans) }}
+      {% endblock %}
+    </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ settings.meta_description|default('sylius.meta.frontend_description'|trans) }}">
+    <meta name="keywords" content="{{ settings.meta_keywords|default('sylius.meta.frontend_keywords'|trans) }}">
 
-        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Open+Sans:300italic,400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Open+Sans:300italic,400,300,700' rel='stylesheet' type='text/css'>
 
-        {# stylesheets... #}
-        {% block stylesheets %}
-            <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css" type="text/css" />
-            <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" type="text/css" />
-            {% stylesheets output='assets/compiled/frontend.css' filter='cssrewrite'
-                'bundles/syliusweb/css/selectize.bootstrap3.css'
-                'bundles/syliusweb/css/frontend.css'
-                'bundles/syliusweb/css/blueimp-gallery.css'
-            %}
-                <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
-            {% endstylesheets %}
-        {% endblock %}
+    {# stylesheets... #}
+    {% block stylesheets %}
+      <link rel="stylesheet" href="{{ asset('bundles/syliusweb/css/bootstrap.css') }}" type="text/css" />
+      <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" type="text/css" />
+      {% stylesheets output='assets/compiled/frontend.css' filter='cssrewrite'
+        'bundles/syliusweb/css/selectize.bootstrap3.css'
+        'bundles/syliusweb/css/frontend.css'
+        'bundles/syliusweb/css/blueimp-gallery.css'
+      %}
+          <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+      {% endstylesheets %}
+    {% endblock %}
 
-        <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
-        <!--[if lt IE 9]>
-        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-    </head>
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
     <body>
-        <div class="container">
-        {% block header %}
-            <div class="masthead pull-right">
-                {{ knp_menu_render('sylius.frontend.main', {'template': 'SyliusWebBundle:Frontend:menu.html.twig'}) }}
+        
+      {% block header %}
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Mostrar menú de navegación</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              {% if app.user is not null and not is_granted('ROLE_SYLIUS_ADMIN') %}
+              <img src="{{ asset('bundles/syliusweb/img/web/merida-bikes-logo-h.png') }}" class="merida-bikes-logo" alt="Merida Bikes Logo" />
+              {% endif %}
+              <a class="ciclos-marcen-logo" href="{{ path('sylius_homepage') }}" title="{{ 'sylius.logo'|trans }}">
+                <h1>
+                  <img src="{{ asset('bundles/syliusweb/img/web/ciclos-marcen-logo.png') }}" alt="Ciclos Marcen Logo" />
+                </h1>
+              </a>
             </div>
-            <!--<div class="currency-menu masthead pull-right">
-                {{ knp_menu_render('sylius.frontend.currency', {'template': 'SyliusWebBundle:Frontend:menu.html.twig'}) }}
-            </div>-->
-            <h1 class="logo"><a href="{{ path('sylius_homepage') }}" title="{{ 'sylius.logo'|trans }}"><span>{{ 'sylius.logo'|trans }}</span></a></h1>
-        {% endblock %}
+            <div class="collapse navbar-collapse pull-right">
 
-        {% block flashes %}
-            {% for type in ['success', 'error', 'fos_user_success', 'notice'] %}
-                {% for flash in app.session.flashbag.get(type) %}
-                    <div class="alert alert-{{ type == 'fos_user_success' ? 'success' : type == 'error' ? 'danger' : type == 'notice' ? 'warning' : type }}">
-                        <a class="close" data-dismiss="alert" href="#">×</a>
-                        {{ flash|trans }}
-                    </div>
-                {% endfor %}
-            {% endfor %}
-        {% endblock %}
+              <!-- sylius.frontend.main -->
+              {{ knp_menu_render('sylius.frontend.main', {'template': 'SyliusWebBundle:Frontend:menu.html.twig'}) }}
+              <!--*********************-->
 
-        {% block main %}
-        <hr>
-        <div class="row">
-            <div class="col-md-3" id="sidebar">
-                {% block sidebar %}
-                <h4>{{ 'sylius.shop_by'|trans }}</h4><br>
-                {{ knp_menu_render('sylius.frontend.taxonomies', {'template': 'SyliusWebBundle:Frontend:menu.html.twig'}) }}
-                {{ render(url('sylius_partial_product_latest', {'limit': 5, 'template': 'SyliusWebBundle:Frontend/Product:latestSidebar.html.twig'})) }}
-                {{ sonata_block_render({'name': '/cms/blocks/contact'}) }}
-
-                    <h2>Links</h2>
-                    <ul>
-                    {% for child in cmf_children(cmf_find('/cms/pages')) %}
-                        <li>
-                            <a href="{{ path('sylius_page_show', {'id': child.name}) }}">{{ child.title|striptags }}</a>
-                        </li>
-                    {% endfor %}
-                    </ul>
-                {% endblock %}
-            </div>
-            <div class="col-md-9">
-                {% block content %}
-                {% endblock %}
-            </div>
-        </div>
-        <hr>
-        <div class="row">
-            {% for i in 1..3 %}
-                <div class="col-md-4">
-                    {{ sonata_block_render({'name': '/cms/blocks/block-' ~ i}) }}
+              <!-- search -->
+              <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Buscar" maxlength="20">
                 </div>
-            {% endfor %}
+                <button type="submit" class="btn btn-default"><i class="icon-search"></i></button>
+              </form>
+              <!--************************-->
+
+              <!-- sylius.frontend.social -->
+              {{ knp_menu_render('sylius.frontend.social', {'template': 'SyliusWebBundle:Frontend:menu.html.twig'}) }}
+              <!--************************-->
+
+            </div><!--/.nav-collapse -->
+          </div>
         </div>
-        <hr>
-        {% endblock %}
+      {% endblock %}
 
-        {% block gallery %}
-            {# Gallery modal #}
-            {% include 'SyliusWebBundle::gallery.html.twig' %}
-        {% endblock %}
-
-        {# Confirmation modal #}
-        {% include 'SyliusWebBundle::confirm-modal.html.twig' %}
-
-        {% block footer %}
-            <div class="footer">
-                <p class="text-muted">
-                    &copy; Sylius, 2011 - {{ 'now'|date('Y') }}.
-                    &middot; <a href="{{ path('sylius_disclaimer') }}" target="_blank" title="{{ 'sylius.frontend.disclaimer'|trans }}">
-                        {{ 'sylius.frontend.disclaimer'|trans }}
-                    </a>
-                </p>
-                {{ knp_menu_render('sylius.frontend.social', {'template': 'SyliusWebBundle:Frontend:menu.html.twig'}) }}
+      <div class="container">
+      <!-- flashes -->
+      {% block flashes %}
+        {% for type in ['success', 'error', 'fos_user_success', 'notice'] %}
+          {% for flash in app.session.flashbag.get(type) %}
+            <div class="alert alert-{{ type == 'fos_user_success' ? 'success' : type == 'error' ? 'danger' : type == 'notice' ? 'warning' : type }}">
+              <a class="close" data-dismiss="alert" href="#">×</a>
+              {{ flash|trans }}
             </div>
-        {% endblock %}
-        </div>
+          {% endfor %}
+        {% endfor %}
+      {% endblock %}
 
-        {# javascripts... #}
-        {% block javascripts %}
-            <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-            <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
-            <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
-            <script src="{{ path('fos_js_routing_js', {"callback": "fos.Router.setData"}) }}"></script>
-        {% javascripts output='assets/compiled/frontend.js'
-            'bundles/syliusweb/js/jquery.blueimp-gallery.min.js'
-            'bundles/syliusweb/js/confirm-modal.js'
-            'bundles/syliusweb/js/selectize.js'
-            'bundles/syliusweb/js/frontend.js'
-        %}
-            <script type="text/javascript" src="{{ asset_url }}"></script>
-        {% endjavascripts %}
-        {% endblock %}
+      {% block main %}
+      
+        <div class="row">
+
+          <div class="col-md-3" id="sidebar">
+            {% block sidebar %}
+              <!-- contacto -->
+              <div class="panel panel-contact">
+                <div class="panel-body">
+                  <p><i class="icon-fixed-width icon-phone icon-large"></i> 976 426 040</p>
+                  <p><i class="icon-fixed-width icon-envelope icon-large"></i> info@ciclosmarcen.com</p>
+                </div>
+              </div>
+              <!-- taxonomies -->
+              {{ knp_menu_render('sylius.frontend.taxonomies', {'template': 'SyliusWebBundle:Frontend:menu.html.twig'}) }}
+              <!-- newest products -->
+              {{ render(url('sylius_partial_product_latest', {'limit': 5, 'template': 'SyliusWebBundle:Frontend/Product:latestSidebar.html.twig'})) }}
+            {% endblock %}
+          </div>
+
+          <div class="col-md-9">
+            {% block content %}
+            {% endblock %}
+          </div>
+
+        </div>
+      {% endblock %}
+
+      {% block gallery %}
+        {# Gallery modal #}
+        {% include 'SyliusWebBundle::gallery.html.twig' %}
+      {% endblock %}
+
+      {# Confirmation modal #}
+      {% include 'SyliusWebBundle::confirm-modal.html.twig' %}
+
+      </div><!--/.container -->
+
+      {% block footer %}
+        <div class="footer">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4">
+                <!-- footer taxonomies -->
+                {{ knp_menu_render('sylius.frontend.taxons', {'template': 'SyliusWebBundle:Frontend:menu.html.twig'}) }}
+              </div>
+              <!-- contacto -->
+              <div class="col-md-4">
+                <h5>Contacto</h5>
+                {{ knp_menu_render('sylius.frontend.contact', {'template': 'SyliusWebBundle:Frontend:menu.html.twig'}) }}
+              </div>
+              <!-- colaboradores -->
+              <div class="col-md-4">
+                <h5>Colaboradores</h5>
+                <ul class="list-unstyled">
+                  <li class="first"><a href="http://www.merida-bikes.com.es/" title="Merida Bikes España" target="_blank"><img src="{{ asset('bundles/syliusweb/img/web/merida-bikes-logo-white-h.png') }}" class="merida-bikes-logo" alt="Merida Bikes Logo" /></a></li>
+                  <li class="last"><a href="http://www.shimano.com/" title="Shimano" target="_blank"><img src="{{ asset('bundles/syliusweb/img/web/shimano-logo.png') }}" class="shimano-logo" alt="Shinano Logo" /></a></li>
+                </ul>
+                <!--************************-->
+              </div>
+          </div>
+          <!-- brand -->
+          <p class="brand">
+            &copy; Ciclos Marcen, 2007 - 2014
+            &middot;
+            <a href="#" target="_blank" title="{{ 'sylius.frontend.disclaimer'|trans }}">
+              Aviso Legal
+            </a>
+            <img src="{{ asset('bundles/syliusweb/img/web/logotipo_paypal_pagos.png') }}" alt="Compra con PayPal" class="paypal" />
+          </p>
+          </div><!--./container -->
+        </div><!--/.footer -->
+      {% endblock %}
+      
+
+      {# javascripts... #}
+      {% block javascripts %}
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
+        <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+        <script src="{{ path('fos_js_routing_js', {"callback": "fos.Router.setData"}) }}"></script>
+      {% javascripts output='assets/compiled/frontend.js'
+        'bundles/syliusweb/js/jquery.blueimp-gallery.min.js'
+        'bundles/syliusweb/js/confirm-modal.js'
+        'bundles/syliusweb/js/selectize.js'
+        'bundles/syliusweb/js/frontend.js'
+        'bundles/syliusweb/js/holder.js'
+      %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+      {% endjavascripts %}
+      {% endblock %}
     </body>
 </html>
