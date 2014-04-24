@@ -2,12 +2,13 @@ sylius:
     cart:
         restricted_zone_removal: Product %product% removed from cart since it is not available in your country.
     checkout:
+        canceled: Your payment was canceled.
+        failed: Your payment was declined.
+        out_of_stock: There is only %quantity% %name% in the stock.
+        pending: Your payment is currently pending.
+        processing: Your payment is processing.
         restricted_zone: This product is not available in your country.
         success: Thank you for your order!
-        canceled: Your payment was canceled.
-        pending: Your payment is currently pending.
-        failed: Your payment was declined.
         unknown: Unknown payment error.
-        out_of_stock: There is only %quantity% %name% in the stock.
     payment:
         success: Payment completed successfully
