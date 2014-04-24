@@ -8,6 +8,8 @@ app/config/*.local.yml
 app/config/deploy.rb
 behat.yml
 
+web/*
+
 www/bundles/*
 www/css/*
 www/js/*
