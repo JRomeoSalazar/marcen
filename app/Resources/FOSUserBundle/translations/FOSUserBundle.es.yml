@@ -1,0 +1,11 @@
+# Security
+security:
+    login:
+        email: "Email:"
+        header: <h1>Entrar <small>Sylius store</small></h1>
+        info: Por favor ingrese usando "<strong>sylius@example.com</strong>" como email y "<strong>sylius</strong>" como contraseña.
+
+# Registration
+registration:
+    register_header: <h1>Registro <small>Crea una cuenta nueva en la tienda</small></h1>
+    confirmed_header: <h1>Bienvenido <small>Su registro se ha completado de forma exitosa</small></h1>
