@@ -1,12 +1,12 @@
 sylius:
   form:
     product:
-        name: Name
-        description: Description
         attributes: Attributes
-        options: Options
+        description: Description
         meta_keywords: Meta keywords
         meta_description: Meta description
+        name: Name
+        options: Options
     product_variant:
         available_on: Available on
     product_prototype:

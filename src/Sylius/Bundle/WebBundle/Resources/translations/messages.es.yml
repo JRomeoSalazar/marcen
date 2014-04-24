@@ -324,6 +324,7 @@ sylius:
     frontend_title: Sylius, e-commerce moderno para Symfony2
   na: N/A
   newest: Novedades
+  no: no
   no_results: No results
   option:
     create: Añadir opción
@@ -383,26 +384,6 @@ sylius:
     total: Total
     update_header: Editar orden
     user: Usuario
-  shipment:
-    ship: Envío
-    created_at: Fecha de creación
-    id: ID
-    index_header: Envios
-    inventory_state: Estado de inventario
-    manage: Gestionar
-    method: Método
-    modified: Fecha de modificacion
-    name: Nombre
-    no_items: No hay productos para mostrar
-    no_results: No hay envios
-    order: Orden
-    show_header: Mostrar encabezado
-    sku: SKU
-    state: Estado
-    tracking_code: Código de seguimiento
-    update: Editar
-    update_header: Editando envío
-    updated_at: Fecha de última modificación
   order_item:
     product: sylius.order_item.product
     quantity: Cantidad
@@ -427,7 +408,7 @@ sylius:
     created_at: Fecha de creación
     id: ID
     index_header: Pagos
-    manage: sylius.payment.manage
+    manage: Administrar pagos
     method: Metodo
     no_results: Sin resultados
     state:
@@ -578,6 +559,26 @@ sylius:
   settings:
     general_header: Encabezado general
     taxation_header: Encabezado de Impuesto
+  shipment:
+    ship: Envío
+    created_at: Fecha de creación
+    id: ID
+    index_header: Envios
+    inventory_state: Estado de inventario
+    manage: Gestionar
+    method: Método
+    modified: Fecha de modificacion
+    name: Nombre
+    no_items: No hay productos para mostrar
+    no_results: No hay envios
+    order: Orden
+    show_header: Mostrar encabezado
+    sku: SKU
+    state: Estado
+    tracking_code: Código de seguimiento
+    update: Editar
+    update_header: Editando envío
+    updated_at: Fecha de última modificación
   shipment_category:
     manage: Gestionar
   shipping_address: Dirección de envío

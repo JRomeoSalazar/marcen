@@ -6,6 +6,7 @@ sylius:
     menu:
       main:
         assortment: Varios
+        attributes: Configurar atributos
         configuration: Configuración
         countries: Países
         customer: Clientes
@@ -37,6 +38,7 @@ sylius:
         zones: Zonas
       sidebar:
         assortment: Varios
+        attributes: Configurar atributos
         blocks: Bloques
         configuration: Configuración
         content: Contenido
