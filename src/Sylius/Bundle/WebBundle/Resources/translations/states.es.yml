@@ -1,0 +1,38 @@
+sylius:
+    order:
+        state:
+            0: Estado de pedido
+            1: Realizado
+            2: Carrito cerrado
+            3: Pedido realizado
+            4: Pedido confirmado
+    payment:
+        state:
+            0: Estado del pago
+            cancelled: Cancelado
+            checkout: Realizado
+            completed: Completado
+            contrareembolso:
+                self: Pago Contra Reembolso
+                alter: Pagado Contra Reembolso
+            failed: Fallido
+            new: Nuevo
+            pending: Pendiente
+            processing: Procesándose
+            transferencia:
+                self: Pendiente transferencia bancaria
+                alter: Pagado transferencia bancaria
+            refunded: Pago devuelto
+            unknown: Desconocido
+            void: Vacío
+    shipment:
+        state:
+            0: Estado del envío
+            backorder: Bajo pedido
+            cancelled: Cancelado
+            checkout: Realizado
+            onhold: En espera
+            partially_shipped: Parcialmente enviado
+            ready: Listo
+            returned: Devuelto
+            shipped: Enviado
