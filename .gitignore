@@ -34,6 +34,7 @@ vendor/*
 .gemrc
 .htaccess
 .profile
+.viminfo
 archived/*
 ftp
 logs/*
