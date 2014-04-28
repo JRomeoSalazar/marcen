@@ -27,6 +27,7 @@
       <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" type="text/css" />
       {% stylesheets output='assets/compiled/frontend.css' filter='cssrewrite'
         'bundles/syliusweb/css/selectize.bootstrap3.css'
+        'bundles/syliusweb/css/cookiecuttr.css'
         'bundles/syliusweb/css/frontend.css'
         'bundles/syliusweb/css/blueimp-gallery.css'
       %}
@@ -162,7 +163,7 @@
           <p class="brand">
             &copy; Ciclos Marcen, 2007 - 2014
             &middot;
-            <a href="#" target="_blank" title="{{ 'sylius.frontend.disclaimer'|trans }}">
+            <a href="{{ path('sylius_disclaimer') }}" target="_blank" title="{{ 'sylius.frontend.disclaimer'|trans }}">
               Aviso Legal
             </a>
             <img src="{{ asset('bundles/syliusweb/img/web/logotipo_paypal_pagos.png') }}" alt="Compra con PayPal" class="paypal" />
@@ -182,6 +183,8 @@
         'bundles/syliusweb/js/jquery.blueimp-gallery.min.js'
         'bundles/syliusweb/js/confirm-modal.js'
         'bundles/syliusweb/js/selectize.js'
+        'bundles/syliusweb/js/cookiecuttr/jquery.cookie.js'
+        'bundles/syliusweb/js/cookiecuttr/jquery.cookiecuttr.js'
         'bundles/syliusweb/js/frontend.js'
         'bundles/syliusweb/js/holder.js'
       %}
