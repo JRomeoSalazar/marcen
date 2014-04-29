@@ -45,9 +45,9 @@ security:
                 remember_me_parameter: _remember_me
             oauth:
                 resource_owners:
-                    amazon:   "/login/check-amazon"
+                    #amazon:   "/login/check-amazon"
                     facebook: "/login/check-facebook"
-                    google:   "/login/check-google"
+                    #google:   "/login/check-google"
                 login_path:   /connect
                 failure_path: /connect
                 oauth_user_provider:
