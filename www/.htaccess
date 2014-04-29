@@ -20,3 +20,5 @@ DirectoryIndex app.php
         RedirectMatch 302 ^/$ /app.php/
     </IfModule>
 </IfModule>
+
+php_value date.timezone "Europe/Madrid"
