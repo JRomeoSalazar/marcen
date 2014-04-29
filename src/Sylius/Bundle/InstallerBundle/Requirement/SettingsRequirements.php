@@ -39,12 +39,12 @@ class SettingsRequirements extends RequirementCollection
                 phpversion(),
                 false
             ))
-            ->add(new Requirement(
+            /*->add(new Requirement(
                 $translator->trans('sylius.settings.timezone', array(), 'requirements'),
                 $this->isOn('date.timezone'),
                 $translator->trans('sylius.settings.any', array(), 'requirements'),
                 ini_get('date.timezone')
-            ))
+            ))*/
         ;
 
         if (version_compare(phpversion(), self::REQUIRED_PHP_VERSION, '>=')) {
