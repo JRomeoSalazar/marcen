@@ -2,7 +2,7 @@
 security:
     login:
         email: "Email:"
-        header: <h1>Entrar <small>Sylius store</small></h1>
+        header: <h1>Iniciar sesión <small>Ciclos Marcen Online</small></h1>
         info: Por favor ingrese usando "<strong>sylius@example.com</strong>" como email y "<strong>sylius</strong>" como contraseña.
 
 # Registration
