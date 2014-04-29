@@ -26,3 +26,15 @@ bin/phpcrodm.php
 bin/jackalope
 bin/phpunit
 vendor/*
+
+.backups
+.bash_history
+.bashrc
+.cache/*
+.gemrc
+.htaccess
+.profile
+.viminfo
+archived/*
+ftp
+logs/*
