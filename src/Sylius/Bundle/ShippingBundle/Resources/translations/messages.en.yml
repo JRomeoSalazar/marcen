@@ -50,3 +50,8 @@ sylius:
             configuration: Configuration
             enabled: sylius.form.shipping_method.enabled   # FIXME
             name: Name
+
+        shipping_category_requirement:
+            match_none:  'None of items have to match method category'
+            match_any: 'At least 1 item have to match method category'
+            match_all: 'All items have to match method category'

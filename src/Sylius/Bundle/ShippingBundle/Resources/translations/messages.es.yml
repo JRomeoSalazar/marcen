@@ -46,3 +46,7 @@ sylius:
       configuration: Configuración
       enabled: Activo
       name: Nombre
+    shipping_category_requirement:
+      match_none:  'Ninguno de los artículos debe coincidir con la categoría de envío'
+      match_any: 'Al menos 1 de los artículos debe coincidir con la categoría de envío'
+      match_all: 'Todos los artículos deben coincidir con la categoría de envío'
