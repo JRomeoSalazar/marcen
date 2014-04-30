@@ -150,6 +150,9 @@ div.navbar div.container div.navbar-collapse ul.sylius-frontend-social li > a.tw
 div.navbar div.container div.navbar-collapse ul.sylius-frontend-social li > a.twitter:focus {
   color: #3071a9;
 }
+div#main {
+  min-height: 1030px;
+}
 div#sidebar div.panel-contact {
   border-color: #6b9000;
   background-color: #91c300;
