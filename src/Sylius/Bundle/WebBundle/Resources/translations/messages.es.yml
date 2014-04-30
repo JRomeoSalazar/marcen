@@ -24,6 +24,8 @@ sylius:
       list: sylius.account.address.list
       update: sylius.account.address.update
     home:
+      email: Email:
+      id: Identificador de cliente:
       outline: Disfruta de todas las características disponibles en tu espacio personal para ver, seguir y gestionar toda tu información.
       since: Eres cliente desde
       welcome: Bienvenido a tu espacio
