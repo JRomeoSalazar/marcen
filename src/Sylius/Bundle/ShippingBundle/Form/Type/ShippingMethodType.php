@@ -19,6 +19,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Form\FormView;
+use Symfony\Component\Translation\TranslatorInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 /**
@@ -57,19 +58,28 @@ class ShippingMethodType extends AbstractType
     protected $checkerRegistry;
 
     /**
+     * Translator.
+     *
+     * @var TranslatorInterface
+     */
+    protected $translator;
+
+    /**
      * Constructor.
      *
      * @param string                       $dataClass
      * @param array                        $validationGroups
      * @param CalculatorRegistryInterface  $calculatorRegistry
      * @param RuleCheckerRegistryInterface $checkerRegistry
+     * @param TranslatorInterface          $translator
      */
-    public function __construct($dataClass, array $validationGroups, CalculatorRegistryInterface $calculatorRegistry, RuleCheckerRegistryInterface $checkerRegistry)
+    public function __construct($dataClass, array $validationGroups, CalculatorRegistryInterface $calculatorRegistry, RuleCheckerRegistryInterface $checkerRegistry, TranslatorInterface $translator)
     {
         $this->dataClass = $dataClass;
         $this->validationGroups = $validationGroups;
         $this->calculatorRegistry = $calculatorRegistry;
         $this->checkerRegistry = $checkerRegistry;
+        $this->translator = $translator;
     }
 
     /**
@@ -77,6 +87,11 @@ class ShippingMethodType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        $requirements = array();
+        foreach (ShippingMethod::getCategoryRequirementLabels() as $label) {
+            $requirements[] = $this->translator->trans($label);
+        }
+
         $builder
             ->addEventSubscriber(new BuildShippingMethodFormListener($this->calculatorRegistry, $builder->getFormFactory()))
             ->add('name', 'text', array(
@@ -91,7 +106,7 @@ class ShippingMethodType extends AbstractType
                 'label'    => 'sylius.form.shipping_method.category'
             ))
             ->add('categoryRequirement', 'choice', array(
-                'choices'  => ShippingMethod::getCategoryRequirementLabels(),
+                'choices'  => $requirements,
                 'multiple' => false,
                 'expanded' => true,
                 'label'    => 'sylius.form.shipping_method.category_requirement'
