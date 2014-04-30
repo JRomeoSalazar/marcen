@@ -99,6 +99,7 @@ sylius:
     country:
       index: Paises
     customers: Clientes
+    dashboard: Panel de Control
     edit: Editar
     exchange_rate:
       index: Tipos de cambio
