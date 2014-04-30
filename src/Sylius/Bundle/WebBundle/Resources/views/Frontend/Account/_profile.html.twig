@@ -2,11 +2,11 @@
 <br>
 
 <div class="row">
-    <div class="col-md-7">{{ 'sylius.account.home.outline'|trans }} </div>
-    <div class="col-md-5">
-        <strong>{{ app.user.lastName|upper }} {{ app.user.firstName }}</strong><br><br>
-        {{ 'sylius.account.home.id'|trans }} {{ app.user.id }} <br>
-        {{ 'sylius.account.home.email'|trans }} {{ app.user.email }}<br>
+    <div class="col-md-12">{{ 'sylius.account.home.outline'|trans }} </div>
+    <div class="col-md-12">
+        <p><strong>{{ app.user.lastName|upper }} {{ app.user.firstName }}</strong></p>
+        <strong>{{ 'sylius.account.home.id'|trans }}</strong> {{ app.user.id }}<br>
+        <strong>{{ 'sylius.account.home.email'|trans }}</strong> {{ app.user.email }}<br>
         {{ 'sylius.account.home.since'|trans }} {{ app.user.createdAt|date() }}
     </div>
 </div>
