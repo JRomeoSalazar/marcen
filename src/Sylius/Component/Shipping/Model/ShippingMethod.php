@@ -318,9 +318,9 @@ class ShippingMethod implements ShippingMethodInterface
     public static function getCategoryRequirementLabels()
     {
         return array(
-            ShippingMethodInterface::CATEGORY_REQUIREMENT_MATCH_NONE => 'None of items have to match method category',
-            ShippingMethodInterface::CATEGORY_REQUIREMENT_MATCH_ANY  => 'At least 1 item have to match method category',
-            ShippingMethodInterface::CATEGORY_REQUIREMENT_MATCH_ALL  => 'All items have to match method category',
+            ShippingMethodInterface::CATEGORY_REQUIREMENT_MATCH_NONE => 'sylius.form.shipping_category_requirement.match_none',
+            ShippingMethodInterface::CATEGORY_REQUIREMENT_MATCH_ANY  => 'sylius.form.shipping_category_requirement.match_any',
+            ShippingMethodInterface::CATEGORY_REQUIREMENT_MATCH_ALL  => 'sylius.form.shipping_category_requirement.match_all',
         );
     }
 }

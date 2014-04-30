@@ -23,15 +23,19 @@ sylius:
     shipping_calculator:
       flat_rate_configuration:
         amount: Cantidad
+        label: Tarifa única por envío
       flexible_rate_configuration:
         additional_item_cost: Costo adicional de artículo
         additional_item_limit: Límite de artículos adicionales
         first_item_cost: Costo del primer artículo
+        label: Tarifa flexible
       per_item_rate_configuration:
         amount: Cantidad
+        label: Tarifa única por artículo
       weight_rate_configuration:
         amount: Cantidad
         division: División
+        label: Tarifa basada en el peso
     shipping_category:
       description: Descripción
       name: Nombre
@@ -42,3 +46,7 @@ sylius:
       configuration: Configuración
       enabled: Activo
       name: Nombre
+    shipping_category_requirement:
+      match_none:  'Ninguno de los artículos debe coincidir con la categoría de envío'
+      match_any: 'Al menos 1 de los artículos debe coincidir con la categoría de envío'
+      match_all: 'Todos los artículos deben coincidir con la categoría de envío'
