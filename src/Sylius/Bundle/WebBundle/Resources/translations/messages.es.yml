@@ -502,6 +502,17 @@ sylius:
     update_header: actualizar encabezado
     updated_at: Última actualización
   product_not_available_in_zone: No disponible en su país
+  product_option:
+    create: Crear opción
+    create_header: Nueva opción de producto
+    index_header: Opciones de producto
+    manage: Gestionar opciones
+    name: Nombre
+    no_results: No hay opciones configuradas.
+    presentation: presentación
+    update_header: Editar opción
+    updated_at: última actualización
+    values: valores
   promotion:
     actions: Acciones
     add_action: Añadir acción
