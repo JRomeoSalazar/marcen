@@ -38,10 +38,10 @@
             </constraint>
         </property>
         <property name="description">
-            <constraint name="NotBlank">
+            <!--<constraint name="NotBlank">
                 <option name="message">sylius.product.description.not_blank</option>
                 <option name="groups">sylius</option>
-            </constraint>
+            </constraint>-->
             <constraint name="Length">
                 <option name="min">3</option>
                 <option name="minMessage">sylius.product.description.min_length</option>

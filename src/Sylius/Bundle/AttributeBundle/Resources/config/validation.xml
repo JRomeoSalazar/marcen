@@ -45,7 +45,7 @@
         </property>
     </class>
 
-    <class name="Sylius\Component\Attribute\Model\AttributeValue">
+    <!--<class name="Sylius\Component\Attribute\Model\AttributeValue">
         <property name="attribute">
             <constraint name="NotBlank">
                 <option name="message">sylius.attribute_value.attribute.not_blank</option>
@@ -58,6 +58,6 @@
                 <option name="groups">sylius</option>
             </constraint>
         </property>
-    </class>
+    </class>-->
 
 </constraint-mapping>
