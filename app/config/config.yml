@@ -106,7 +106,7 @@ liip_imagine:
                 thumbnail: { size: [240, 180], mode: outbound }
         sylius_large:
             filters:
-                thumbnail: { size: [640, 480], mode: outbound }
+                thumbnail: { size: [1300, 750], mode: outbound }
 
 knp_snappy:
     pdf:
