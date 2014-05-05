@@ -7,7 +7,9 @@ sylius:
       main:
         assortment: Varios
         attributes: Configurar atributos
+        blocks: Bloques
         configuration: Configuración
+        content: Contenido
         countries: Países
         customer: Clientes
         dashboard: Panel general
@@ -19,11 +21,11 @@ sylius:
         new_promotion: Añadir nueva promoción
         options: Administrar opciones de producto
         orders: Pedidos en curso
+        pages: Páginas
         payment_methods: Modos de pago
         payments: Pagos
         products: Productos
         promotions: Promociones
-        properties: Configurar propiedades
         prototypes: Prototipos de producto
         sales: Pedidos
         shipments: Envíos
@@ -59,7 +61,6 @@ sylius:
         payments: Pagos
         products: Productos
         promotions: Promociones
-        properties: Configuración de propiedades
         prototypes: Prototipos de producto
         sales: Pedidos
         shipments: Envíos
