@@ -335,17 +335,6 @@ sylius:
     newest: Newest products
     no: no
     no_results: sylius.no_results
-    product_option:
-        create: Create option
-        create_header: New product option
-        index_header: Product options
-        manage: Manage options
-        name: name
-        no_results: There are no options configured.
-        presentation: presentation
-        update_header: Editing option
-        updated_at: last update
-        values: values
     order:
         billing_address: Billing address
         create: Create order
@@ -486,6 +475,17 @@ sylius:
         update_header: Editing attribute
         updated_at: last update
     product_not_available_in_zone: Not available in your country
+    product_option:
+        create: Create option
+        create_header: New product option
+        index_header: Product options
+        manage: Manage options
+        name: name
+        no_results: There are no options configured.
+        presentation: presentation
+        update_header: Editing option
+        updated_at: last update
+        values: values
     promotion:
         actions: Actions
         add_action: Add action
