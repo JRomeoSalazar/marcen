@@ -100,7 +100,7 @@ liip_imagine:
     filter_sets:
         sylius_small:
             filters:
-                thumbnail: { size: [120, 90], mode: outbound }
+                thumbnail: { size: [120, 70], mode: outbound }
         sylius_medium:
             filters:
                 thumbnail: { size: [240, 180], mode: outbound }
