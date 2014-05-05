@@ -473,6 +473,18 @@ sylius:
         updated_at: Last update
         variant_selection_method: Variant selection method
         view_details: View %product% details.
+    product_attribute:
+        add_choice: Add choice
+        create: Create product attribute
+        create_header: New product attribute
+        index_header: Product attributes
+        manage: Manage attributes
+        name: name
+        no_results: There are no attributes configured.
+        presentation: presentation
+        type: type
+        update_header: Editing attribute
+        updated_at: last update
     product_not_available_in_zone: Not available in your country
     promotion:
         actions: Actions
@@ -516,19 +528,8 @@ sylius:
     promotion_rule:
         configuration: Configuration
         type: Type
-    product_attribute:
-        add_choice: Add choice
-        create: Create product attribute
-        create_header: New product attribute
-        index_header: Product attributes
-        manage: Manage attributes
-        name: name
-        no_results: There are no attributes configured.
-        presentation: presentation
-        type: type
-        update_header: Editing attribute
-        updated_at: last update
     prototype:
+        attributes: Atributos
         build: Build prototype
         build_header: Building product from prototype
         create: Create prototype
@@ -537,7 +538,6 @@ sylius:
         name: name
         no_results: There are no prototypes defined.
         options: options
-        attributes: 
         update_header: Editing prototype
         updated_at: last update
     province:
