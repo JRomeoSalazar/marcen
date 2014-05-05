@@ -152,6 +152,7 @@ div.navbar div.container div.navbar-collapse ul.sylius-frontend-social li > a.tw
 }
 div#main {
   min-height: 1030px;
+  margin-bottom: 1em;
 }
 div#sidebar div.panel-contact {
   border-color: #6b9000;
