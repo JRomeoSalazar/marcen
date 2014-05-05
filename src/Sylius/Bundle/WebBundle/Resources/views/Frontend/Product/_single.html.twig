@@ -1,4 +1,4 @@
-<div class="row product">
+<div class="row product" id="product-single">
     <div class="col-md-3">
         <a href="{{ path('sylius_product_show', {'slug': product.slug}) }}" class="thumbnail">
             <img src="{{ product.image ? product.image.path|imagine_filter('sylius_product_box') : 'http://placehold.it/200x200' }}" alt="{{ product.name }}" />
