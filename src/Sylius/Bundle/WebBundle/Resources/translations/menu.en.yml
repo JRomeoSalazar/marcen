@@ -4,7 +4,9 @@ sylius:
             main:
                 assortment: Assortment
                 attributes: Configure attributes
+                blocks: Blocks
                 configuration: Configuration
+                content: Content
                 countries: Countries
                 customer: Customers
                 dashboard: Dashboard
@@ -16,6 +18,7 @@ sylius:
                 new_promotion: Add new promotion
                 options: Manage product options
                 orders: Current orders
+                pages: Pages
                 payment_methods: Payment methods
                 payments: Payments
                 products: Products
