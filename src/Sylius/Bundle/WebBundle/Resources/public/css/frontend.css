@@ -288,6 +288,16 @@ div.product-box a h4 {
   text-transform: uppercase;
   text-align: center;
 }
+div.product-show h3 {
+  color: #333333;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+div.product-single h3 {
+  color: #333333;
+  font-weight: bold;
+  text-transform: uppercase;
+}
 div.footer {
   color: #a2a5ad;
   background-color: #222222;
