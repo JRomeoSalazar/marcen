@@ -3,3 +3,4 @@ sylius:
     attribute:
       name: Internal name
       presentation: Presentation
+      type: Type
