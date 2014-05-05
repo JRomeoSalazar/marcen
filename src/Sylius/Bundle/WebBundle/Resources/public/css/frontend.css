@@ -288,12 +288,12 @@ div.product-box a h4 {
   text-transform: uppercase;
   text-align: center;
 }
-div.product-show h3 {
+div#product-show h3 {
   color: #333333;
   font-weight: bold;
   text-transform: uppercase;
 }
-div.product-single h3 {
+div#product-single h3 {
   color: #333333;
   font-weight: bold;
   text-transform: uppercase;
