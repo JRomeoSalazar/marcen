@@ -94,6 +94,8 @@ sylius:
     updated_at: Última actualización
   breadcrumb:
     assortment: Varios
+    attribute:
+      index: Propiedades de producto
     block:
       index: Bloques de contenido
     build: sylius.breadcrumb.build
@@ -130,8 +132,6 @@ sylius:
       index: Promociones
     promotion_coupon:
       index: sylius.breadcrumb.promotion_coupon.index
-    property:
-      index: Propiedades de producto
     prototype:
       index: Prototipos de producto
     sales: Ventas
@@ -444,7 +444,7 @@ sylius:
     update_header: Editar método de pago
     updated_at: Fecha de última modificación
   product:
-    add_property: Añadir propiedad
+    add_attribute: Añadir atributo
     available_on: Disponible el
     available_on_demand: Disponible bajo demanda
     categorization: Categorización
@@ -489,6 +489,18 @@ sylius:
     updated_at: Última actualización
     variant_selection_method: étodo de selección de la variante
     view_details: 'Ver detalles de %product%.'
+  product_attribute:
+    add_choice: añadir elección
+    create: Crear atributo de producto
+    create_header: Nuevo atributo
+    index_header: Atributos
+    manage: Gestionar
+    name: Nombre
+    no_results: No hay atributos configurados
+    presentation: Presentación
+    type: Tipo
+    update_header: actualizar encabezado
+    updated_at: Última actualización
   product_not_available_in_zone: No disponible en su país
   promotion:
     actions: Acciones
@@ -530,18 +542,6 @@ sylius:
   promotion_rule:
     configuration: configuración
     type: Tipo
-  property:
-    add_choice: añadir elección
-    create: Crear propiedad
-    create_header: Nueva propiedad
-    index_header: Propiedades
-    manage: Gestionar
-    name: Nombre
-    no_results: No hay propiedades configuradas
-    presentation: Presentación
-    type: Tipo
-    update_header: actualizar encabezado
-    updated_at: Última actualización
   prototype:
     build: Construir
     build_header: Construir encabezado

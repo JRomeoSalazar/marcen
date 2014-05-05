@@ -95,6 +95,8 @@ sylius:
         updated_at: Last update
     breadcrumb:
         assortment: Assortment
+        attribute:
+            index: Attributes
         block:
             index: Content Blocks
         build: Build
@@ -131,8 +133,6 @@ sylius:
             index: Promotions
         promotion_coupon:
             index: Coupons
-        attribute:
-            index: Attributes
         prototype:
             index: Prototypes
         sales: Sales
