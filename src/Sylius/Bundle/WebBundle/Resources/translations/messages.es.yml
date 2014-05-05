@@ -543,6 +543,7 @@ sylius:
     configuration: configuración
     type: Tipo
   prototype:
+    attributes: Atributos
     build: Construir
     build_header: Construir encabezado
     create: Crear prototipo
