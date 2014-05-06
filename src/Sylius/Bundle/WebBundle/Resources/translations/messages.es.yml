@@ -445,6 +445,7 @@ sylius:
     updated_at: Fecha de última modificación
   product:
     add_attribute: Añadir atributo
+    attributes: Atributos
     available_on: Disponible el
     available_on_demand: Disponible bajo demanda
     categorization: Categorización
@@ -457,10 +458,10 @@ sylius:
     index_header: Productos
     manage: Gestionar productos
     name: Nombre
+    no_attributes: Este producto no tiene atributos configurados
     no_description: '<i>Sin descripción...</i>'
     no_images: No hay imágenes del producto
     no_options: No hay opciones para este producto
-    no_properties: Este producto no tiene propiedades configuradas
     no_results: No hay productos
     no_shipping_category: Sin categoría de envío
     no_short_description: '<i>Sin descripción corta</i>'
@@ -469,7 +470,6 @@ sylius:
     no_taxons: No taxons
     options: Opciones
     price: Precio
-    properties: Propiedades
     restricted_zone: Zona restringida
     shipping_category: Categoría de envío
     show: Ver más
@@ -478,16 +478,16 @@ sylius:
     sku: SKU
     stock: Stock actual
     tabs:
+      attributes: Atributos
       categorization: Categorización
       images: Imágenes
       options: Opciones
       product: Producto
-      properties: Propiedades
     tax_category: Categoría de impuestos
     unavailable: No disponible
     update_header: Editar producto
     updated_at: Última actualización
-    variant_selection_method: étodo de selección de la variante
+    variant_selection_method: Método de selección de la variante
     view_details: 'Ver detalles de %product%.'
   product_attribute:
     add_choice: añadir elección
@@ -563,7 +563,6 @@ sylius:
     name: Nombre
     no_results: No hay prototipos configurados
     options: Opciones
-    properties: Propiedades
     update_header: Actualizar encabezado
     updated_at: Última actualización
   province:
