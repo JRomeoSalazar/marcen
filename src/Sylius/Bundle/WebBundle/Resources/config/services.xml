@@ -131,7 +131,7 @@
                 </service>
             </argument>
             <argument type="service" id="sylius.repository.product" />
-            <argument type="service" id="sylius.repository.variant" />
+            <argument type="service" id="sylius.repository.variation" />
             <tag name="twig.extension" />
         </service>
 
