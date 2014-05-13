@@ -6,3 +6,5 @@ sylius:
     create: '%resource% se ha creado con éxito.'
     update: '%resource% se ha actualizado con éxito.'
     delete: '%resource% ha sido eliminado.'
+    move: '%resource% ha sido movido con éxito.'
+    generate: '%resource%s han sido generados con éxito.'

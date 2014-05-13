@@ -98,7 +98,7 @@ sylius:
       index: Propiedades de producto
     block:
       index: Bloques de contenido
-    build: sylius.breadcrumb.build
+    build: Construir
     configuration: Configuración
     country:
       index: Paises
