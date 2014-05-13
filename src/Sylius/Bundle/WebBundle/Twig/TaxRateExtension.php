@@ -3,7 +3,7 @@
 namespace Sylius\Bundle\WebBundle\Twig;
 
 use Sylius\Bundle\SettingsBundle\Model\Settings;
-use Sylius\Bundle\TaxationBundle\Resolver\TaxRateResolverInterface;
+use Sylius\Component\Taxation\Resolver\TaxRateResolverInterface;
 use Sylius\Bundle\ResourceBundle\Model\RepositoryInterface;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
