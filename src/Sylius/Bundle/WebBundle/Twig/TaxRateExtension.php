@@ -3,8 +3,8 @@
 namespace Sylius\Bundle\WebBundle\Twig;
 
 use Sylius\Bundle\SettingsBundle\Model\Settings;
-use Sylius\Bundle\TaxationBundle\Resolver\TaxRateResolverInterface;
-use Sylius\Bundle\ResourceBundle\Model\RepositoryInterface;
+use Sylius\Component\Taxation\Resolver\TaxRateResolverInterface;
+use Sylius\Component\Resource\Repository\RepositoryInterface;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class TaxRateExtension extends \Twig_Extension
