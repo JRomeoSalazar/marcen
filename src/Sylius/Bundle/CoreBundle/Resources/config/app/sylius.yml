@@ -3,14 +3,14 @@ sylius_core:
     emails:
         enabled: true
         from_email:
-            address: jromeosalazar@gmail.com
-            sender_name: Sylius Admin
+            address: ciclosmarcenonline@ciclosmarcenonline.com
+            sender_name: Ciclos Marcen Online
         order_confirmation:
             enabled: true
             template: 'SyliusWebBundle:Frontend/Email:orderConfirmation.html.twig'
             from_email:
-                address: jromeosalazar@gmail.com
-                sender_name: Sylius Orders
+                address: ciclosmarcenonline@ciclosmarcenonline.com
+                sender_name: Ciclos Marcen Online
         #customer_welcome:
         #    enabled: false
         #    template: 'SyliusWebBundle:Frontend/Email:customerWelcome.html.twig'
