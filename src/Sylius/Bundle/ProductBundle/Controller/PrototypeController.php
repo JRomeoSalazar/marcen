@@ -13,8 +13,11 @@ namespace Sylius\Bundle\ProductBundle\Controller;
 
 use Sylius\Bundle\ResourceBundle\Controller\ResourceController;
 use Sylius\Component\Product\Builder\PrototypeBuilderInterface;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use Symfony\Component\EventDispatcher\GenericEvent;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Translation\TranslatorInterface;
 
 /**
  * Prototype controller.
@@ -48,11 +51,19 @@ class PrototypeController extends ResourceController
         $form = $productController->getForm($product);
 
         if ($request->isMethod('POST') && $form->submit($request)->isValid()) {
+            $eventDispatcher = $this->getEventDispatcher();
+            $eventDispatcher->dispatch('sylius.product.pre_create', new GenericEvent($product));
+
             $manager = $this->get('doctrine')->getManager();
             $manager->persist($product);
             $manager->flush();
 
-            $this->flashHelper->setFlash('success', 'Product has been successfully created.');
+            $translator = $this->getTranslator();
+            $message = $translator->trans('sylius.resource.create', array('%resource%' => 'Product'), 'flashes');
+            $this->get('session')->getFlashBag()->add('success', $message);
+
+
+            $eventDispatcher->dispatch('sylius.product.post_create', new GenericEvent($product));
 
             return $this->redirectHandler->redirectTo($product);
         }
@@ -82,5 +93,25 @@ class PrototypeController extends ResourceController
     protected function getBuilder()
     {
         return $this->get('sylius.builder.product_prototype');
+    }
+
+    /**
+     * Get event dispatcher.
+     *
+     * @return EventDispatcherInterface
+     */
+    protected function getEventDispatcher()
+    {
+        return $this->container->get('event_dispatcher');
+    }
+
+    /**
+     * Get translator.
+     *
+     * @return TranslatorInterface
+     */
+    protected function getTranslator()
+    {
+        return $this->container->get('translator');
     }
 }
