@@ -239,6 +239,38 @@ div.product-box {
   }
 }
 
+div.offer-corner-png {
+  position: relative;
+  display: inline-block;
+  p {
+    display: inline;
+    span {
+      font-weight: 900;
+      color: white;
+      position: absolute;
+      display: inline-block;
+      right: -32px;
+      text-align: center;
+      text-transform: uppercase;
+      top: 18px;
+      width: 120px;
+      padding: 3px 10px;
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      z-index: 2;
+    }
+    img {
+      position: absolute;
+      display: inline-block;
+      right: -4px;
+      top: -4px;
+      z-index: 1;
+    }
+  }
+}
+
 div.footer {
   color: @gray-light;
   background-color: @gray-darker;
