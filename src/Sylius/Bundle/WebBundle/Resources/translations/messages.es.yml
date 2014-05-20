@@ -363,6 +363,7 @@ sylius:
     payment_states:
       balance_due: Saldo
     promotion_total: Total de Promoción
+    promotions: Promociones
     recent_header: Pedidos recientes
     shipment_state: Estado del envio
     shipment_states:

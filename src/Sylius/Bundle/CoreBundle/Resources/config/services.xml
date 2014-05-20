@@ -450,6 +450,18 @@
         </service>
         <service id="sylius.promotion_action.percentage_discount" class="%sylius.promotion_action.percentage_discount.class%">
             <argument type="service" id="sylius.repository.adjustment" />
+            <argument type="service" id="sylius.tax_calculator" />
+            <argument type="service" id="sylius.tax_rate_resolver" />
+            <argument type="service" id="sylius.zone_matcher" />
+            <argument type="service">
+                <service
+                    factory-service="sylius.settings.manager"
+                    factory-method="loadSettings"
+                    class="Sylius\Bundle\SettingsBundle\Model\Settings"
+                >
+                    <argument>taxation</argument>
+                </service>
+            </argument>
             <tag name="sylius.promotion_action" type="percentage_discount" label="Percentage discount" />
         </service>
         <service id="sylius.promotion_action.shipping_discount" class="%sylius.promotion_action.shipping_discount.class%">
