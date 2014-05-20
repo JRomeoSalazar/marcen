@@ -196,6 +196,7 @@ sylius:
                 no_taxes: No taxes applied
                 promotion_discount: Promotion discounts
                 promotion_total: Promotion total
+                promotions: Promotions
                 shipping_address: Shipping address
                 shipping_charges: Shipping charges
                 shipping_total: Shipping total
