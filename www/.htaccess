@@ -22,3 +22,6 @@ DirectoryIndex app.php
 </IfModule>
 
 php_value date.timezone "Europe/Madrid"
+
+php_flag display_errors 1
+php_value error_reporting 7
