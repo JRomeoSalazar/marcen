@@ -484,6 +484,7 @@ sylius:
       images: Imágenes
       options: Opciones
       product: Producto
+      promotion: Promoción
     tax_category: Categoría de impuestos
     unavailable: No disponible
     update_header: Editar producto

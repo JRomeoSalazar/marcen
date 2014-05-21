@@ -144,4 +144,32 @@ interface ProductInterface extends BaseProductInterface, PriceableInterface, Tax
      * @return ImageInterface
      */
     public function getImage();
+
+    /**
+     * Get descuentos.
+     *
+     * @return Collection
+     */
+    public function getDescuentos();
+
+    /**
+     * Checks if product has descuento.
+     *
+     * @return Boolean
+     */
+    public function hasDescuento(Descuento $descuento);
+
+    /**
+     * Add descuento.
+     *
+     * @param Descuento $descuento
+     */
+    public function addDescuento(Descuento $descuento);
+
+    /**
+     * Remove descuento.
+     *
+     * @param Descuento $descuento
+     */
+    public function removeDescuento(Descuento $descuento);
 }

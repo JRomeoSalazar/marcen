@@ -80,6 +80,13 @@ class Product extends BaseProduct implements ProductInterface
     protected $restrictedZone;
 
     /**
+     * Descuentos de producto
+     *
+     * @var Collection
+     */
+    protected $descuentos;
+
+    /**
      * Constructor.
      */
     public function __construct()
@@ -88,6 +95,8 @@ class Product extends BaseProduct implements ProductInterface
 
         $this->setMasterVariant(new ProductVariant());
         $this->taxons = new ArrayCollection();
+
+        $this->descuentos = new ArrayCollection();
 
         $this->variantSelectionMethod = self::VARIANT_SELECTION_CHOICE;
     }
@@ -283,5 +292,41 @@ class Product extends BaseProduct implements ProductInterface
             self::VARIANT_SELECTION_CHOICE => 'Variant choice',
             self::VARIANT_SELECTION_MATCH  => 'Options matching',
         );
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getDescuentos()
+    {
+        return $this->descuentos;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function hasDescuento(Descuento $descuento)
+    {
+        return $this->descuentos->contains($descuento);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function addDescuento(Descuento $descuento)
+    {
+        if (!$this->hasDescuento($descuento)) {
+            $descuento->setProduct($this);
+            $this->descuentos->add($descuento);
+        }
+    }
+
+     /**
+     * {@inheritdoc}
+     */
+    public function removeDescuento(Descuento $descuento)
+    {
+        $descuento->setProduct(null);
+        $this->descuentos->removeElement($descuento);
     }
 }

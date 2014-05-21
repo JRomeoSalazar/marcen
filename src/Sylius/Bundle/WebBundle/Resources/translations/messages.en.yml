@@ -457,6 +457,7 @@ sylius:
             options: Options
             product: Product
             attributes: Attributes
+            promotion: Promotion
         tax_category: Tax category
         unavailable: Unavailable
         update_header: Editing product
