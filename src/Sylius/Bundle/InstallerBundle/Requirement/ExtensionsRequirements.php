@@ -18,7 +18,7 @@ class ExtensionsRequirements extends RequirementCollection
 {
     public function __construct(TranslatorInterface $translator)
     {
-        parent::__construct($translator->trans('sylius.extensions', array(), 'requirements'));
+        parent::__construct($translator->trans('sylius.extensions.0', array(), 'requirements'));
 
         $on = $translator->trans('sylius.extensions.on', array(), 'requirements');
         $off = $translator->trans('sylius.extensions.off', array(), 'requirements');
@@ -147,7 +147,7 @@ class ExtensionsRequirements extends RequirementCollection
 
         $this
             ->add(new Requirement(
-                $translator->trans('sylius.extensions.accelerator', array(), 'requirements'),
+                $translator->trans('sylius.extensions.accelerator.0', array(), 'requirements'),
                 $status,
                 $on,
                 $status ? $on : $off,

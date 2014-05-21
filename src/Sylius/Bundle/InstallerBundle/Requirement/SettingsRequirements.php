@@ -20,7 +20,7 @@ class SettingsRequirements extends RequirementCollection
 
     public function __construct(TranslatorInterface $translator)
     {
-        parent::__construct($translator->trans('sylius.settings', array(), 'requirements'));
+        parent::__construct($translator->trans('sylius.settings.0', array(), 'requirements'));
 
         $on = $translator->trans('sylius.settings.on', array(), 'requirements');
         $off = $translator->trans('sylius.settings.off', array(), 'requirements');
@@ -49,7 +49,7 @@ class SettingsRequirements extends RequirementCollection
 
         if (version_compare(phpversion(), self::REQUIRED_PHP_VERSION, '>=')) {
             $this->add(new Requirement(
-                $translator->trans('sylius.settings.timezone_deprecated', array(), 'requirements'),
+                $translator->trans('sylius.settings.timezone_deprecated.0', array(), 'requirements'),
                 in_array(date_default_timezone_get(), DateTimeZone::listIdentifiers()),
                 $translator->trans('sylius.settings.non_deprecated', array(), 'requirements'),
                 date_default_timezone_get(),

@@ -90,7 +90,7 @@ abstract class SyliusKernel extends Kernel
             $bundles[] = new \Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
         }
 
-        if (in_array($this->environment, array('dev', 'test')) && class_exists('Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle')) {
+        if (in_array($this->environment, array('dev', 'test', 'prod')) && class_exists('Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle')) {
             $bundles[] = new \Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle();
             $bundles[] = new \Sylius\Bundle\FixturesBundle\SyliusFixturesBundle();
         }
