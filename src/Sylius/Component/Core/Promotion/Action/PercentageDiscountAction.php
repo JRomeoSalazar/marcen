@@ -131,7 +131,9 @@ class PercentageDiscountAction implements PromotionActionInterface
             $subject->addAdjustment($adjustment);
         }
         else {
-            $ruleConfiguration = array_shift($promotion->getRules())->getConfiguration();
+            foreach ($promotion->getRules() as $rule) {
+                $ruleConfiguration = $rule->getConfiguration();
+            }
             $promotionsTotal = 0;
             foreach ($items as $item) {
                 foreach ($item['item']->getProduct()->getTaxons() as $taxon) {
