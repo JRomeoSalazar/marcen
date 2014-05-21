@@ -22,6 +22,12 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
+
+/*
+ * app/console sylius:order:release // para liberar inventario pendiente
+ * app/console sylius:order:purge // para liberar pedidos pendientes
+ */
+
 class OrderController extends ResourceController
 {
     /**
