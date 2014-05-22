@@ -22,7 +22,7 @@
             <generator strategy="AUTO" />
         </id>
 
-        <many-to-one field="product" target-entity="Sylius\Component\Core\Model\Product" inversed-by="descuentos">
+        <many-to-one field="product" target-entity="Sylius\Component\Core\Model\Product" inversed-by="productPromotions">
             <join-column name="product_id" referenced-column-name="id" nullable="false" />
         </many-to-one>
 

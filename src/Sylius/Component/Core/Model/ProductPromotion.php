@@ -117,7 +117,7 @@ class ProductPromotion
      * Set porcentaje
      *
      * @param integer $porcentaje
-     * @return Descuento
+     * @return ProductPromotion
      */
     public function setPorcentaje($porcentaje)
     {

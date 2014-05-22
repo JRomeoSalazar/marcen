@@ -80,11 +80,11 @@ class Product extends BaseProduct implements ProductInterface
     protected $restrictedZone;
 
     /**
-     * Descuentos de producto
+     * Product Promotions
      *
      * @var Collection
      */
-    protected $descuentos;
+    protected $productPromotions;
 
     /**
      * Constructor.
@@ -96,7 +96,7 @@ class Product extends BaseProduct implements ProductInterface
         $this->setMasterVariant(new ProductVariant());
         $this->taxons = new ArrayCollection();
 
-        $this->descuentos = new ArrayCollection();
+        $this->productPromotions = new ArrayCollection();
 
         $this->variantSelectionMethod = self::VARIANT_SELECTION_CHOICE;
     }
@@ -297,36 +297,36 @@ class Product extends BaseProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
-    public function getDescuentos()
+    public function getProductPromotions()
     {
-        return $this->descuentos;
+        return $this->productPromotions;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function hasDescuento(Descuento $descuento)
+    public function hasProductPromotion(ProductPromotion $productPromotion)
     {
-        return $this->descuentos->contains($descuento);
+        return $this->productPromotions->contains($productPromotion);
     }
 
     /**
      * {@inheritdoc}
      */
-    public function addDescuento(Descuento $descuento)
+    public function addProductPromotion(ProductPromotion $productPromotion)
     {
-        if (!$this->hasDescuento($descuento)) {
-            $descuento->setProduct($this);
-            $this->descuentos->add($descuento);
+        if (!$this->hasProductPromotion($productPromotion)) {
+            $productPromotion->setProduct($this);
+            $this->productPromotions->add($productPromotion);
         }
     }
 
      /**
      * {@inheritdoc}
      */
-    public function removeDescuento(Descuento $descuento)
+    public function removeProductPromotion(ProductPromotion $productPromotion)
     {
-        $descuento->setProduct(null);
-        $this->descuentos->removeElement($descuento);
+        $productPromotion->setProduct(null);
+        $this->productPromotions->removeElement($productPromotion);
     }
 }

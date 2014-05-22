@@ -14,6 +14,7 @@ namespace Sylius\Component\Core\Model;
 use Doctrine\Common\Collections\Collection;
 use Sylius\Bundle\VariableProductBundle\Model\VariableProductInterface;
 use Sylius\Component\Addressing\Model\ZoneInterface;
+use Sylius\Component\Core\Model\ProductPromotion;
 use Sylius\Component\Product\Model\ProductInterface as BaseProductInterface;
 use Sylius\Component\Shipping\Model\ShippingCategoryInterface;
 use Sylius\Component\Taxation\Model\TaxCategoryInterface;
@@ -146,30 +147,30 @@ interface ProductInterface extends BaseProductInterface, PriceableInterface, Tax
     public function getImage();
 
     /**
-     * Get descuentos.
+     * Get product promotions.
      *
      * @return Collection
      */
-    public function getDescuentos();
+    public function getProductPromotions();
 
     /**
-     * Checks if product has descuento.
+     * Checks if product has product promotion.
      *
      * @return Boolean
      */
-    public function hasDescuento(Descuento $descuento);
+    public function hasProductPromotion(ProductPromotion $productPromotion);
 
     /**
-     * Add descuento.
+     * Add product promotion.
      *
-     * @param Descuento $descuento
+     * @param ProductPromotion $productPromotion
      */
-    public function addDescuento(Descuento $descuento);
+    public function addProductPromotion(ProductPromotion $productPromotion);
 
     /**
-     * Remove descuento.
+     * Remove product promotion.
      *
-     * @param Descuento $descuento
+     * @param ProductPromotion $productPromotion
      */
-    public function removeDescuento(Descuento $descuento);
+    public function removeProductPromotion(ProductPromotion $productPromotion);
 }

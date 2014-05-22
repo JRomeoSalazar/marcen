@@ -443,6 +443,9 @@ sylius:
         no_taxons: There are no taxons for this product
         options: Options
         price: Retail price
+        promotion:
+            add: Add promotion
+            delete: Delete promotion
         attributes: Attributes
         restricted_zone: Restricted zone
         shipping_category: Shipping category
