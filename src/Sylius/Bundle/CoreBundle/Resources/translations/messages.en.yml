@@ -48,6 +48,8 @@ sylius:
         product_filter:
             name: Name
             sku: SKU
+        product_promotion:
+            porcentaje: Percentage
         settings:
             general:
                 currency: Default currency

@@ -441,8 +441,14 @@ sylius:
         no_sku: No SKU
         no_tax_category: No tax category
         no_taxons: There are no taxons for this product
+        offer: Offer
         options: Options
         price: Retail price
+        promotion:
+            0: Product promotions
+            add: Add promotion
+            no_promotions: This product has no promotions defined
+            delete: Delete promotion
         attributes: Attributes
         restricted_zone: Restricted zone
         shipping_category: Shipping category
@@ -457,6 +463,7 @@ sylius:
             options: Options
             product: Product
             attributes: Attributes
+            promotion: Product promotions
         tax_category: Tax category
         unavailable: Unavailable
         update_header: Editing product

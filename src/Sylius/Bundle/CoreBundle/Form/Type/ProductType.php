@@ -53,6 +53,13 @@ class ProductType extends BaseProductType
                 'empty_value' => '---',
                 'label'       => 'sylius.form.product.restricted_zone',
             ))
+            ->add('productPromotions', 'collection', array(
+                'type'         => 'sylius_product_promotion',
+                'allow_add'    => true,
+                'allow_delete' => true,
+                'by_reference' => false,
+                'label'        => false,
+            ))
         ;
     }
 }

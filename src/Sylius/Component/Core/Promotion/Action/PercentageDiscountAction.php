@@ -92,11 +92,18 @@ class PercentageDiscountAction implements PromotionActionInterface
      */
     public function execute(PromotionSubjectInterface $subject, array $configuration, PromotionInterface $promotion)
     {
-        // Obtenemos la zona fiscal por defecto
-        if ($this->settings->has('default_tax_zone')) {
-            $zone = $this->settings->get('default_tax_zone');
+        /* Averiguamos la zona fiscal del pedido */
+        $zone = null;
+
+        if (null !== $subject->getShippingAddress()) {
+            $zone = $this->zoneMatcher->match($subject->getShippingAddress()); // Match the tax zone.
         }
-        else {
+
+        if ($this->settings->has('default_tax_zone')) {
+            $zone = $zone ?: $this->settings->get('default_tax_zone'); // If address does not match any zone, use the default one.
+        }
+
+        if (null === $zone) {
             throw new NotFoundHttpException("Debe establecer una 'Zona fiscal por defecto' en la 'Configuración de impuestos'.");
         }
 

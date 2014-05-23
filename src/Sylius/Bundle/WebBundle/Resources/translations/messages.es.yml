@@ -190,8 +190,8 @@ sylius:
         no_promotion: No se han aplicado promociones
         no_shipping_charges: No se aplican gastos de envío
         no_taxes: Impuestos no aplicados
-        promotion_discount: Descuentos
-        promotion_total: Descuento total
+        promotion_discount: Promociones
+        promotion_total: Descuento por promoción total
         shipping_address: Dirección de envío
         shipping_charges: Envío
         shipping_total: Total del envío
@@ -469,8 +469,14 @@ sylius:
     no_sku: '<i>No tiene SKU</i>'
     no_tax_category: Sin categoría de impuestos
     no_taxons: No taxons
+    offer: Oferta
     options: Opciones
     price: Precio
+    promotion:
+      0: Promociones de producto
+      add: Añadir promoción
+      no_promotions: Este producto no tiene promociones establecidas
+      delete: Borrar promoción
     restricted_zone: Zona restringida
     shipping_category: Categoría de envío
     show: Ver más
@@ -484,6 +490,7 @@ sylius:
       images: Imágenes
       options: Opciones
       product: Producto
+      promotion: Promociones de producto
     tax_category: Categoría de impuestos
     unavailable: No disponible
     update_header: Editar producto
@@ -524,7 +531,7 @@ sylius:
     created_at: Fecha de creación
     description: Descripción
     ends_at: Fecha de fin
-    general_info: sylius.promotion.general_info
+    general_info: Información general
     id: sylius.promotion.id
     index_header: Promociones actuales
     manage: Gestionar promociones

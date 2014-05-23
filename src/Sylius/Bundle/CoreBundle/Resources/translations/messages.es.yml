@@ -52,6 +52,8 @@ sylius:
     product_filter:
       name: Nombre
       sku: SKU
+    product_promotion:
+      porcentaje: Porcentaje
     settings:
       general:
         currency: Moneda por defecto
