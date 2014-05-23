@@ -150,13 +150,10 @@ div.navbar div.container div.navbar-collapse ul.sylius-frontend-social li > a.tw
 div.navbar div.container div.navbar-collapse ul.sylius-frontend-social li > a.twitter:focus {
   color: #3071a9;
 }
-<<<<<<< HEAD
 div#main {
   min-height: 1030px;
   margin-bottom: 3em;
 }
-=======
->>>>>>> base
 div#sidebar div.panel-contact {
   border-color: #6b9000;
   background-color: #91c300;
@@ -243,7 +240,6 @@ div#sidebar ul.newest li a h4 {
   font-size: 15px;
   text-align: left;
 }
-<<<<<<< HEAD
 div#sidebar ul.account span.nav-header {
   padding: 10px 16px;
   font-size: 18px;
@@ -257,8 +253,6 @@ div#sidebar ul.account span.nav-header {
   text-align: center;
   text-transform: uppercase;
 }
-=======
->>>>>>> base
 div#sidebar h4.newest-header {
   padding: 10px 16px;
   font-size: 18px;
@@ -294,7 +288,6 @@ div.product-box a h4 {
   text-transform: uppercase;
   text-align: center;
 }
-<<<<<<< HEAD
 div#product-show h3 {
   color: #333333;
   font-weight: bold;
@@ -305,15 +298,6 @@ div#product-single h3 {
   font-weight: bold;
   text-transform: uppercase;
 }
-div.offer-corner-png {
-  position: relative;
-  display: inline-block;
-}
-div.offer-corner-png p {
-  display: inline;
-}
-div.offer-corner-png p span {
-=======
 .offer-corner-png {
   position: relative;
   display: inline-block;
@@ -322,7 +306,6 @@ div.offer-corner-png p span {
   display: inline;
 }
 .offer-corner-png p span {
->>>>>>> base
   font-weight: 900;
   color: white;
   position: absolute;
@@ -339,11 +322,7 @@ div.offer-corner-png p span {
   -ms-transform: rotate(45deg);
   z-index: 2;
 }
-<<<<<<< HEAD
-div.offer-corner-png p img {
-=======
 .offer-corner-png p img {
->>>>>>> base
   position: absolute;
   display: inline-block;
   right: -4px;
