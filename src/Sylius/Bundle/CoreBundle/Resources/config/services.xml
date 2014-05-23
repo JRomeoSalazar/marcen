@@ -65,6 +65,8 @@
         <parameter key="sylius.form.type.product_filter.class">Sylius\Bundle\CoreBundle\Form\Type\Filter\ProductFilterType</parameter>
         <parameter key="sylius.form.type.order_filter.class">Sylius\Bundle\CoreBundle\Form\Type\Filter\OrderFilterType</parameter>
         <parameter key="sylius.form.type.shipment_filter.class">Sylius\Bundle\CoreBundle\Form\Type\Filter\ShipmentFilterType</parameter>
+        <parameter key="sylius.form.type.product_promotion.class">Sylius\Bundle\CoreBundle\Form\Type\ProductPromotionType</parameter>
+        <parameter key="sylius.model.product_promotion.class">Sylius\Component\Core\Model\ProductPromotion</parameter>
 
         <parameter key="sylius.listener.image_upload.class">Sylius\Bundle\CoreBundle\EventListener\ImageUploadListener</parameter>
 
@@ -408,6 +410,10 @@
         </service>
         <service id="sylius.form.type.shipment_filter" class="%sylius.form.type.shipment_filter.class%">
             <tag name="form.type" alias="sylius_shipment_filter" />
+        </service>
+        <service id="sylius.form.type.product_promotion" class="%sylius.form.type.product_promotion.class%">
+            <argument>%sylius.model.product_promotion.class%</argument>
+            <tag name="form.type" alias="sylius_product_promotion" />
         </service>
 
         <!-- promotions -->

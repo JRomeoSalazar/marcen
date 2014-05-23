@@ -178,6 +178,31 @@
                 {% endfor %}
             </tbody>
         </table>
+
+        <hr>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th colspan="2">{{ 'sylius.product.promotion.0'|trans }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for productPromotion in product.productPromotions %}
+                <tr>
+                    <td><strong>#{{ loop.index }}</strong></td>
+                    <td>{{ productPromotion.porcentaje }}%</td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="2">
+                        <span class="label label-info">
+                            <i class="glyphicon glyphicon-list-alt icon-white"></i> {{ 'sylius.product.promotion.no_promotions'|trans }}
+                        </span>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
 </div>
 

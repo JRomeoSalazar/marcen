@@ -20,6 +20,7 @@
         <parameter key="sylius.form.frontend.profile.type.class">Sylius\Bundle\WebBundle\Form\ProfileFormType</parameter>
         <parameter key="sylius.form.frontend.registration.type.class">Sylius\Bundle\CoreBundle\Form\Type\RegistrationFormType</parameter>
         <parameter key="sylius.twig.tax_rate_extension.class">Sylius\Bundle\WebBundle\Twig\TaxRateExtension</parameter>
+        <parameter key="sylius.twig.product_promotion_extension.class">Sylius\Bundle\WebBundle\Twig\ProductPromotionExtension</parameter>
     </parameters>
 
     <services>
@@ -130,6 +131,11 @@
                     <argument>taxation</argument>
                 </service>
             </argument>
+            <argument type="service" id="sylius.repository.product" />
+            <argument type="service" id="sylius.repository.product_variant" />
+            <tag name="twig.extension" />
+        </service>
+        <service id="sylius.twig.product_promotion_extension" class="%sylius.twig.product_promotion_extension.class%">
             <argument type="service" id="sylius.repository.product" />
             <argument type="service" id="sylius.repository.product_variant" />
             <tag name="twig.extension" />

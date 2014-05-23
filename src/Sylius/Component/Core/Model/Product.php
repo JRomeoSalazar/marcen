@@ -80,6 +80,13 @@ class Product extends BaseProduct implements ProductInterface
     protected $restrictedZone;
 
     /**
+     * Product Promotions
+     *
+     * @var Collection
+     */
+    protected $productPromotions;
+
+    /**
      * Constructor.
      */
     public function __construct()
@@ -88,6 +95,8 @@ class Product extends BaseProduct implements ProductInterface
 
         $this->setMasterVariant(new ProductVariant());
         $this->taxons = new ArrayCollection();
+
+        $this->productPromotions = new ArrayCollection();
 
         $this->variantSelectionMethod = self::VARIANT_SELECTION_CHOICE;
     }
@@ -283,5 +292,52 @@ class Product extends BaseProduct implements ProductInterface
             self::VARIANT_SELECTION_CHOICE => 'Variant choice',
             self::VARIANT_SELECTION_MATCH  => 'Options matching',
         );
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getProductPromotions()
+    {
+        return $this->productPromotions;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function hasProductPromotions()
+    {
+        return !$this->productPromotions->isEmpty();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function addProductPromotion(ProductPromotion $productPromotion)
+    {
+        if (!$this->hasProductPromotion($productPromotion)) {
+            $productPromotion->setProduct($this);
+            $this->productPromotions->add($productPromotion);
+        }
+    }
+
+     /**
+     * {@inheritdoc}
+     */
+    public function removeProductPromotion(ProductPromotion $productPromotion)
+    {
+
+        if ($this->hasProductPromotion($productPromotion)) {
+            $productPromotion->setProduct(null);
+            $this->productPromotions->removeElement($productPromotion);
+        }
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function hasProductPromotion(ProductPromotion $productPromotion)
+    {
+        return $this->productPromotions->contains($productPromotion);
     }
 }
