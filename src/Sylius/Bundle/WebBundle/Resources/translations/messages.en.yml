@@ -441,6 +441,7 @@ sylius:
         no_sku: No SKU
         no_tax_category: No tax category
         no_taxons: There are no taxons for this product
+        offer: Offer
         options: Options
         price: Retail price
         promotion:

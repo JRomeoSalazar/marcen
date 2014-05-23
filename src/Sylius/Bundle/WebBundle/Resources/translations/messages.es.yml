@@ -469,6 +469,7 @@ sylius:
     no_sku: '<i>No tiene SKU</i>'
     no_tax_category: Sin categoría de impuestos
     no_taxons: No taxons
+    offer: Oferta
     options: Opciones
     price: Precio
     promotion:
