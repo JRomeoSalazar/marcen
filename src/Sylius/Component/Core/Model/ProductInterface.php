@@ -154,11 +154,11 @@ interface ProductInterface extends BaseProductInterface, PriceableInterface, Tax
     public function getProductPromotions();
 
     /**
-     * Checks if product has product promotion.
+     * Check if order has any product promotions.
      *
      * @return Boolean
      */
-    public function hasProductPromotion(ProductPromotion $productPromotion);
+    public function hasProductPromotions();
 
     /**
      * Add product promotion.
@@ -173,4 +173,11 @@ interface ProductInterface extends BaseProductInterface, PriceableInterface, Tax
      * @param ProductPromotion $productPromotion
      */
     public function removeProductPromotion(ProductPromotion $productPromotion);
+
+    /**
+     * Checks if product has product promotion.
+     *
+     * @return Boolean
+     */
+    public function hasProductPromotion(ProductPromotion $productPromotion);
 }

@@ -101,6 +101,8 @@ class ProductPromotion
     public function setProduct(Product $product = null)
     {
         $this->product = $product;
+
+        return $this;
     }
 
     /**

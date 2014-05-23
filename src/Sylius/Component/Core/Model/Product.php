@@ -305,9 +305,9 @@ class Product extends BaseProduct implements ProductInterface
     /**
      * {@inheritdoc}
      */
-    public function hasProductPromotion(ProductPromotion $productPromotion)
+    public function hasProductPromotions()
     {
-        return $this->productPromotions->contains($productPromotion);
+        return !$this->productPromotions->isEmpty();
     }
 
     /**
@@ -326,7 +326,18 @@ class Product extends BaseProduct implements ProductInterface
      */
     public function removeProductPromotion(ProductPromotion $productPromotion)
     {
-        $productPromotion->setProduct(null);
-        $this->productPromotions->removeElement($productPromotion);
+
+        if ($this->hasProductPromotion($productPromotion)) {
+            $productPromotion->setProduct(null);
+            $this->productPromotions->removeElement($productPromotion);
+        }
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function hasProductPromotion(ProductPromotion $productPromotion)
+    {
+        return $this->productPromotions->contains($productPromotion);
     }
 }

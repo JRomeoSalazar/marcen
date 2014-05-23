@@ -52,6 +52,19 @@
             <argument type="service" id="sylius.repository.promotion" />
             <argument type="service" id="sylius.promotion_eligibility_checker" />
             <argument type="service" id="sylius.promotion_applicator" />
+            <argument type="service" id="sylius.repository.adjustment" />
+            <argument type="service" id="sylius.tax_calculator" />
+            <argument type="service" id="sylius.tax_rate_resolver" />
+            <argument type="service" id="sylius.zone_matcher" />
+            <argument type="service">
+                <service
+                    factory-service="sylius.settings.manager"
+                    factory-method="loadSettings"
+                    class="Sylius\Bundle\SettingsBundle\Model\Settings"
+                >
+                    <argument>taxation</argument>
+                </service>
+            </argument>
         </service>
 
         <service id="sylius.promotion_eligibility_checker" class="%sylius.promotion_eligibility_checker.class%">

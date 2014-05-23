@@ -48,7 +48,7 @@
 
         <one-to-many field="productPromotions" target-entity="Sylius\Component\Core\Model\ProductPromotion" mapped-by="product">
             <cascade>
-                <cascade-persist/>
+                <cascade-persist />
             </cascade>
         </one-to-many>
     </mapped-superclass>

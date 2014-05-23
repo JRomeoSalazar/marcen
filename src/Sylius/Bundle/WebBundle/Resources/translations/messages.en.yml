@@ -444,7 +444,9 @@ sylius:
         options: Options
         price: Retail price
         promotion:
+            0: Product promotions
             add: Add promotion
+            no_promotions: This product has no promotions defined
             delete: Delete promotion
         attributes: Attributes
         restricted_zone: Restricted zone
@@ -460,7 +462,7 @@ sylius:
             options: Options
             product: Product
             attributes: Attributes
-            promotion: Promotion
+            promotion: Product promotions
         tax_category: Tax category
         unavailable: Unavailable
         update_header: Editing product

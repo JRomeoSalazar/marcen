@@ -472,7 +472,9 @@ sylius:
     options: Opciones
     price: Precio
     promotion:
+      0: Promociones de producto
       add: Añadir promoción
+      no_promotions: Este producto no tiene promociones establecidas
       delete: Borrar promoción
     restricted_zone: Zona restringida
     shipping_category: Categoría de envío
@@ -487,7 +489,7 @@ sylius:
       images: Imágenes
       options: Opciones
       product: Producto
-      promotion: Promoción
+      promotion: Promociones de producto
     tax_category: Categoría de impuestos
     unavailable: No disponible
     update_header: Editar producto
