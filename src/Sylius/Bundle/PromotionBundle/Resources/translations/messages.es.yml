@@ -16,16 +16,17 @@ sylius:
         taxons: Taxonomías
         exclude: Excluir
       item_count_configuration:
-        count: Contador
-        equal: Igual
+        count: Número de artículos
+        equal: Igual o superior
       item_total_configuration:
         amount: Cantidad
-        equal: Igual
+        equal: Igual o superior
       nth_order_configuration:
-        nth: Enésimo
+        nth: Número de pedido
       user_loyality_configuration:
-        time: Hora
+        time: Cantidad de tiempo
         unit:
+          0: Unidad
           days: Días
           weeks: Semanas
           months: Meses
@@ -44,6 +45,7 @@ sylius:
     promotion:
       actions: Acciones
       coupon_based: Basado en cupones
+      exclusive: Excluyente
       description: Descripción
       ends_at: Termina el
       name: Nombre

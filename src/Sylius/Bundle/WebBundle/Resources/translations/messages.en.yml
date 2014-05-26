@@ -495,7 +495,13 @@ sylius:
         updated_at: last update
         values: values
     promotion:
-        actions: Actions
+        actions:
+            0: Actions
+            amount: Amount
+            percentage: Percentage
+            variant: Product
+            quantity: Quantity
+            price: Precio
         add_action: Add action
         add_rule: Add rule
         coupon_based: Coupon based?

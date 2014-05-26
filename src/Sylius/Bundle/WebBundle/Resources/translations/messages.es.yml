@@ -522,7 +522,13 @@ sylius:
     updated_at: última actualización
     values: valores
   promotion:
-    actions: Acciones
+    actions:
+      0: Acciones
+      amount: Cantidad
+      percentage: Porcentage
+      variant: Producto
+      quantity: Cantidad
+      price: Precio
     add_action: Añadir acción
     add_rule: Añadir regla
     coupon_based: ¿Basada en cupones?
@@ -532,7 +538,7 @@ sylius:
     description: Descripción
     ends_at: Fecha de fin
     general_info: Información general
-    id: sylius.promotion.id
+    id: Id
     index_header: Promociones actuales
     manage: Gestionar promociones
     name: Nombre
