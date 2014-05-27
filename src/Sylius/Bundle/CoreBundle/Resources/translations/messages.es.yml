@@ -11,7 +11,7 @@ sylius:
       add_product_configuration:
         price: Precio unitario
         quantity: Cantidad
-        variant: Variante
+        variant: Producto
     block:
       body: Cuerpo
       id: ID

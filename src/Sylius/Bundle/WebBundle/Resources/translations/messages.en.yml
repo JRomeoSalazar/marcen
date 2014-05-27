@@ -334,7 +334,7 @@ sylius:
         frontend_title: Sylius, modern ecommerce for Symfony2
     na: N/A
     newest: Newest products
-    no: no
+    no: No
     no_results: sylius.no_results
     order:
         billing_address: Billing address
@@ -495,7 +495,13 @@ sylius:
         updated_at: last update
         values: values
     promotion:
-        actions: Actions
+        actions:
+            0: Actions
+            amount: Amount
+            percentage: Percentage
+            variant: Product
+            quantity: Quantity
+            price: Precio
         add_action: Add action
         add_rule: Add rule
         coupon_based: Coupon based?
@@ -504,24 +510,45 @@ sylius:
         created_at: Created at
         description: Description
         ends_at: Ends at
+        exclusive: Exclusive
         general_info: General Info
         id: ID
         index_header: Current promotions
         manage: Manage promotions
         name: Name
         no_results: There are no promotions configured.
-        rules: Rules
+        priority: Priority
+        rules:
+            0: Rules
+            after: After
+            amount: Amount
+            count: Count
+            country: Country
+            equal: Equal
+            exclude: Exclude
+            nth: Nth
+            taxons: Taxons
+            time: Timeo
+            unit: Unidad
+            unit_config:
+                days: Days
+                months: Months
+                weeks: Weeks
+                years: Years
         show_header: Promotion details
         starts_at: Starts at
         update_header: Editing promotion
         updated_at: Last update
         usage_limit: Usage limit
         used: Used
-        priority: Priority
-        exclusive: Exclusive
     promotion_action:
         configuration: Configuration
-        type: Type
+        type:
+            0: Type
+            add_product: Add product
+            fixed_discount: Fixed discount
+            percentage_discount: Percentage discount
+            shipping_discount: Shipping discount
     promotion_coupon:
         code: Code
         create: Add coupon
@@ -535,7 +562,14 @@ sylius:
         update_header: Editing coupon
     promotion_rule:
         configuration: Configuration
-        type: Type
+        type:
+            0: Type
+            item_count: Item count
+            item_total: Item total
+            nth_order: Nth order
+            shipping_country: Shipping country
+            taxonomy: Taxonomy
+            user_loyality: User loyality
     prototype:
         attributes: Atributos
         build: Build prototype
@@ -705,7 +739,7 @@ sylius:
         sku: SKU
         stock: Current stock
         update_header: Editing variant
-    yes: yes
+    yes: Yes
     zone:
         add_member: Add member
         create: Create zone
