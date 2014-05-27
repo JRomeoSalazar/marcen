@@ -11,7 +11,7 @@ sylius:
       add_product_configuration:
         price: Precio unitario
         quantity: Cantidad
-        variant: Variante
+        variant: Producto
     block:
       body: Cuerpo
       id: ID
@@ -52,6 +52,8 @@ sylius:
     product_filter:
       name: Nombre
       sku: SKU
+    product_promotion:
+      porcentaje: Porcentaje
     settings:
       general:
         currency: Moneda por defecto

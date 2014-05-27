@@ -20,6 +20,8 @@
         <parameter key="sylius.form.frontend.profile.type.class">Sylius\Bundle\WebBundle\Form\ProfileFormType</parameter>
         <parameter key="sylius.form.frontend.registration.type.class">Sylius\Bundle\CoreBundle\Form\Type\RegistrationFormType</parameter>
         <parameter key="sylius.twig.tax_rate_extension.class">Sylius\Bundle\WebBundle\Twig\TaxRateExtension</parameter>
+        <parameter key="sylius.twig.product_promotion_extension.class">Sylius\Bundle\WebBundle\Twig\ProductPromotionExtension</parameter>
+        <parameter key="sylius.twig.promotion_configuration_extension.class">Sylius\Bundle\WebBundle\Twig\SyliusPromotionExtension</parameter>
     </parameters>
 
     <services>
@@ -132,6 +134,19 @@
             </argument>
             <argument type="service" id="sylius.repository.product" />
             <argument type="service" id="sylius.repository.product_variant" />
+            <tag name="twig.extension" />
+        </service>
+        <service id="sylius.twig.product_promotion_extension" class="%sylius.twig.product_promotion_extension.class%">
+            <argument type="service" id="sylius.repository.product" />
+            <argument type="service" id="sylius.repository.product_variant" />
+            <tag name="twig.extension" />
+        </service>
+        <service id="sylius.twig.promotion_configuration_extension" class="%sylius.twig.promotion_configuration_extension.class%">
+            <argument type="service" id="sylius.repository.country" />
+            <argument type="service" id="sylius.repository.taxon" />
+            <argument type="service" id="sylius.repository.product_variant" />
+            <argument type="service" id="translator" />
+            <argument type="service" id="sylius.twig.money" />
             <tag name="twig.extension" />
         </service>
 

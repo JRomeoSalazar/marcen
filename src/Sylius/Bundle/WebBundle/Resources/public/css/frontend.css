@@ -298,14 +298,14 @@ div#product-single h3 {
   font-weight: bold;
   text-transform: uppercase;
 }
-div.offer-corner-png {
+.offer-corner-png {
   position: relative;
   display: inline-block;
 }
-div.offer-corner-png p {
+.offer-corner-png p {
   display: inline;
 }
-div.offer-corner-png p span {
+.offer-corner-png p span {
   font-weight: 900;
   color: white;
   position: absolute;
@@ -322,7 +322,7 @@ div.offer-corner-png p span {
   -ms-transform: rotate(45deg);
   z-index: 2;
 }
-div.offer-corner-png p img {
+.offer-corner-png p img {
   position: absolute;
   display: inline-block;
   right: -4px;

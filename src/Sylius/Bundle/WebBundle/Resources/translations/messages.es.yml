@@ -190,8 +190,8 @@ sylius:
         no_promotion: No se han aplicado promociones
         no_shipping_charges: No se aplican gastos de envío
         no_taxes: Impuestos no aplicados
-        promotion_discount: Descuentos
-        promotion_total: Descuento total
+        promotion_discount: Promociones
+        promotion_total: Descuento por promoción total
         shipping_address: Dirección de envío
         shipping_charges: Envío
         shipping_total: Total del envío
@@ -327,7 +327,7 @@ sylius:
     frontend_title: Sylius, e-commerce moderno para Symfony2
   na: N/A
   newest: Novedades
-  no: no
+  no: No
   no_results: No results
   option:
     create: Añadir opción
@@ -469,8 +469,14 @@ sylius:
     no_sku: '<i>No tiene SKU</i>'
     no_tax_category: Sin categoría de impuestos
     no_taxons: No taxons
+    offer: Oferta
     options: Opciones
     price: Precio
+    promotion:
+      0: Promociones de producto
+      add: Añadir promoción
+      no_promotions: Este producto no tiene promociones establecidas
+      delete: Borrar promoción
     restricted_zone: Zona restringida
     shipping_category: Categoría de envío
     show: Ver más
@@ -484,6 +490,7 @@ sylius:
       images: Imágenes
       options: Opciones
       product: Producto
+      promotion: Promociones de producto
     tax_category: Categoría de impuestos
     unavailable: No disponible
     update_header: Editar producto
@@ -515,7 +522,13 @@ sylius:
     updated_at: última actualización
     values: valores
   promotion:
-    actions: Acciones
+    actions:
+      0: Acciones
+      amount: Cantidad
+      percentage: Porcentage
+      price: Precio
+      quantity: Cantidad
+      variant: Producto
     add_action: Añadir acción
     add_rule: Añadir regla
     coupon_based: ¿Basada en cupones?
@@ -524,13 +537,31 @@ sylius:
     created_at: Fecha de creación
     description: Descripción
     ends_at: Fecha de fin
-    general_info: sylius.promotion.general_info
-    id: sylius.promotion.id
+    exclusive: Excluyente
+    general_info: Información general
+    id: Id
     index_header: Promociones actuales
     manage: Gestionar promociones
     name: Nombre
     no_results: No hay promociones configuradas
-    rules: Reglas
+    priority: Prioridad
+    rules:
+      0: Reglas
+      after: Después de
+      amount: Cantidad
+      count: Número de artículos
+      country: País de envío
+      equal: Igual o superior
+      exclude: Excluir
+      nth: Número de orden
+      taxons: Categorías
+      time: Cantidad de tiempo
+      unit: Unidad
+      unit_config:
+        days: Días
+        months: Meses
+        weeks: Semanas
+        years: Años
     show_header: Detalles de la promoción
     starts_at: Fecha de inicio
     update_header: Editar promoción
@@ -539,7 +570,12 @@ sylius:
     used: promoción utilizado
   promotion_action:
     configuration: Configuración
-    type: Tipo
+    type:
+        0: Tipo
+        add_product: Añadir producto
+        fixed_discount: Descuento fijo
+        percentage_discount: Porcentage de descuento
+        shipping_discount: Descuento de envío
   promotion_coupon:
     create: Añadir cupón
     create_header: Crear nuevo cupón
@@ -553,7 +589,15 @@ sylius:
     update_header: Editar cupón
   promotion_rule:
     configuration: configuración
-    type: Tipo
+    type:
+      0: Tipo
+      item_count: Número de artículos
+      item_total: Total de artículos
+      nth_order: Número de orden
+      shipping_country: País de envío
+      taxonomy: Categoría
+      user_loyality: Fidelidad de usuario
+
   prototype:
     attributes: Atributos
     build: Construir
@@ -724,7 +768,7 @@ sylius:
     sku: SKU
     stock: Stock actual
     update_header: Editar variante
-  "yes": Sí
+  yes: Sí
   zone:
     add_member: Añadir miembro
     create: Crear zona

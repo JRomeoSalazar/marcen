@@ -23,6 +23,7 @@ sylius:
             user_loyality_configuration:
                 time: Time
                 unit:
+                    0: Unit
                     days: Days
                     weeks: Weeks
                     months: Months

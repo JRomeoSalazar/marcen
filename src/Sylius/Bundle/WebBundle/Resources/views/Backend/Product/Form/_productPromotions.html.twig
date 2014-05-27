@@ -1,0 +1,43 @@
+{% form_theme form 'SyliusWebBundle::forms.html.twig' %}
+
+{% macro productPromotionPrototype() %}
+<div id="sylius_product_productPromotions___name__" class="row">
+	<div class="col-lg-5">
+		<div class="form-group">
+			<label class="control-label col-lg-2 required" for="sylius_product_productPromotions___name___porcentaje">{{ 'sylius.form.product_promotion.porcentaje'|trans }}</label>
+			<div class="col-lg-10">
+				<input type="number" id="sylius_product_productPromotions___name___porcentaje" name="sylius_product[productPromotions][__name__][porcentaje]" required="required" class="form-control" />
+			</div>
+		</div>
+	</div>
+    <div class="col-lg-2 col-lg-offset-5">
+        <a href="#" class="btn btn-danger" data-collection-button="delete" data-id="sylius_product_productPromotions___name__" data-collection="sylius_product_productPromotions"><i class="glyphicon glyphicon-trash"></i>&nbsp;{{ 'sylius.product.promotion.delete'|trans }}</a>
+    </div>
+</div>
+{% endmacro %}
+
+<div class="tab-pane" id="productPromotions">
+   <div id="sylius_product_productPromotions" class="collection-container" data-prototype="{{ _self.productPromotionPrototype()|e }}">
+   		{% for productPromotionForm in form.productPromotions %}
+            <div id="{{ productPromotionForm.vars.id }}" class="row">
+				<div class="col-lg-5">
+					<div class="form-group">
+						<label class="control-label col-lg-2 required" for="{{ productPromotionForm.porcentaje.vars.id }}">
+							{{ productPromotionForm.porcentaje.vars.label|trans }}
+						</label>
+						<div class="col-lg-10">
+							{{ form_widget(productPromotionForm.porcentaje) }}
+						</div>
+					</div>
+				</div>
+			    <div class="col-lg-2 col-lg-offset-5">
+			        <a href="#" class="btn btn-danger" data-collection-button="delete" data-id="{{ productPromotionForm.vars.id }}" data-collection="sylius_product_productPromotions"><i class="glyphicon glyphicon-trash"></i>&nbsp;{{ 'sylius.product.promotion.delete'|trans }}</a>
+			    </div>
+			</div>
+        {% endfor %}
+   </div>
+   <hr>
+    <a href="#" class="btn btn-success btn-block" data-collection-button="add" data-prototype="sylius_product_productPromotions" data-collection="sylius_product_productPromotions">
+        {{ 'sylius.product.promotion.add'|trans }}
+    </a>
+</div>
