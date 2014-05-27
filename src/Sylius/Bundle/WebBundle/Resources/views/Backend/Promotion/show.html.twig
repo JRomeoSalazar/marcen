@@ -1,7 +1,7 @@
 {% extends 'SyliusWebBundle:Backend:layout.html.twig' %}
 
 {% import 'SyliusResourceBundle:Macros:buttons.html.twig' as buttons %}
-{% from 'SyliusWebBundle:Backend/Promotion:macros.html.twig' import configuration %}
+{% from 'SyliusWebBundle:Backend/Promotion:macros.html.twig' import rule_configuration, action_configuration %}
 
 {% block topbar %}
 <ol class="breadcrumb">
@@ -95,11 +95,11 @@
 <div class="row">
     <div class="col-md-6">
         {% if promotion.hasRules %}
-        <h4>{{ 'sylius.promotion.rules'|trans }}</h4>
+        <h4>{{ 'sylius.promotion.rules.0'|trans }}</h4>
         <table id="rules" class="table table-condensed">
             <thead>
                 <tr>
-                    <th>{{ 'sylius.promotion_rule.type'|trans }}</th>
+                    <th>{{ 'sylius.promotion_rule.type.0'|trans }}</th>
                     <th>{{ 'sylius.promotion_rule.configuration'|trans }}</th>
                     <th></th>
                 </tr>
@@ -107,8 +107,8 @@
             <tbody>
                 {% for rule in promotion.rules %}
                     <tr id="{{ rule.id }}">
-                        <td><span class="label label-info">{{ rule.type|capitalize|replace('_', ' ') }}</span></td>
-                        <td>{{ configuration(rule.configuration) }}</td>
+                        <td><span class="label label-info">{{ ('sylius.promotion_rule.type.' ~ rule.type)|trans }}</span></td>
+                        <td>{{ rule_configuration(rule) }}</td>
                         <td>
                             <div class="btn-group pull-right">
                                 {{ buttons.delete(path('sylius_backend_promotion_rule_delete', {'id': rule.id, 'promotionId': promotion.id})) }}
@@ -126,7 +126,7 @@
         <table id="actions" class="table table-condensed">
             <thead>
                 <tr>
-                    <th>{{ 'sylius.promotion_action.type'|trans }}</th>
+                    <th>{{ 'sylius.promotion_action.type.0'|trans }}</th>
                     <th>{{ 'sylius.promotion_action.configuration'|trans }}</th>
                     <th></th>
                 </tr>
@@ -134,8 +134,8 @@
             <tbody>
                 {% for action in promotion.actions %}
                     <tr id="{{ action.id }}">
-                        <td><span class="label label-info">{{ action.type|capitalize|replace('_', ' ') }}</span></td>
-                        <td>{{ configuration(action.configuration) }}</td>
+                        <td><span class="label label-info">{{ ('sylius.promotion_action.type.' ~ action.type)|trans }}</span></td>
+                        <td>{{ action_configuration(action) }}</td>
                         <td>
                             <div class="btn-group pull-right">
                                 {{ buttons.delete(path('sylius_backend_promotion_action_delete', {'id': action.id, 'promotionId': promotion.id})) }}

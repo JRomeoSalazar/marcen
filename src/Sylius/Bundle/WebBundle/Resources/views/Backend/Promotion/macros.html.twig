@@ -71,12 +71,23 @@
 
 {% endmacro %}
 
-{% macro configuration(configuration) %}
+{% macro rule_configuration(rule) %}
 
 <ul class="list-unstyled">
-{% for key, value in configuration %}
+{% for key, value in rule.configuration %}
     {% set value = value is sameas(false) ? '0' : value|join(', ') %}
-    <li><strong>{{ key|humanize }}</strong>: {{ value }}</li>
+    <li><strong>{{ ('sylius.promotion.rules.' ~ key)|trans }}</strong>: {{ sylius_rule_configuration(key, value, rule.type)|raw }}</li>
+{% endfor %}
+</ul>
+
+{% endmacro %}
+
+{% macro action_configuration(action) %}
+
+<ul class="list-unstyled">
+{% for key, value in action.configuration %}
+    {% set value = value is sameas(false) ? '0' : value|join(', ') %}
+    <li><strong>{{ ('sylius.promotion.actions.' ~ key)|trans }}</strong>: {{ sylius_action_configuration(key, value, action.type)|raw }}</li>
 {% endfor %}
 </ul>
 
