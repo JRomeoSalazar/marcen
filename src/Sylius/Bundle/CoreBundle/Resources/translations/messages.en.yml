@@ -44,7 +44,10 @@ sylius:
             shipping_category: Shipping category
             short_description: Short description
             tax_category: Tax category
-            variant_selection_method: Variant selection method
+            variant_selection_method:
+                0: Variant selection method
+                choice: Variant choice
+                match: Options matching
         product_filter:
             name: Name
             sku: SKU

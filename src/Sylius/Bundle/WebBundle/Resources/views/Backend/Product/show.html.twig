@@ -215,7 +215,7 @@
         {{ buttons.manage(path('sylius_backend_product_variant_generate', {'productId': product.id}), 'sylius.product.generate_variants'|trans) }}
     {% endif %}
     <div class="pull-right">
-        <strong>{{ 'sylius.product.variant_selection_method'|trans }}</strong>: {{ product.variantSelectionMethodLabel }}
+        <strong>{{ 'sylius.product.variant_selection_method.0'|trans }}</strong>: {{ ('sylius.product.variant_selection_method.' ~ product.variantSelectionMethod)|trans }}
     </div>
 </div>
 {% endif %}

@@ -3,4 +3,11 @@ sylius:
     attribute:
       name: Internal name
       presentation: Presentation
-      type: Type
+      type:
+       0: Type
+       checkbox: Checkbox
+       choice: Choice
+       money: Money
+       number: Number
+       percent: Percentage
+       text: Text

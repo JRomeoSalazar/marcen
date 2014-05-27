@@ -28,12 +28,12 @@ class AttributeTypes
     public static function getChoices()
     {
         return array(
-            self::CHECKBOX   => 'Checkbox',
-            self::CHOICE     => 'Choice',
-            self::MONEY      => 'Money',
-            self::NUMBER     => 'Number',
-            self::PERCENTAGE => 'Percentage',
-            self::TEXT       => 'Text',
+            self::CHECKBOX,
+            self::CHOICE,
+            self::MONEY,
+            self::NUMBER,
+            self::PERCENTAGE,
+            self::TEXT,
         );
     }
 }

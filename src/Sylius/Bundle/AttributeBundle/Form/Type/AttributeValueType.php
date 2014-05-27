@@ -49,9 +49,9 @@ class AttributeValueType extends AbstractType
     /**
      * Constructor.
      *
-     * @param string $subjectName
-     * @param string $dataClass
-     * @param array  $validationGroups
+     * @param string               $subjectName
+     * @param string               $dataClass
+     * @param array                $validationGroups
      */
     public function __construct($subjectName, $dataClass, array $validationGroups)
     {
@@ -65,8 +65,9 @@ class AttributeValueType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+
         $builder
-            ->add('attribute', sprintf('sylius_%s_attribute_choice', $this->subjectName))
+            ->add('attribute', sprintf('sylius_%s_attribute_choice', $this->subjectName), array('label' => 'sylius.product_attribute.0'))
             ->addEventSubscriber(new BuildAttributeValueFormListener($builder->getFormFactory()))
         ;
 

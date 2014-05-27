@@ -16,6 +16,7 @@ use Sylius\Component\Attribute\Model\AttributeTypes;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\Translation\TranslatorInterface;
 
 /**
  * Attribute type.
@@ -47,17 +48,26 @@ class AttributeType extends AbstractType
     protected $validationGroups;
 
     /**
+     * Translator
+     * 
+     * @var TranslatorInterface
+     */
+    protected $translator;
+
+    /**
      * Constructor.
      *
-     * @param string $subjectName
-     * @param string $dataClass
-     * @param array  $validationGroups
+     * @param string               $subjectName
+     * @param string               $dataClass
+     * @param array                $validationGroups
+     * @param TranslatorInterface  $translator
      */
-    public function __construct($subjectName, $dataClass, array $validationGroups)
+    public function __construct($subjectName, $dataClass, array $validationGroups, TranslatorInterface $translator)
     {
         $this->subjectName = $subjectName;
         $this->dataClass = $dataClass;
         $this->validationGroups = $validationGroups;
+        $this->translator = $translator;
     }
 
     /**
@@ -65,6 +75,11 @@ class AttributeType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        $labels = array();
+        foreach (AttributeTypes::getChoices() as $label) {
+            $labels[] = $this->translator->trans(('sylius.form.attribute.type.'.$label));
+        }
+
         $builder
             ->add('name', 'text', array(
                 'label' => 'sylius.form.attribute.name'
@@ -73,8 +88,8 @@ class AttributeType extends AbstractType
                 'label' => 'sylius.form.attribute.presentation'
             ))
             ->add('type', 'choice', array(
-                'choices' => AttributeTypes::getChoices(),
-                'label' => 'sylius.form.attribute.type'
+                'choices' => $labels,
+                'label' => 'sylius.form.attribute.type.0'
             ))
             ->addEventSubscriber(new BuildAttributeFormChoicesListener($builder->getFormFactory()))
         ;

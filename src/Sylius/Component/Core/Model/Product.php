@@ -289,8 +289,8 @@ class Product extends BaseProduct implements ProductInterface
     public static function getVariantSelectionMethodLabels()
     {
         return array(
-            self::VARIANT_SELECTION_CHOICE => 'Variant choice',
-            self::VARIANT_SELECTION_MATCH  => 'Options matching',
+            self::VARIANT_SELECTION_CHOICE => self::VARIANT_SELECTION_CHOICE,
+            self::VARIANT_SELECTION_MATCH => self::VARIANT_SELECTION_MATCH,
         );
     }
 
