@@ -15,6 +15,7 @@ use Sylius\Bundle\ResourceBundle\DependencyInjection\AbstractResourceExtension;
 use Sylius\Bundle\ResourceBundle\SyliusResourceBundle;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
+use Symfony\Component\DependencyInjection\Reference;
 
 /**
  * Sylius attributes system extension.
@@ -91,7 +92,7 @@ class SyliusAttributeExtension extends AbstractResourceExtension
 
         $attributeFormType = new Definition($attributeClasses['form']);
         $attributeFormType
-            ->setArguments(array($subject, $attributeClasses['model'], '%sylius.validation_group.'.$attributeAlias.'%'))
+            ->setArguments(array($subject, $attributeClasses['model'], '%sylius.validation_group.'.$attributeAlias.'%', new Reference('translator')))
             ->addTag('form.type', array('alias' => 'sylius_'.$attributeAlias))
         ;
 

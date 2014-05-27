@@ -6,7 +6,14 @@ sylius:
     attribute:
       name: Nombre interno
       presentation: Presentación
-      type: Tipo
+      type:
+       0: Tipo
+       checkbox: Casilla de verificación
+       choice: Campo de elección
+       money: Moneda
+       number: Número
+       percent: Porcentage
+       text: Texto
     product:
       name: Nombre
       description: Descripción

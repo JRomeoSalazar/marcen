@@ -61,7 +61,7 @@ class BuildAttributeValueFormListener implements EventSubscriberInterface
         $form = $event->getForm();
 
         if (null === $attributeValue) {
-            $form->add($this->factory->createNamed('value', 'text', null, array('auto_initialize' => false)));
+            $form->add($this->factory->createNamed('value', 'text', null, array('auto_initialize' => false, 'label' => 'sylius.product_attribute.value')));
 
             return;
         }

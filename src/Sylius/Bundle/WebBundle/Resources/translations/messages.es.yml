@@ -495,9 +495,13 @@ sylius:
     unavailable: No disponible
     update_header: Editar producto
     updated_at: Última actualización
-    variant_selection_method: Método de selección de la variante
+    variant_selection_method:
+      0: Método de selección de la variante
+      choice: Elección de la variante
+      match: Concordancia de opciones
     view_details: 'Ver detalles de %product%.'
   product_attribute:
+    0: Atributo
     add_choice: añadir elección
     create: Crear atributo de producto
     create_header: Nuevo atributo
@@ -509,6 +513,7 @@ sylius:
     type: Tipo
     update_header: actualizar encabezado
     updated_at: Última actualización
+    value: Valor
   product_not_available_in_zone: No disponible en su país
   product_option:
     create: Crear opción

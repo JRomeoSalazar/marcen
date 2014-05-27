@@ -48,7 +48,10 @@ sylius:
       shipping_category: Categoría de envío
       short_description: Breve descripción
       tax_category: Categoría del impuesto
-      variant_selection_method: Método de selección variante
+      variant_selection_method:
+        0: Método de selección variante
+        choice: Elección de la variante
+        match: Concordacia de opciones
     product_filter:
       name: Nombre
       sku: SKU

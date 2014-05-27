@@ -11,6 +11,13 @@ sylius:
     code:
       not_blank: Por favor introduzca el código del idioma.
       unique: Este idioma ya existe.
+  product_variant:
+    onHand:
+      min: 'Las existencias deben ser mayores que {{ limit }}.'
+      not_blank: Por favor introduzca las existencias.
+    price:
+      min: El precio no puede ser negativo.
+      not_blank: Por favor introduzca el precio.
   user:
     disclaimer:
       is_true: Debe aceptar el Aviso Legal
@@ -22,13 +29,6 @@ sylius:
       max: 'Los apellidos no deben tener más de {{ limit }} caracteres.'
       min: 'Los apellidos deben tener al menos {{ limit }} caracteres.'
       not_blank: Por favor introduzca sus apellidos.
-  variant:
-    onHand:
-      min: 'Las existencias deben ser mayores que {{ limit }}.'
-      not_blank: Por favor introduzca las existencias.
-    price:
-      min: El precio no puede ser negativo.
-      not_blank: Por favor introduzca el precio.
 sylius_shipping:
   method:
     zone:
