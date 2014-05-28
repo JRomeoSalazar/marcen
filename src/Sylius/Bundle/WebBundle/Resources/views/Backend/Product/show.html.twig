@@ -155,10 +155,10 @@
         {% endif %}
 
         <hr>
-        <table class="table table-bordered">
+        <table class="table">
             <thead>
                 <tr>
-                    <th colspan="2">{{ 'sylius.product.attributes'|trans }}</th>
+                    <th colspan="3">{{ 'sylius.product.attributes'|trans }}</th>
                 </tr>
             </thead>
             <tbody>
@@ -166,6 +166,7 @@
                 <tr>
                     <td><strong>{{ attribute.name }}</strong></td>
                     <td>{{ attribute.value }}</td>
+                    <td style="text-align:right">{{ buttons.delete(path('sylius_backend_product_attribute_value_delete', {'id': attribute.id, 'productId':product.id})) }}</td>
                 </tr>
                 {% else %}
                 <tr>
