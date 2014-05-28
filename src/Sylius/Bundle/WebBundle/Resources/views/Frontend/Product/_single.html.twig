@@ -1,7 +1,7 @@
 <div class="row product" id="product-single">
     <div class="col-md-3">
         <a href="{{ path('sylius_product_show', {'slug': product.slug}) }}" class="thumbnail {% if product.hasProductPromotions %}offer-corner-png{% endif %}">
-            <img src="{{ product.image ? product.image.path|imagine_filter('sylius_product_box') : 'http://placehold.it/200x200' }}" alt="{{ product.name }}" />
+            <img src="{{ product.image ? product.image.path|imagine_filter('sylius_product_box') : 'http://placehold.it/262x151' }}" alt="{{ product.name }}" />
             {% if product.hasProductPromotions %}
                 <p><span>{{ 'sylius.product.offer'|trans }}</span><img src="{{ asset('bundles/syliusweb/img/offer-ribbon.png') }}" alt="offer ribbon" /></p>
             {% endif %}
@@ -19,7 +19,7 @@
                 <br />
                 <span class="label label-important">{{ 'sylius.out_of_stock'|trans }}</span>
             {% else %}
-                <form action="{{ path('sylius_cart_item_add', {'id': product.id}) }}" method="post" class="clearfix">
+                <form action="{{ path('sylius_cart_item_add', {'id': product.id}) }}" method="post" class="product-single clearfix">
                     {% set form = sylius_cart_form({'product': product}) %}
                     {{ form_widget(form.quantity, {'attr': {'class': 'center-text'}, 'empty_value': '1'}) }}
                     {{ form_widget(form._token) }}
@@ -28,6 +28,9 @@
             {% endif %}
             </div>
         {% endif %}
-        <a href="{{ path('sylius_product_show', {'slug': product.slug}) }}" class="btn btn-lg btn-merida pull-right">{{ 'sylius.product.show'|trans }}</a>
+        <a href="{{ path('sylius_product_show', {'slug': product.slug}) }}" class="btn btn-merida pull-right">
+            <i class="icon-eye-open icon-white"></i>
+            {{ 'sylius.product.show'|trans }}
+        </a>
     </div>
 </div>
