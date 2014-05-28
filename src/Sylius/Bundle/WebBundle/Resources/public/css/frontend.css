@@ -64,6 +64,72 @@ a.btn-special .badge {
   color: #fb9e25;
   background-color: #ffffff;
 }
+button.btn-merida,
+a.btn-merida {
+  color: #ffffff;
+  background-color: #91c300;
+  border-color: #7fab00;
+}
+button.btn-merida:hover,
+a.btn-merida:hover,
+button.btn-merida:focus,
+a.btn-merida:focus,
+button.btn-merida:active,
+a.btn-merida:active,
+button.btn-merida.active,
+a.btn-merida.active,
+.open .dropdown-togglebutton.btn-merida,
+.open .dropdown-togglea.btn-merida {
+  color: #ffffff;
+  background-color: #739a00;
+  border-color: #526e00;
+}
+button.btn-merida:active,
+a.btn-merida:active,
+button.btn-merida.active,
+a.btn-merida.active,
+.open .dropdown-togglebutton.btn-merida,
+.open .dropdown-togglea.btn-merida {
+  background-image: none;
+}
+button.btn-merida.disabled,
+a.btn-merida.disabled,
+button.btn-merida[disabled],
+a.btn-merida[disabled],
+fieldset[disabled] button.btn-merida,
+fieldset[disabled] a.btn-merida,
+button.btn-merida.disabled:hover,
+a.btn-merida.disabled:hover,
+button.btn-merida[disabled]:hover,
+a.btn-merida[disabled]:hover,
+fieldset[disabled] button.btn-merida:hover,
+fieldset[disabled] a.btn-merida:hover,
+button.btn-merida.disabled:focus,
+a.btn-merida.disabled:focus,
+button.btn-merida[disabled]:focus,
+a.btn-merida[disabled]:focus,
+fieldset[disabled] button.btn-merida:focus,
+fieldset[disabled] a.btn-merida:focus,
+button.btn-merida.disabled:active,
+a.btn-merida.disabled:active,
+button.btn-merida[disabled]:active,
+a.btn-merida[disabled]:active,
+fieldset[disabled] button.btn-merida:active,
+fieldset[disabled] a.btn-merida:active,
+button.btn-merida.disabled.active,
+a.btn-merida.disabled.active,
+button.btn-merida[disabled].active,
+a.btn-merida[disabled].active,
+fieldset[disabled] button.btn-merida.active,
+fieldset[disabled] a.btn-merida.active {
+  background-color: #91c300;
+  border-color: #7fab00;
+}
+button.btn-merida .badge,
+a.btn-merida .badge {
+  color: #91c300;
+  background-color: #ffffff;
+}
 body {
   background-color: #ececec;
   padding-top: 75px;
@@ -155,7 +221,7 @@ div#main {
   margin-bottom: 3em;
 }
 div#sidebar div.panel-contact {
-  border-color: #6b9000;
+  border-color: #7fab00;
   background-color: #91c300;
 }
 div#sidebar div.panel-contact > .panel-heading {
@@ -164,16 +230,20 @@ div#sidebar div.panel-contact > .panel-heading {
   border-color: #dddddd;
 }
 div#sidebar div.panel-contact > .panel-heading + .panel-collapse .panel-body {
-  border-top-color: #6b9000;
+  border-top-color: #7fab00;
 }
 div#sidebar div.panel-contact > .panel-footer + .panel-collapse .panel-body {
-  border-bottom-color: #6b9000;
+  border-bottom-color: #7fab00;
 }
 div#sidebar div.panel-contact div.panel-body p {
-  font-weight: bold;
+  color: white;
 }
 div#sidebar div.panel-contact div.panel-body p:last-child {
   margin-bottom: 0px;
+}
+div#sidebar div.panel-contact div.panel-body p a,
+div#sidebar div.panel-contact div.panel-body p a:hover {
+  color: white;
 }
 div#sidebar ul {
   /* general */
