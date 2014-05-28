@@ -271,6 +271,10 @@ div.product-box a h4 {
   text-transform: uppercase;
   text-align: center;
 }
+form.product-single input {
+  display: inline-block;
+  width: auto;
+}
 .offer-corner-png {
   position: relative;
   display: inline-block;

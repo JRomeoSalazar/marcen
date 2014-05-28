@@ -19,7 +19,7 @@
                 <br />
                 <span class="label label-important">{{ 'sylius.out_of_stock'|trans }}</span>
             {% else %}
-                <form action="{{ path('sylius_cart_item_add', {'id': product.id}) }}" method="post" class="clearfix">
+                <form action="{{ path('sylius_cart_item_add', {'id': product.id}) }}" method="post" class="product-single clearfix">
                     {% set form = sylius_cart_form({'product': product}) %}
                     {{ form_widget(form.quantity, {'attr': {'class': 'center-text'}, 'empty_value': '1'}) }}
                     {{ form_widget(form._token) }}
@@ -28,6 +28,9 @@
             {% endif %}
             </div>
         {% endif %}
-        <a href="{{ path('sylius_product_show', {'slug': product.slug}) }}" class="btn btn-lg btn-info pull-right">{{ 'sylius.product.show'|trans }}</a>
+        <a href="{{ path('sylius_product_show', {'slug': product.slug}) }}" class="btn btn-info pull-right">
+            <i class="icon-eye-open icon-white"></i>
+            {{ 'sylius.product.show'|trans }}
+        </a>
     </div>
 </div>
