@@ -81,7 +81,8 @@ class TaxRateExtension extends \Twig_Extension
 
         $rate = $this->taxRateResolver->resolve($producto, array('zone' => $zone));
 
-        return $amount = $amount + $amount*$rate->getAmount();
+        if( isset($rate) ) return $amount = $amount + $amount*$rate->getAmount();
+        else return $amount;
     }
 
     public function getName()
