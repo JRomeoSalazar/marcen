@@ -10,7 +10,7 @@
     <div class="col-md-9">
         <a href="{{ path('sylius_product_show', {'slug': product.slug}) }}" class="nounderline"><h3>{{ product.name }}</h3></a>
         <h4><span class="label label-primary">{{ sylius_calculate_price(product)|product_promotion(product.id)|tax_rate(product.id)|sylius_price }}</span></h4>
-        <p>{{ product.shortDescription|default('sylius.product.no_description'|trans)|raw }}</p>
+        {% if product.shortDescription %}<p>{{ product.shortDescription }}</p>{% endif %}
 
         <hr>
         {% if not product.hasOptions %}
