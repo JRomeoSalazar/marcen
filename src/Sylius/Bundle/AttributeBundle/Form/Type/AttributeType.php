@@ -77,7 +77,7 @@ class AttributeType extends AbstractType
     {
         $labels = array();
         foreach (AttributeTypes::getChoices() as $label) {
-            $labels[] = $this->translator->trans(('sylius.form.attribute.type.'.$label));
+            $labels[$label] = $this->translator->trans(('sylius.form.attribute.type.'.$label));
         }
 
         $builder
