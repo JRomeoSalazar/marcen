@@ -21,6 +21,7 @@
     </thead>
     <tbody>
     {% for variant in variants %}
+        {% if not variant.isDeleted %}
         {% set product = variant.product %}
         <tr id="{{ variant.id }}">
             <td>{{ variant.id }}</td>
@@ -54,6 +55,7 @@
                 </div>
             </td>
         </tr>
+        {% endif %}
     {% endfor %}
     </tbody>
 </table>
