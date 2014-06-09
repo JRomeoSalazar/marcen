@@ -48,7 +48,7 @@ class ProductType extends BaseProductType
 
         $labels = array();
         foreach (Product::getVariantSelectionMethodLabels() as $label) {
-            $labels[] = $this->translator->trans(('sylius.form.product.variant_selection_method.'.$label));
+            $labels[$label] = $this->translator->trans(('sylius.form.product.variant_selection_method.'.$label));
         }
 
         $builder
