@@ -67,7 +67,7 @@ class TaxRateExtension extends \Twig_Extension
 
     public function taxRateFilter($amount, $itemId, $item = "product")
     {
-        $item == "product" ? $producto = $this->productRepository->find($itemId) : $producto = $this->variantRepository->find($itemId);
+        $item == "product" ? $producto = $this->productRepository->find($itemId) : $producto = $this->variantRepository->find($itemId)->getProduct();
         if (!isset($producto)) {
             return $amount;
         }

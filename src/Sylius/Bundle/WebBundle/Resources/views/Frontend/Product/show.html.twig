@@ -83,7 +83,7 @@
                             {% endif %}
                         </td>
                         <td>
-                            <span class="label label-success">{{ sylius_calculate_price(variant)|product_promotion(variant.id, 'variant')|tax_rate(variant.id)|sylius_price }}</span>
+                            <span class="label label-success">{{ sylius_calculate_price(variant)|product_promotion(variant.id, 'variant')|tax_rate(variant.id, 'variant')|sylius_price }}</span>
                         </td>
                         <td>
                         {% if sylius_inventory_is_available(variant) %}
