@@ -51,7 +51,8 @@ class ProductType extends AbstractType
                 'label' => 'sylius.form.product.name'
             ))
             ->add('description', 'textarea', array(
-                'label' => 'sylius.form.product.description'
+                'label' => 'sylius.form.product.description',
+                'attr' => array('class' => 'tinymce')
             ))
             ->add('masterVariant', 'sylius_product_variant', array(
                 'master' => true,
