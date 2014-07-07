@@ -10,6 +10,7 @@
 %}
     <script type="text/javascript" src="{{ asset_url }}"></script>
 {% endjavascripts %}
+{{ tinymce_init() }}
 {% endblock %}
 
 {% block topbar %}
@@ -33,4 +34,3 @@
 </form>
 {% endblock %}
 
-{{ tinymce_init() }}
