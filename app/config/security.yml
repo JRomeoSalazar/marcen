@@ -46,7 +46,7 @@ security:
             oauth:
                 resource_owners:
                     #amazon:   "/login/check-amazon"
-                    facebook: "/login/check-facebook"
+                    #facebook: "/login/check-facebook"
                     #google:   "/login/check-google"
                 login_path:   /connect
                 failure_path: /connect
