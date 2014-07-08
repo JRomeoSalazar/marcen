@@ -280,6 +280,7 @@ sylius:
     frontend:
         close: Close
         disclaimer: Disclaimer
+        quienes_somos: About Ciclos Marcen
     gallery:
         next: Next
         previous: Previous
