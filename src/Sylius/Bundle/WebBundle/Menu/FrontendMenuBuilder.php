@@ -386,6 +386,12 @@ class FrontendMenuBuilder extends MenuBuilder
             'labelAttributes' => array('icon' => 'icon-fixed-width icon-home icon-large', 'iconOnly' => false)
         ))->setLabel('C/Reina Fabiola, 20');
 
+        $menu->addChild('quienes_somos', array(
+            'route' => 'sylius_quienes_somos',
+            'linkAttributes' => array('title' => 'Sobre Ciclos Marcen'),
+            'labelAttributes' => array('icon' => 'icon-fixed-width icon-info-sign icon-large', 'iconOnly' => false)
+        ))->setLabel('Sobre Ciclos Marcen');
+
         return $menu;
     }
 

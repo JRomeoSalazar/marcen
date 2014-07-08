@@ -273,6 +273,7 @@ sylius:
   frontend:
     close: Cerrar
     disclaimer: Aviso Legal
+    quienes_somos: Sobre Ciclos Marcen
   gallery:
     next: Siguiente
     previous: Anterior

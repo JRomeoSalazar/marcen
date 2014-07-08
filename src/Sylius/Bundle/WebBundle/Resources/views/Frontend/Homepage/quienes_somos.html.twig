@@ -1,0 +1,15 @@
+{% extends 'SyliusWebBundle:Frontend:layout.html.twig' %}
+
+{% block main %}
+<hr>
+{# Sobre Ciclos Marcen #}
+<h3>{{ 'sylius.frontend.quienes_somos'|trans|upper }}</h3>
+<div class="text-justify">
+	<p><strong>Ciclos Marcen</strong> es una empresa cuya tradición se remonta 20 años atrás. Fué la primera tienda monomarca en España especializada en Merida Bikes cuando aquí muy poca gente la conocía.</p>
+	<p>Apostamos desde entonces por esta marca internacional ya que sabíamos de la trayectoria de la emrpesa y la calidad de sus productos. El tiempo nos ha dado la razón.</p>
+	<p>Nuestro único objetivo ha sido siempre dar el mejor servicio.</p>
+</div>
+<div class="brand-img">
+	<img src="{{ asset('bundles/syliusweb/img/web/ciclos_marcen.jpg') }}" alt="Tienda Ciclos Marcen" />
+</div>
+{% endblock %}

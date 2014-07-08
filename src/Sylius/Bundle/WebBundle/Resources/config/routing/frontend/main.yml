@@ -5,6 +5,12 @@ sylius_homepage:
     pattern: /
     defaults: { _controller: sylius.controller.frontend.homepage:mainAction }
 
+sylius_quienes_somos:
+    pattern:  /quienes-somos
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template: SyliusWebBundle:Frontend/Homepage:quienes_somos.html.twig
+
 sylius_disclaimer:
     pattern:  /disclaimer
     defaults:
