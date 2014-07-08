@@ -116,11 +116,13 @@ class SyliusPromotionExtension extends \Twig_Extension
                     $taxons_ids = explode(', ', $value);
                     foreach ($taxons_ids as $taxon_id ) {
                         $taxon = $this->taxonRepository->find($taxon_id);
-                        if (isset($taxons)) {
-                            $taxons = $taxons." <span class='label label-default'>".$taxon->getName()."</span>";
-                        }
-                        else {
-                            $taxons = "<span class='label label-default'>".$taxon->getName()."</span>";
+                        if (null !== $taxon) {
+                            if (isset($taxons)) {
+                                $taxons = $taxons." <span class='label label-default'>".$taxon->getName()."</span>";
+                            }
+                            else {
+                                $taxons = "<span class='label label-default'>".$taxon->getName()."</span>";
+                            }
                         }
                     }
                     return $taxons;
