@@ -108,7 +108,9 @@ class SyliusPromotionExtension extends \Twig_Extension
                 break;
 
             case 'shipping_country':
-                return $this->countryRepository->find($value)->getName();
+                $country = $this->countryRepository->find($value);
+                if (null !== $country) return $country->getName();
+                else return "";
                 break;
 
             case 'taxonomy':
@@ -125,7 +127,10 @@ class SyliusPromotionExtension extends \Twig_Extension
                             }
                         }
                     }
-                    return $taxons;
+                    if (isset($taxons)) {
+                        return $taxons;
+                    }
+                    else return "";
                 }
                 else {
                     if ($value) return $this->translator->trans('sylius.yes');
