@@ -192,7 +192,6 @@ class PromotionProcessor implements PromotionProcessorInterface
                 }
 
                 foreach ($promotions as $description => $productPromotion) {
-
                     // Obtenemos la cantidad a descontar
                     $amount = $productPromotion['amount'];
                     $amount *= -1;
@@ -203,7 +202,13 @@ class PromotionProcessor implements PromotionProcessorInterface
                     $adjustment->setLabel(OrderInterface::PROMOTION_ADJUSTMENT);
                     $adjustment->setDescription($description);
 
-                    $subject->addAdjustment($adjustment);
+                    /*** Comprobamos que la promoción no se haya añadido ya ***/
+                    $sw = 1;
+                    foreach ($subject->getPromotionAdjustments() as $promocion_actual) {
+                        if ($promocion_actual->getDescription() == $description) $sw = 0;
+                    }
+
+                    if ($sw) $subject->addAdjustment($adjustment);
                 }
             }
         }
