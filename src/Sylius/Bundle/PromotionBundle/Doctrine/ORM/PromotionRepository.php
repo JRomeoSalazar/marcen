@@ -40,6 +40,44 @@ class PromotionRepository extends EntityRepository implements PromotionRepositor
         ;
     }
 
+    /**
+     * {@inheritdoc}
+     */
+    public function findTaxonomyActive()
+    { 
+        $date = new \Datetime();
+
+        $qb = $this
+            ->createQueryBuilder($this->getAlias())
+            ->leftJoin($this->getAlias().'.rules', 'rules')
+            ->where('rules.type=:type');
+
+        $qb = $qb
+            ->andWhere(
+                $qb->expr()->orX(
+                    $qb->expr()->isNull($this->getAlias().'.startsAt'),
+                    $qb->expr()->lt($this->getAlias().'.startsAt', ':date')
+                )
+            )
+            ->andWhere(
+                $qb->expr()->orX(
+                    $qb->expr()->isNull($this->getAlias().'.endsAt'),
+                    $qb->expr()->gt($this->getAlias().'.endsAt', ':date')
+                )
+            )
+            ->setParameters(array(
+                'type' => 'taxonomy',
+                'date' => $date
+                )
+            )
+            ->addOrderBy($this->getAlias().'.priority', 'DESC');
+
+        return $qb
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
     protected function getCollectionQueryBuilder()
     {
         return parent::getCollectionQueryBuilder()

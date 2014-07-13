@@ -275,6 +275,14 @@ form.product-single input {
   display: inline-block;
   width: auto;
 }
+div.product h4,
+div.product-show h4,
+div.product h5,
+div.product-show h5 {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+}
 .offer-corner-png {
   position: relative;
   display: inline-block;

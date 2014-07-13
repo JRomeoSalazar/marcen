@@ -28,4 +28,11 @@ interface PromotionRepositoryInterface extends RepositoryInterface
      * @return Collection|PromotionInterface[]
      */
     public function findActive();
+
+    /**
+     * Finds active promotions with rule type 'taxonomy'.
+     *
+     * @return Collection|PromotionInterface[]
+     */
+    public function findTaxonomyActive();
 }
