@@ -117,7 +117,8 @@ class ProductPromotionExtension extends \Twig_Extension
         foreach ($promotions as $promotion) {
             foreach ($promotion->getRules() as $rule) {
                 if ($rule->getType() != 'taxonomy') continue;
-                foreach ($rule->getConfiguration()['taxons'] as $taxon) {
+                $configuration = $rule->getConfiguration();
+                foreach ($configuration['taxons'] as $taxon) {
                     if (in_array($taxon, $product_taxons)) {
                         foreach ($promotion->getActions() as $action) {
                             if ($action->getType() == 'percentage_discount') {
