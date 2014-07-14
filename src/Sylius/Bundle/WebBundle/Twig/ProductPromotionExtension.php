@@ -115,19 +115,22 @@ class ProductPromotionExtension extends \Twig_Extension
 
         /* Comprobamos si concuerdan algún taxon del producto con algún taxon de las reglas */
         foreach ($promotions as $promotion) {
+            $sw = 0;
             foreach ($promotion->getRules() as $rule) {
                 if ($rule->getType() != 'taxonomy') continue;
                 $configuration = $rule->getConfiguration();
                 foreach ($configuration['taxons'] as $taxon) {
-                    if (in_array($taxon, $product_taxons)) {
-                        foreach ($promotion->getActions() as $action) {
-                            $action_configuration = $action->getConfiguration();
-                            if ($action->getType() == 'percentage_discount') {
-                                $discount += $amount*$action_configuration['percentage'];
-                            }
-                            else if ($action->getType() == 'fixed_discount') {
-                                $discount += $action_configuration['amount'];
-                            }
+                    if (in_array($taxon, $product_taxons) && !$configuration['exclude']) $sw = 1;
+                    elseif (!in_array($taxon, $product_taxons) && $configuration['exclude']) $sw = 1;
+                }
+                if ($sw) {
+                    foreach ($promotion->getActions() as $action) {
+                        $action_configuration = $action->getConfiguration();
+                        if ($action->getType() == 'percentage_discount') {
+                            $discount += $amount*$action_configuration['percentage'];
+                        }
+                        else if ($action->getType() == 'fixed_discount') {
+                            $discount += $action_configuration['amount'];
                         }
                     }
                 }
