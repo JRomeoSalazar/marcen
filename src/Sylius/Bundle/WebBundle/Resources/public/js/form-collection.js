@@ -21,7 +21,6 @@
         });
         $(document).on('click', 'a[data-collection-button="delete"]', function(e) {
             e.preventDefault();
-            var collectionContainer = $('#' + $(this).data('collection'));
             var item_id = $(this).data('id');
             $('#' + item_id).remove();
         });
