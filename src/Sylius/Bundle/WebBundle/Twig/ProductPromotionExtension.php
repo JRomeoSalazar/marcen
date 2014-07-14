@@ -121,11 +121,12 @@ class ProductPromotionExtension extends \Twig_Extension
                 foreach ($configuration['taxons'] as $taxon) {
                     if (in_array($taxon, $product_taxons)) {
                         foreach ($promotion->getActions() as $action) {
+                            $action_configuration = $action->getConfiguration();
                             if ($action->getType() == 'percentage_discount') {
-                                $discount += $amount*$action->getConfiguration()['percentage'];
+                                $discount += $amount*$action_configuration['percentage'];
                             }
                             else if ($action->getType() == 'fixed_discount') {
-                                $discount += $action->getConfiguration()['amount'];
+                                $discount += $action_configuration['amount'];
                             }
                         }
                     }
