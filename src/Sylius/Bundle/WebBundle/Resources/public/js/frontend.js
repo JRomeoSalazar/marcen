@@ -25,6 +25,23 @@
 			cookieAcceptButtonText: 'Aceptar cookies'
 		});
 
+        // Mostar y ocultar taxonomías
+        $('h5#menu-categories').click(function() {
+            $('ul.taxonomies').slideToggle();
+            $('h4.newest-header').slideToggle();
+        });
+
+        // Mostrar y ocultar taxones
+        $('span.nav-header').click(function() {
+            var $id = $(this).attr('id');
+            $('ul[data-id="' + $id + '"]').slideToggle();
+        });
+
+        // Mostrar y ocultar novedades
+        $('h4.newest-header').click(function() {
+            $('ul.newest').slideToggle();
+        });
+
     });
 
 })( jQuery );

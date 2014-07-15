@@ -135,7 +135,13 @@ div#sidebar {
     background-color: @green-merida;
     div.panel-body {
       p {
+        display: inline-block;
+        *display: inline;
+        zoom: 1;
         color: white;
+        &:first-child {
+          margin-right: 1em; 
+        }
         &:last-child {
           margin-bottom: 0px;
         }
@@ -144,6 +150,19 @@ div#sidebar {
         }
       }
     }
+  }
+
+  h5#menu-categories {
+    .button-size(@padding-large-vertical; @padding-large-horizontal; @font-size-large; @line-height-large; 0px);
+    background-color: white;
+    border-bottom: solid 3px @green-merida;
+    color: @gray-dark;
+    font-weight: bold;
+    margin: 0px;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+
   }
 
   ul { /* general */
@@ -166,6 +185,7 @@ div#sidebar {
         background-color: @gray-light;
         border-bottom: 2px solid @green-merida;
         color: white;
+        cursor: pointer;
         display: block;
         font-weight: bold;
         text-align: center;
@@ -234,6 +254,7 @@ div#sidebar {
     background-color: @gray-light;
     border-bottom: 2px solid @green-merida;
     color: white;
+    cursor: pointer;
     font-size: 16px;
     font-weight: bold;
     margin: 1.5em 0px 0px 0px;
@@ -270,6 +291,11 @@ div#product-show {
     color: @gray-dark;
     font-weight: bold;
     text-transform: uppercase;
+  }
+  h4, h5 {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
   }
 }
 
@@ -435,4 +461,26 @@ a.oauth-login {
 
 a.nounderline {
     text-decoration: none;
+}
+
+
+/* Media Queries */
+@media (max-width: @screen-sm-max) {
+  div#sidebar {
+    margin-bottom: 1em;
+    ul.taxonomies {
+      display: none;
+      margin-bottom: 0px;
+      ul.nav-stacked {
+        display: none;
+      }
+    }
+    h4.newest-header {
+      display: none;
+      margin-top: 0px;
+    }
+    ul.newest {
+      display: none;
+    }
+  }
 }

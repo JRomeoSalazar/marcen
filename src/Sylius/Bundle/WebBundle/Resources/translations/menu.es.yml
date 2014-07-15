@@ -96,3 +96,5 @@ sylius:
         google: Google +
         linkedin: LinkedIn
         twitter: Twitter
+    sidebar:
+        menu_taxonomies: Categorías

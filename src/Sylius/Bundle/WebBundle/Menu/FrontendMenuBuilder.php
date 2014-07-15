@@ -229,6 +229,8 @@ class FrontendMenuBuilder extends MenuBuilder
         $taxonomies = $this->taxonomyRepository->findAll();
 
         foreach ($taxonomies as $taxonomy) {
+            $childOptions['childrenAttributes']['data-id'] = $taxonomy->getId();
+            $childOptions['labelAttributes']['id'] = $taxonomy->getId();
             $child = $menu->addChild($taxonomy->getName(), $childOptions);
 
             if ($taxonomy->getRoot()->hasPath()) {

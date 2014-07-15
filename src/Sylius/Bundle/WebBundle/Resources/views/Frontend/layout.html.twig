@@ -8,7 +8,7 @@
       {% endblock %}
     </title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{{ settings.meta_description|default('sylius.meta.frontend_description'|trans) }}">
     <meta name="keywords" content="{{ settings.meta_keywords|default('sylius.meta.frontend_keywords'|trans) }}">
 
@@ -111,6 +111,11 @@
                   <p><i class="icon-fixed-width icon-envelope icon-large"></i> <a href="mailto:info@ciclosmarcen.com" title="Email Ciclos Marcen Online" target="_blank">info@ciclosmarcen.com</a></p>
                 </div>
               </div>
+              <!-- desplegar menu categorías -->
+              <h5 id="menu-categories" class="hidden-lg hidden-md">
+                {{ 'sylius.frontend.sidebar.menu_taxonomies'|trans({},'menu') }}
+                <i class="icon-sort-down"></i>
+              </h5>
               <!-- taxonomies -->
               {{ knp_menu_render('sylius.frontend.taxonomies', {'template': 'SyliusWebBundle:Frontend:menu.html.twig'}) }}
               <!-- newest products -->

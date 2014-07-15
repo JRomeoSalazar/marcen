@@ -236,7 +236,13 @@ div#sidebar div.panel-contact > .panel-footer + .panel-collapse .panel-body {
   border-bottom-color: #7fab00;
 }
 div#sidebar div.panel-contact div.panel-body p {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
   color: white;
+}
+div#sidebar div.panel-contact div.panel-body p:first-child {
+  margin-right: 1em;
 }
 div#sidebar div.panel-contact div.panel-body p:last-child {
   margin-bottom: 0px;
@@ -244,6 +250,20 @@ div#sidebar div.panel-contact div.panel-body p:last-child {
 div#sidebar div.panel-contact div.panel-body p a,
 div#sidebar div.panel-contact div.panel-body p a:hover {
   color: white;
+}
+div#sidebar h5#menu-categories {
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 0px;
+  background-color: white;
+  border-bottom: solid 3px #91c300;
+  color: #333333;
+  font-weight: bold;
+  margin: 0px;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
 }
 div#sidebar ul {
   /* general */
@@ -267,6 +287,7 @@ div#sidebar ul.taxonomies span.nav-header {
   background-color: #a2a5ad;
   border-bottom: 2px solid #91c300;
   color: white;
+  cursor: pointer;
   display: block;
   font-weight: bold;
   text-align: center;
@@ -331,6 +352,7 @@ div#sidebar h4.newest-header {
   background-color: #a2a5ad;
   border-bottom: 2px solid #91c300;
   color: white;
+  cursor: pointer;
   font-size: 16px;
   font-weight: bold;
   margin: 1.5em 0px 0px 0px;
@@ -362,6 +384,12 @@ div#product-show h3 {
   color: #333333;
   font-weight: bold;
   text-transform: uppercase;
+}
+div#product-show h4,
+div#product-show h5 {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
 }
 div#product-single h3 {
   color: #333333;
@@ -502,4 +530,24 @@ a.oauth-login:hover {
 }
 a.nounderline {
   text-decoration: none;
+}
+/* Media Queries */
+@media (max-width: 991px) {
+  div#sidebar {
+    margin-bottom: 1em;
+  }
+  div#sidebar ul.taxonomies {
+    display: none;
+    margin-bottom: 0px;
+  }
+  div#sidebar ul.taxonomies ul.nav-stacked {
+    display: none;
+  }
+  div#sidebar h4.newest-header {
+    display: none;
+    margin-top: 0px;
+  }
+  div#sidebar ul.newest {
+    display: none;
+  }
 }
