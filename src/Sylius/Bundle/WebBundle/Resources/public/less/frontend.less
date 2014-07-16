@@ -466,6 +466,43 @@ a.nounderline {
 
 /* Media Queries */
 @media (max-width: @screen-sm-max) {
+  div.navbar {
+    div.container {
+      div.navbar-collapse {
+        width: 100%;
+        float: none;
+
+        ul.sylius-frontend-main {}
+
+        form.navbar-form {
+          padding-right: 5px;
+          div.form-group {
+            display: inline-block;
+            *display: inline;
+            zoom: 1;
+            input {
+              width: 350px;
+            }
+          }
+        }
+
+        ul.sylius-frontend-social {
+          float: right;
+          li {
+            display: inline-block;
+            *display: inline;
+            zoom: 1;
+            a {
+              display: inline-block;
+              *display: inline;
+              zoom: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+
   div#sidebar {
     margin-bottom: 1em;
     ul.taxonomies {
