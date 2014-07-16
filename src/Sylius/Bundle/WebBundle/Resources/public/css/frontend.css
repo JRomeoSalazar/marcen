@@ -533,6 +533,34 @@ a.nounderline {
 }
 /* Media Queries */
 @media (max-width: 991px) {
+  div.navbar div.container div.navbar-collapse {
+    width: 100%;
+    float: none;
+  }
+  div.navbar div.container div.navbar-collapse form.navbar-form {
+    padding-right: 5px;
+  }
+  div.navbar div.container div.navbar-collapse form.navbar-form div.form-group {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+  }
+  div.navbar div.container div.navbar-collapse form.navbar-form div.form-group input {
+    width: 350px;
+  }
+  div.navbar div.container div.navbar-collapse ul.sylius-frontend-social {
+    float: right;
+  }
+  div.navbar div.container div.navbar-collapse ul.sylius-frontend-social li {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+  }
+  div.navbar div.container div.navbar-collapse ul.sylius-frontend-social li a {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+  }
   div#sidebar {
     margin-bottom: 1em;
   }
