@@ -158,6 +158,12 @@ class FrontendMenuBuilder extends MenuBuilder
             ))->setLabel($this->translate('sylius.frontend.menu.main.register'));
         }
 
+        $menu->addChild('condiciones_generales', array(
+            'route' => 'sylius_condiciones_generales',
+            'linkAttributes' => array('title' => $this->translate('sylius.frontend.menu.main.condiciones_generales')),
+            'labelAttributes' => array('icon' => 'icon-check-sign icon-large')
+        ))->setLabel($this->translate('sylius.frontend.menu.main.condiciones_generales'));
+
         if ($this->securityContext->getToken() && $this->securityContext->isGranted('ROLE_SYLIUS_ADMIN')) {
 
             $routeParams = array(
