@@ -84,6 +84,7 @@ sylius:
                 account: My account
                 administration: Administration
                 cart: View cart (%items%) %total%
+                condiciones_generales: Terms and conditions
                 login: Login
                 logout: Logout
                 register: Register

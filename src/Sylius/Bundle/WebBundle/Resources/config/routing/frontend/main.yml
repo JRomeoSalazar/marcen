@@ -17,6 +17,12 @@ sylius_disclaimer:
         _controller: FrameworkBundle:Template:template
         template: SyliusWebBundle:Frontend/Homepage:disclaimer.html.twig
 
+sylius_condiciones_generales:
+    pattern:  /condiciones-generales
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template: SyliusWebBundle:Frontend/Homepage:condiciones_generales.html.twig
+
 sylius_currency:
     resource: @SyliusWebBundle/Resources/config/routing/frontend/currency.yml
     prefix: /currency
