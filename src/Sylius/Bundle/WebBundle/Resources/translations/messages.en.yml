@@ -277,6 +277,7 @@ sylius:
             email: Email
             firstName: First name
             lastName: Last name
+            newsletter: I would like to receive offers and news
     frontend:
         close: Close
         disclaimer: Disclaimer

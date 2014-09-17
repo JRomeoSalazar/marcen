@@ -37,12 +37,18 @@ class User extends BaseUser implements UserInterface
     protected $addresses;
     protected $disclaimer;
 
+    /**
+     * @var boolean
+     */
+    protected $newsletter;
+
     public function __construct()
     {
         $this->createdAt = new \DateTime();
         $this->orders    = new ArrayCollection();
         $this->addresses = new ArrayCollection();
         $this->disclaimer = true;
+        $this->newsletter = true;
 
         parent::__construct();
     }
@@ -366,6 +372,24 @@ class User extends BaseUser implements UserInterface
     public function setDisclaimer($disclaimer)
     {
         $this->disclaimer = $disclaimer;
+
+        return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getNewsletter()
+    {
+        return $this->newsletter;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setNewsletter($newsletter)
+    {
+        $this->newsletter = $newsletter;
 
         return $this;
     }
