@@ -82,6 +82,7 @@ sylius:
             enabled: Enabled
             first_name: First name
             groups: Groups
+            newsletter: I would like to receive offers and news
             last_name: Last name
             password: Password
             shipping_address: Shipping address

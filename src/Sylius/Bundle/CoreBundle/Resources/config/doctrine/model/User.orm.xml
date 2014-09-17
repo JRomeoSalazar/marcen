@@ -26,6 +26,7 @@
         <field name="firstName" column="first_name" type="string" nullable="true" />
         <field name="lastName" column="last_name" type="string" nullable="true" />
         <field name="disclaimer" column="disclaimer" type="boolean" nullable="true" />
+        <field name="newsletter" column="newsletter" type="boolean" nullable="true" />
 
         <field name="amazonId" column="amazon_id" type="string" nullable="true" />
         <field name="facebookId" column="facebook_id" type="string" nullable="true" />

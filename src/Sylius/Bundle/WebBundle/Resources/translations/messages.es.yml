@@ -270,6 +270,7 @@ sylius:
       email: Correo electrónico
       firstName: Nombre
       lastName: Apellidos
+      newsletter: Deseo recibir ofertas y noticias
   frontend:
     close: Cerrar
     disclaimer: Aviso Legal

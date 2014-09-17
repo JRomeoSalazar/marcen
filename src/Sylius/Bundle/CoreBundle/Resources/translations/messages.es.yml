@@ -87,6 +87,7 @@ sylius:
       first_name: Nombre
       groups: Grupos
       last_name: Apellidos
+      newsletter: Deseo recibir noticias y ofertas
       password: Contraseña
       shipping_address: Dirección de envío
     user_filter:

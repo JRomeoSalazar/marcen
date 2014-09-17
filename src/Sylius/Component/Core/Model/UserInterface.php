@@ -139,4 +139,18 @@ interface UserInterface extends BaseUserInterface, TimestampableInterface
      * @param boolean $disclaimer
      */
     public function setDisclaimer($disclaimer);
+
+    /**
+     * Get newsletter.
+     *
+     * @return boolean
+     */
+    public function getNewsletter();
+
+    /**
+     * Set newsletter.
+     *
+     * @param boolean $newsletter
+     */
+    public function setNewsletter($newsletter);
 }

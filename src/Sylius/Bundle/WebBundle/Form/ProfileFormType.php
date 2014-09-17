@@ -33,6 +33,9 @@ class ProfileFormType extends BaseType
             ->add('email', 'email', array(
                 'label'    => 'sylius.form.profile.email'
             ))
+            ->add('newsletter', null, array(
+                'label'    => 'sylius.form.profile.newsletter'
+            ))
         ;
     }
 

@@ -34,6 +34,8 @@ class RegistrationFormType extends BaseType
         $builder->add('lastName', 'text', array('label' => 'sylius.form.user.last_name'));
 
         parent::buildForm($builder, $options);
+        
+        $builder->add('newsletter', null, array('label' => 'sylius.form.user.newsletter'));
 
         // disclaimer label
         $disclaimer_text = $this->translator->trans('sylius.form.user.disclaimer.self');
