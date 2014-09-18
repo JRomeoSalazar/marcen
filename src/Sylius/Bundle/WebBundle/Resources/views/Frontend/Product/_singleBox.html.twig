@@ -4,6 +4,7 @@
         {% if show_ribbon(product) %}
       		<p><span>{{ 'sylius.product.offer'|trans }}</span><img src="{{ asset('bundles/syliusweb/img/offer-ribbon.png') }}" alt="offer ribbon" /></p>
       	{% endif %}
+        <h4>{{ product.name|upper }}</h4>
         <span class="label label-primary">{{ sylius_calculate_price(product)|product_promotion(product.id)|tax_rate(product.id)|sylius_price }}</span>
         {% if show_ribbon(product) %}
             <span class="label label-default" style="text-decoration:line-through">{{ sylius_calculate_price(product)|tax_rate(product.id)|sylius_price }}</span>
