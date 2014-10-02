@@ -17,9 +17,14 @@
 
 {{ form_errors(form) }}
 
-<form action="{{ path('sylius_backend_page_update', {'id': page.id}) }}" method="post" class="form-horizontal" novalidate>
+{% set id = page.id|trim('/') %}
+<form action="{{ path('sylius_backend_page_index') }}{{ id }}/edit" method="post" class="form-horizontal" novalidate>
     <input type="hidden" name="_method" value="PUT">
     {% include 'SyliusWebBundle:Backend/Page:_form.html.twig' %}
     {{ update() }}
 </form>
+{% endblock %}
+
+{% block javascripts %}
+	{{ tinymce_init() }}
 {% endblock %}

@@ -103,6 +103,10 @@
             <argument type="service" id="request" />
             <tag name="knp_menu.menu" alias="sylius.frontend.contact" />
         </service>
+        <service id="sylius.menu.frontend.block" class="Knp\Menu\MenuItem" factory-service="sylius.menu_builder.frontend" factory-method="createBlockMenu" scope="request">
+            <argument type="service" id="request" />
+            <tag name="knp_menu.menu" alias="sylius.frontend.block" />
+        </service>
 
         <service id="sylius.menu.backend.main" class="Knp\Menu\MenuItem" factory-service="sylius.menu_builder.backend" factory-method="createMainMenu" scope="request">
             <argument type="service" id="request" />
