@@ -26,5 +26,5 @@ interface TwigMailerInterface
      * @param string|array $fromEmail
      * @param string       $toEmail
      */
-    public function sendEmail($templateName, $context, $fromEmail, $toEmail);
+    public function sendEmail($templateName, $context, array $fromEmail, array $toEmail);
 }

@@ -3,8 +3,16 @@
 
 email:
   order_confirmation:
-    subject: Confirmación de pedido
-    text: "Su pedido número <strong>%number%</strong> se ha realizado correctamente, puede consultar los detalles de su pedido en la siguiente dirección:"
+    subject: Confirmación de pedido Nº %number%
+    text: "Hola %firstName%, tu pedido número <strong>%number%</strong> se ha realizado correctamente, puede consultar los detalles de su pedido en la siguiente dirección:"
+    text2: "Si tienes alguna duda o sugerencia puedes mandarnos un correo a la dirección <a href='mailto:info@ciclosmarcen.com' title='Email Ciclos Marcen'>info@ciclosmarcen.com</a> o llamar al número de teléfono 976 426 040 en horario comercial."
+    text3: "Gracias por confiar en Ciclos Marcen y esperamos que el pedido sea de tu agrado."
+  customer_welcome:
+    subject: Bienvenido a Ciclos Marcen
+    text: "Hola %firstName%, tu registro se ha completado correctamente. Te damos la bienvenida a Ciclos Marcen Online y esperamos que puedas disfrutar de nuestros productos y servicios."
+    text2: "Si lo deseas también puedes seguir nuestras noticias, promociones y novedades a través de nuestros canales en <a href='https://www.facebook.com/ciclosmarcen' title='Facebook Ciclos Marcen'>Facebook</a> y <a href='https://www.twitter.com/ciclosmarcen' title='Twitter Ciclos Marcen'>Twitter</a>. Del mismo modo disponemos de un canal de <a href='%linkNoticias%' title='Noticias Ciclos Marcen'>Noticias</a> en nuestra tienda online."
+    text3: "Sin más darte la bienvenida, y si tienes alguna duda o sugerencia puedes mandarnos un correo a la dirección <a href='mailto:info@ciclosmarcen.com' title='Email Ciclos Marcen'>info@ciclosmarcen.com</a> o llamar al número de teléfono 976 426 040 en horario comercial."
+    text4: "¡Bienvenido y gracias por confiar en Ciclos Marcen!"
 sylius:
   account:
     address:

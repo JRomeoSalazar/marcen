@@ -29,6 +29,6 @@ class OrderConfirmationMailer extends AbstractMailer implements OrderConfirmatio
             throw new \InvalidArgumentException('Order has to belong to a User');
         }
 
-        $this->sendEmail(array('order' => $order), $user->getEmail());
+        $this->sendEmail(array('order' => $order), array($user->getEmail() => $user->getFirstName()));
     }
 }

@@ -42,9 +42,9 @@ abstract class AbstractMailer
 
     /**
      * @param array  $context
-     * @param string $recipient
+     * @param array  $recipient
      */
-    protected function sendEmail(array $context, $recipient)
+    protected function sendEmail(array $context, array $recipient)
     {
         $this->mailer->sendEmail(
             $this->parameters['template'],

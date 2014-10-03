@@ -11,4 +11,15 @@
 <div class="alert alert-success">
     {{ 'registration.confirmed'|trans({'%username%': user.firstName}) }}
 </div>
+
+<p>Si quieres puedes completar tu perfil de usuario y tus datos personales en tu cuenta o ir a la tienda a revisar los últimos productos y ofertas</p>
+
+<div class="form-actions">
+	<a href="{{ path('sylius_account_homepage') }}" class="btn btn-lg btn-primary">
+		<i class="icon-user icon-large"></i> Ir a mi cuenta
+	</a>
+	<a href="{{ path('sylius_homepage') }}" class="btn btn-lg btn-success">
+		<i class="icon-home icon-large"></i> Ir a a la tienda
+	</a>
+</div>
 {% endblock %}

@@ -41,7 +41,7 @@ class TwigSwiftMailer implements TwigMailerInterface
      *
      * @author Christophe Coevoet <stof@notk.org>
      */
-    public function sendEmail($templateName, $context, $fromEmail, $toEmail)
+    public function sendEmail($templateName, $context, array $fromEmail, array $toEmail)
     {
         $context = $this->twig->mergeGlobals($context);
         $template = $this->twig->loadTemplate($templateName);
@@ -53,9 +53,9 @@ class TwigSwiftMailer implements TwigMailerInterface
             ->setFrom($fromEmail)
             ->setTo($toEmail);
 
-        $logo = $message->embed(\Swift_Image::fromPath('bundles/syliusweb/img/logo.png'));
+        //$logo = $message->embed(\Swift_Image::fromPath('bundles/syliusweb/img/logo.png'));
 
-        $context['logo'] = $logo;
+        //$context['logo'] = $logo;
 
         $textBody = $template->renderBlock('body_text', $context);
         $htmlBody = $template->renderBlock('body_html', $context);

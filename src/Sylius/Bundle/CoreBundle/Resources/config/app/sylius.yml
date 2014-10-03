@@ -3,20 +3,20 @@ sylius_core:
     emails:
         enabled: true
         from_email:
-            address: ciclosmarcenonline@ciclosmarcenonline.com
+            address: info@ciclosmarcen.com
             sender_name: Ciclos Marcen Online
         order_confirmation:
             enabled: true
             template: 'SyliusWebBundle:Frontend/Email:orderConfirmation.html.twig'
             from_email:
-                address: ciclosmarcenonline@ciclosmarcenonline.com
+                address: info@ciclosmarcen.com
                 sender_name: Ciclos Marcen Online
-        #customer_welcome:
-        #    enabled: false
-        #    template: 'SyliusWebBundle:Frontend/Email:customerWelcome.html.twig'
-        #    from_email:
-        #        address:
-        #        sender_name:
+        customer_welcome:
+            enabled: true
+            template: 'SyliusWebBundle:Frontend/Email:customerWelcome.html.twig'
+            from_email:
+                address: info@ciclosmarcen.com
+                sender_name: Ciclos Marcen Online
 
 sylius_installer:
     classes:

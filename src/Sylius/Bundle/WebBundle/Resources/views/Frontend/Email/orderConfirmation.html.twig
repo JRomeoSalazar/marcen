@@ -1,17 +1,19 @@
 {% block subject %}
     {% autoescape false %}
-    {{ 'email.order_confirmation.subject'|trans }}
+    {{ 'email.order_confirmation.subject'|trans({'%number%': order.number}) }}
     {% endautoescape %}
 {% endblock %}
 
 {% block body_text %}
-	<img src="{{ logo }}" alt="Sylius Logo" />
-	{{ 'email.order_confirmation.text'|trans({'%number%': order.number})|raw }}
-	{{ app.request.scheme ~ '://' ~ app.request.httpHost ~ path('sylius_account_order_show', { 'number': order.number }) }}
+	<p>{{ 'email.order_confirmation.text'|trans({'%firstName%': order.user.firstName, '%number%': order.number})|raw }}</p>
+	<p>{{ app.request.scheme ~ '://' ~ app.request.httpHost ~ path('sylius_account_order_show', { 'number': order.number }) }}</p>
+	<p>{{ 'email.order_confirmation.text2'|trans|raw }}</p>
+	<p>{{ 'email.order_confirmation.text3'|trans|raw }}</p>
 {% endblock %}
 
 {% block body_html %}
-	<img src="{{ logo }}" alt="Sylius Logo" />
-	<p>{{ 'email.order_confirmation.text'|trans({'%number%': order.number})|raw }}</p>
+	<p>{{ 'email.order_confirmation.text'|trans({'%firstName%': order.user.firstName, '%number%': order.number})|raw }}</p>
 	<p>{{ app.request.scheme ~ '://' ~ app.request.httpHost ~ path('sylius_account_order_show', { 'number': order.number }) }}</p>
+	<p>{{ 'email.order_confirmation.text2'|trans|raw }}</p>
+	<p>{{ 'email.order_confirmation.text3'|trans|raw }}</p>
 {% endblock %}

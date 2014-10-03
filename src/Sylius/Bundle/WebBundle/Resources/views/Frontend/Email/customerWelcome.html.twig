@@ -3,5 +3,154 @@
     {{ 'email.customer_welcome.subject'|trans }}
     {% endautoescape %}
 {% endblock %}
-{% block body_text %}{% endblock %}
-{% block body_html %}{% endblock %}
+
+{% block body_text %}
+	<p>{{ 'email.customer_welcome.text'|trans({'%firstName%': user.firstName})|raw }}</p>
+	<p>{{ 'email.customer_welcome.text2'|trans({'%linkNoticias%': linkNoticias})|raw }}</p>
+	<p>{{ 'email.customer_welcome.text3'|trans|raw }}</p>
+	<p>{{ 'email.customer_welcome.text4'|trans|raw }}</p>
+{% endblock %}
+
+{% block body_html %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{ 'email.customer_welcome.subject'|trans }}</title>
+</head>
+<body>
+  <div style="margin-bottom:7.5pt">
+    <p style="text-align:center; font-size:9.0pt; font-family:'Trebuchet MS','sans-serif'; color:#666666">
+      Si no puedes leer este correo correctamente, haz click <a href="#" title="Haz click aquí si no puedes leer el correo correctamente">aqu&iacute;</a>
+    </p>
+  </div>
+  <div align="center">
+    <table border="0" cellspacing="0" cellpadding="0" width="700" style="width:525.0pt">
+      <tbody>
+        <tr>
+          <td style="background:#97bf0d; padding: 0cm 0cm 0cm 0cm">
+            <table border="0" cellspacing="0" cellpadding="0" width="700" style="width:525.0pt">
+              <tbody>
+                <tr>
+                  <td width="450" style="width:337.5pt; background:#97bf0d; padding: 0cm 0cm 0cm 0cm">
+                    <p align="right" style="text-align:right">
+                      <span style="font-size:9.0pt; font-family:'Trebuchet MS','sans-serif'; color:#666666">
+                        <a href="http://www.ciclosmarcen.com" title="Ciclos Marcen"  target="_blank">
+                          <span style="text-decoration:none">
+                            <img src="{{ app.request.scheme ~ '://' ~ app.request.httpHost ~ asset('bundles/syliusweb/img/email/logo.jpg') }}" border="0" width="450" height="120" alt="Ciclos Marcen">
+                          </span>
+                        </a>
+                      </span>
+                    </p>
+                  </td>
+                  <td width="245" style="width:183.75pt; background:#97bf0d; padding:0cm 0cm 0cm 0cm">
+                    <p align="right" style="text-align:right">
+                      <span style="font-family:'Trebuchet MS','sans-serif'; color:white">
+                        <span>
+                          <a href="http://www.ciclosmarcen.com" target="_blank" title="Ciclos Marcen">
+                            <span style="color:white">
+                              http://www.ciclosmarcen.com
+                            </span>
+                          </a>
+                        </span>
+                      </span>
+                    </p>
+                  </td>
+                  <td width="10" style="width:7.5pt; background:#97bf0d; padding:0cm 0cm 0cm 0cm">
+                    <p align="right" style="text-align:right">
+                      <span style="font-family:'Trebuchet MS','sans-serif'; color:#666666">
+                        <img src="{{ app.request.scheme ~ '://' ~ app.request.httpHost ~ asset('bundles/syliusweb/img/email/spacer.gif') }}" border="0" width="10" height="100" alt="Espaciador">
+                      </span>
+                    </p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr style="height:7.5pt">
+          <td style="padding:0cm 0cm 0cm 0cm; height:7.5pt">
+            <p>
+              <span style="font-size:9.0pt; font-family:'Trebuchet MS','sans-serif'; color:#666666">
+                <img src="{{ app.request.scheme ~ '://' ~ app.request.httpHost ~ asset('bundles/syliusweb/img/email/spacer.gif') }}" border="0" width="240" height="10" alt="Espaciador">
+              </span>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="background:#373737; padding:5px 0cm 5px 0cm">
+            <table border="0" cellspacing="0" cellpadding="0" width="700" style="width:525.0pt">
+              <tbody>
+                <tr>
+                  <td style="background:#373737; padding:0cm 10px 0cm 0cm">
+                    <p align="right" style="text-align:right">
+                      <span style="color:#cccccc; font-family:'Trebuchet MS','sans-serif'">
+                        Sigue a Ciclos Marcen:
+                      </span>
+                    </p>
+                  </td>
+                  <td width="75" style="width:56.25pt; background:#373737; padding: 0cm 0cm 0cm 0cm">
+                    <a href="https://www.facebook.com/ciclosmarcen" title="S&iacute;guenos en Facebook" target="_blank" style="display:inline-block; width:30px; height:30px; text-indent:-999em; text-align:left; border-radius:5px; background:url('{{ app.request.scheme ~ '://' ~ app.request.httpHost ~ asset("bundles/syliusweb/img/email/facebook.png") }}')">
+                    </a>
+                    <a href="https://www.twitter.com/ciclosmarcen" title="S&iacute;guenos en Twitter" target="_blank" style="display:inline-block; width:30px; height:30px; text-indent:-999em; text-align:left; border-radius:5px; background:url('{{ app.request.scheme ~ '://' ~ app.request.httpHost ~ asset("bundles/syliusweb/img/email/twitter.png") }}')">
+                    </a>
+                  </td>
+                </tr>
+              </tbody> 
+            </table>
+          </td>
+        </tr>
+        <tr style="height:15pt">
+          <td style="padding:0cm 0cm 0cm 0cm; height:15pt">
+            <p>
+              <span style="font-size:15.0pt; font-family:'Trebuchet MS','sans-serif'; color:#666666">
+                <img src="{{ app.request.scheme ~ '://' ~ app.request.httpHost ~ asset('bundles/syliusweb/img/email/spacer.gif') }}" border="0" width="240" height="18" alt="Espaciador">
+              </span>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding:15px; background:#97bf0d">
+            <span style="font-size:15.0pt; font-family:'Trebuchet MS','sans-serif'; color:#ffffff; font-weight:bold; text-transform:uppercase">
+              {{ 'email.customer_welcome.subject'|trans }}
+            </span>
+          </td>
+        </tr>
+        <tr style="height:2pt">
+          <td style="padding:0cm 0cm 0cm 0cm; height:2pt">
+            <p>
+              <span style="font-size:2.0pt; font-family:'Trebuchet MS','sans-serif'; color:#666666">
+                <img src="{{ app.request.scheme ~ '://' ~ app.request.httpHost ~ asset('bundles/syliusweb/img/email/spacer.gif') }}" border="0" width="240" height="5" alt="Espaciador">
+              </span>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding:15px"> 
+			<p>{{ 'email.customer_welcome.text'|trans({'%firstName%': user.firstName})|raw }}</p>
+			<p>{{ 'email.customer_welcome.text2'|trans({'%linkNoticias%': linkNoticias})|raw }}</p>
+			<p>{{ 'email.customer_welcome.text3'|trans|raw }}</p>
+			<p>{{ 'email.customer_welcome.text4'|trans|raw }}</p>
+          </td>
+        </tr>
+        <tr style="height:7.5pt">
+          <td style="padding:0cm 0cm 0cm 0cm; height:7.5pt">
+            <p>
+              <span style="font-size:9.0pt; font-family:'Trebuchet MS','sans-serif'; color:#666666">
+                <img src="{{ app.request.scheme ~ '://' ~ app.request.httpHost ~ asset('bundles/syliusweb/img/email/spacer.gif') }}" border="0" width="240" height="10" alt="Espaciador">
+              </span>
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div align="center" style="margin-bottom:7.5pt">
+    <p width="700" style="width:525.0pt; text-align:center; font-size:9.0pt; font-family:'Trebuchet MS','sans-serif'; color:#97bf0d; background:#373737; padding-top: 5px; padding-bottom: 5px">
+      Ciclos Marcen, {{ 'now'|date('Y') }}
+    </p>
+  </div>
+</body>
+</html>
+
+{% endblock %}
