@@ -63,22 +63,29 @@
             </div>
             <div class="collapse navbar-collapse pull-right">
 
-              <!-- sylius.frontend.main -->
-              {{ knp_menu_render('sylius.frontend.main', {'template': 'SyliusWebBundle:Frontend:menu.html.twig'}) }}
-              <!--*********************-->
+              <div class="mainMenu">
+                <!-- sylius.frontend.main -->
+                {{ knp_menu_render('sylius.frontend.main', {'template': 'SyliusWebBundle:Frontend:menu.html.twig'}) }}
+                <!--*********************-->
 
-              <!-- search -->
-              <form class="navbar-form navbar-left" role="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Buscar" maxlength="20">
-                </div>
-                <button type="submit" class="btn btn-default"><i class="icon-search"></i></button>
-              </form>
-              <!--************************-->
+                <!-- search -->
+                <!--<form class="navbar-form navbar-left" role="search">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Buscar" maxlength="20">
+                  </div>
+                  <button type="submit" class="btn btn-default"><i class="icon-search"></i></button>
+                </form>-->
+                <!--************************-->
 
-              <!-- sylius.frontend.social -->
-              {{ knp_menu_render('sylius.frontend.social', {'template': 'SyliusWebBundle:Frontend:menu.html.twig'}) }}
-              <!--************************-->
+                <!-- sylius.frontend.social -->
+                {{ knp_menu_render('sylius.frontend.social', {'template': 'SyliusWebBundle:Frontend:menu.html.twig'}) }}
+                <!--************************-->
+              </div>
+
+              <!-- Block Menu -->
+              <div class="blockMenu">
+                {{ knp_menu_render('sylius.frontend.block', {'template': 'SyliusWebBundle:Frontend:menu.html.twig'}) }}
+              </div>
 
             </div><!--/.nav-collapse -->
           </div>

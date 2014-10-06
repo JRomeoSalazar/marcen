@@ -132,7 +132,7 @@ a.btn-merida .badge {
 }
 body {
   background-color: #ececec;
-  padding-top: 75px;
+  padding-top: 125px;
   font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 div.navbar {
@@ -156,6 +156,22 @@ div.navbar div.container div.navbar-header a.ciclos-marcen-logo h1 {
 }
 div.navbar div.container div.navbar-header a.ciclos-marcen-logo h1 img {
   max-width: 130px;
+}
+div.navbar div.container div.navbar-collapse div.blockMenu {
+  text-align: center;
+}
+div.navbar div.container div.navbar-collapse div.blockMenu ul.sylius-frontend-block {
+  width: 500px;
+  margin: 0 auto;
+  float: none;
+}
+div.navbar div.container div.navbar-collapse div.blockMenu ul.sylius-frontend-block li > a {
+  text-align: left;
+  color: #333333;
+}
+div.navbar div.container div.navbar-collapse div.blockMenu ul.sylius-frontend-block li > a:hover,
+div.navbar div.container div.navbar-collapse div.blockMenu ul.sylius-frontend-block li > a:focus {
+  color: #555555;
 }
 div.navbar div.container div.navbar-collapse form.navbar-form {
   padding-right: 5px;
@@ -533,9 +549,20 @@ a.nounderline {
 }
 /* Media Queries */
 @media (max-width: 991px) {
+  body {
+    padding-top: 75px;
+  }
   div.navbar div.container div.navbar-collapse {
     width: 100%;
     float: none;
+  }
+  div.navbar div.container div.navbar-collapse div.blockMenu {
+    text-align: left;
+  }
+  div.navbar div.container div.navbar-collapse div.blockMenu ul.sylius-frontend-block {
+    float: left;
+    width: auto;
+    margin: 0;
   }
   div.navbar div.container div.navbar-collapse form.navbar-form {
     padding-right: 5px;

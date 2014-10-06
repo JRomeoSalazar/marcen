@@ -12,6 +12,7 @@
 namespace Sylius\Bundle\CoreBundle\Mailer;
 
 use Sylius\Component\Core\Model\UserInterface;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 /**
  * CustomerWelcomeMailer implementation
@@ -20,11 +21,30 @@ use Sylius\Component\Core\Model\UserInterface;
  */
 class CustomerWelcomeMailer extends AbstractMailer implements CustomerWelcomeMailerInterface
 {
+	/**
+	 * @var UrlGeneratorInterface
+	 */
+    protected $router;
+
+    /**
+     * Constructor.
+     *
+     * @param UrlGeneratorInterface $router
+     */
+    public function __construct(UrlGeneratorInterface $router, TwigMailerInterface $mailer, array $parameters)
+    {
+        $this->router = $router;
+
+        parent::__construct($mailer, $parameters);
+    }
+
     /**
      * {@inheritdoc}
      */
     public function sendCustomerWelcome(UserInterface $user)
-    {
-        $this->sendEmail(array('user' => $user), $user->getEmail());
+    {	
+    	$linkNoticias = $this->router->generate('sylius_page_show', array('id' => 'noticias'), true);
+
+        $this->sendEmail(array('user' => $user, 'linkNoticias' => $linkNoticias), array($user->getEmail() => $user->getFirstName()));
     }
 }

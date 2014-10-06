@@ -12,6 +12,7 @@
     <services>
 
         <service id="sylius.mailer.customer_welcome" class="%sylius.mailer.customer_welcome.class%">
+            <argument type="service" id="router" />
             <argument type="service" id="sylius.mailer" />
             <argument type="collection">
                 <argument key="template">%sylius.email.customer_welcome.template%</argument>

@@ -158,11 +158,6 @@ class FrontendMenuBuilder extends MenuBuilder
             ))->setLabel($this->translate('sylius.frontend.menu.main.register'));
         }
 
-        $menu->addChild('condiciones_generales', array(
-            'route' => 'sylius_condiciones_generales',
-            'linkAttributes' => array('title' => $this->translate('sylius.frontend.menu.main.condiciones_generales')),
-            'labelAttributes' => array('icon' => 'icon-check-sign icon-large')
-        ))->setLabel($this->translate('sylius.frontend.menu.main.condiciones_generales'));
 
         if ($this->securityContext->getToken() && $this->securityContext->isGranted('ROLE_SYLIUS_ADMIN')) {
 
@@ -183,6 +178,13 @@ class FrontendMenuBuilder extends MenuBuilder
             }
 
             $menu->addChild('administration', $routeParams)->setLabel($this->translate('sylius.frontend.menu.main.administration'));
+        }
+        else {
+            $menu->addChild('condiciones_generales', array(
+                'route' => 'sylius_condiciones_generales',
+                'linkAttributes' => array('title' => $this->translate('sylius.frontend.menu.main.condiciones_generales')),
+                'labelAttributes' => array('icon' => 'icon-check-sign icon-large')
+            ))->setLabel($this->translate('sylius.frontend.menu.main.condiciones_generales'));
         }
 
         return $menu;
@@ -457,4 +459,94 @@ class FrontendMenuBuilder extends MenuBuilder
 
         return $menu;
     }
+
+    /**
+     * Builds frontend block menu.
+     *
+     * @param Request $request
+     *
+     * @return ItemInterface
+     */
+    public function createBlockMenu(Request $request)
+    {
+        $menu = $this->factory->createItem('root', array(
+            'childrenAttributes' => array(
+                'class' => 'nav navbar-nav sylius-frontend-block'
+            )
+        ));
+
+        // Noticias
+        $menu->addChild('noticias', array(
+            'route' => 'sylius_page_show',
+            'routeParameters' => array('id' => 'noticias'),
+            'linkAttributes' => array('title' => 'Noticias'),
+            'labelAttributes' => array('iconOnly' => false)
+        ))->setLabel('Noticias');
+
+        // Tienda
+        $menu->addChild('tienda', array(
+            'route' => 'sylius_page_show',
+            'routeParameters' => array('id' => 'tienda'),
+            'linkAttributes' => array('title' => 'Tienda')
+        ))->setLabel('Tienda');
+
+        // Ocasión
+        $child = $menu->addChild('ocasión', array(
+            'uri' => '#',
+            'linkAttributes' => array(
+                'title' => 'Ocasión',
+                'class' => 'dropdown-toggle',
+                'data-toggle' => 'dropdown'
+            ),
+            'labelAttributes' => array('caret' => true),
+            'childrenAttributes' => array('class' => 'dropdown-menu', 'role' => 'menu')
+        ))->setLabel('Ocasión');
+            // Bicicletas ocasión
+            $child->addChild('bicicletasOcasion', array(
+                'route' => 'sylius_page_show',
+                'routeParameters' => array('id' => 'ocasion/bicicletas-ocasion'),
+                'linkAttributes' => array('title' => 'Bicicletas ocasión')
+            ))->setLabel('Bicicletas Ocasión');
+            // Componentes ocasión
+            $child->addChild('componentesOcasion', array(
+                'route' => 'sylius_page_show',
+                'routeParameters' => array('id' => 'ocasion/componentes-ocasion'),
+                'linkAttributes' => array('title' => 'Componentes ocasión')
+            ))->setLabel('Componentes Ocasión');
+
+        // Ver y saber más
+        $child = $menu->addChild('verYSaberMas', array(
+            'uri' => '#',
+            'linkAttributes' => array(
+                'title' => 'Ver y saber más',
+                'class' => 'dropdown-toggle',
+                'data-toggle' => 'dropdown'
+            ),
+            'labelAttributes' => array('caret' => true),
+            'childrenAttributes' => array('class' => 'dropdown-menu', 'role' => 'menu')
+        ))->setLabel('Ver y saber más');
+            // Merida Bikes
+            $child->addChild('meridaBikes', array(
+                'route' => 'sylius_page_show',
+                'routeParameters' => array('id' => 'ver-y-saber-mas/merida-bikes'),
+                'linkAttributes' => array('title' => '¿Qué es Merida Bikes?')
+            ))->setLabel('¿Qué es Merida Bikes?');
+            // Tienda MSD
+            $child->addChild('tiendaMSD', array(
+                'route' => 'sylius_page_show',
+                'routeParameters' => array('id' => 'ver-y-saber-mas/tienda-msd'),
+                'linkAttributes' => array('title' => 'Tienda MSD')
+            ))->setLabel('Tienda MSD');
+
+        // Enlaces
+        $menu->addChild('enlaces', array(
+            'route' => 'sylius_page_show',
+            'routeParameters' => array('id' => 'enlaces'),
+            'linkAttributes' => array('title' => 'Enlaces'),
+            'labelAttributes' => array('iconOnly' => false)
+        ))->setLabel('Enlaces');
+
+        return $menu;
+    }
+
 }
