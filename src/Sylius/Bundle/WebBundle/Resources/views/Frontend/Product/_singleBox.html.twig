@@ -9,6 +9,6 @@
         {% if show_ribbon(product) %}
             <span class="label label-default" style="text-decoration:line-through">{{ sylius_calculate_price(product)|tax_rate(product.id)|sylius_price }}</span>
         {% endif %}
-        <button class="btn btn-special btn-xs pull-right"><i class="icon-shopping-cart icon-white"></i> {{ 'sylius.add_to_cart'|trans }}</button>
+        <!--<button class="btn btn-special btn-xs pull-right"><i class="icon-shopping-cart icon-white"></i> {{ 'sylius.add_to_cart'|trans }}</button>-->
     </a>
 </div>

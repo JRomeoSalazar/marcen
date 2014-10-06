@@ -64,6 +64,9 @@
             <div class="collapse navbar-collapse pull-right">
 
               <div class="mainMenu">
+
+                <!-- Block Menu -->
+                {{ knp_menu_render('sylius.frontend.block', {'template': 'SyliusWebBundle:Frontend:menu.html.twig'}) }}
                 <!-- sylius.frontend.main -->
                 {{ knp_menu_render('sylius.frontend.main', {'template': 'SyliusWebBundle:Frontend:menu.html.twig'}) }}
                 <!--*********************-->
@@ -80,11 +83,6 @@
                 <!-- sylius.frontend.social -->
                 {{ knp_menu_render('sylius.frontend.social', {'template': 'SyliusWebBundle:Frontend:menu.html.twig'}) }}
                 <!--************************-->
-              </div>
-
-              <!-- Block Menu -->
-              <div class="blockMenu">
-                {{ knp_menu_render('sylius.frontend.block', {'template': 'SyliusWebBundle:Frontend:menu.html.twig'}) }}
               </div>
 
             </div><!--/.nav-collapse -->
