@@ -151,8 +151,7 @@ jms_i18n_routing:
     strategy: prefix_except_default
 
 stfalcon_tinymce:
-        include_jquery: false
-        tinymce_jquery: false
+        tinymce_jquery: true
         selector: ".tinymce"
         language: "%sylius.locale%"
         theme:
