@@ -490,6 +490,13 @@ class FrontendMenuBuilder extends MenuBuilder
             'linkAttributes' => array('title' => 'Tienda')
         ))->setLabel('Tienda');
 
+        // Tienda
+        $menu->addChild('servicioTaller', array(
+            'route' => 'sylius_page_show',
+            'routeParameters' => array('id' => 'servicio-taller'),
+            'linkAttributes' => array('title' => 'Servicio Taller')
+        ))->setLabel('Servicio Taller');
+
         // Ocasión
         $child = $menu->addChild('ocasión', array(
             'uri' => '#',
