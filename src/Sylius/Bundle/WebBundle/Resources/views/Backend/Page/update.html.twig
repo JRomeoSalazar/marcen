@@ -18,7 +18,7 @@
 {{ form_errors(form) }}
 
 {% set id = page.id|trim('/') %}
-<form action="{{ path('sylius_backend_page_index') }}{{ id }}/edit" method="post" class="form-horizontal" novalidate>
+<form id="form1" action="{{ path('sylius_backend_page_index') }}{{ id }}/edit" method="post" class="form-horizontal" novalidate>
     <input type="hidden" name="_method" value="PUT">
     {% include 'SyliusWebBundle:Backend/Page:_form.html.twig' %}
     {{ update() }}
@@ -26,5 +26,9 @@
 {% endblock %}
 
 {% block javascripts %}
-	{{ tinymce_init() }}
+    {{ parent() }}
+	<script type="text/javascript">
+        var uri = "{{ app.request.scheme ~ '://' ~ app.request.httpHost ~ app.request.baseUrl ~ '/media/image/page/' }}";
+	</script>
+    {{ tinymce_init() }}
 {% endblock %}
