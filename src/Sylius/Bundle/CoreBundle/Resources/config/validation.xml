@@ -171,4 +171,17 @@
         </constraint>
     </class>
 
+    <class name="Sylius\Component\Core\Model\Noticia">
+        <property name="titulo">
+            <constraint name="NotBlank">
+                <option name="message">sylius.noticia.titulo.not_blank</option>
+            </constraint>
+        </property>
+        <property name="contenido">
+            <constraint name="NotBlank">
+                <option name="message">sylius.noticia.contenido.not_blank</option>
+            </constraint>
+        </property>
+    </class>
+
 </constraint-mapping>

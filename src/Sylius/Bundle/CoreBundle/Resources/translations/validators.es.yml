@@ -11,6 +11,11 @@ sylius:
     code:
       not_blank: Por favor introduzca el código del idioma.
       unique: Este idioma ya existe.
+  noticia:
+    titulo:
+      not_blank: Por favor introduzca el título de la noticia.
+    contenido:
+      not_blank: Por favor introduzca el contenido de la noticia.
   product_variant:
     onHand:
       min: 'Las existencias deben ser mayores que {{ limit }}.'

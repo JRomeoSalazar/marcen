@@ -31,6 +31,9 @@ sylius:
     locale:
       code: Código
       enabled: Activado
+    noticia:
+      titulo: Título
+      contenido: Contenido
     order:
       comentario: Comentarios:
     order_filter:
