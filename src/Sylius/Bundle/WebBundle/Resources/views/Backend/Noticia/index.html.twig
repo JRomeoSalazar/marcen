@@ -1,0 +1,27 @@
+{% extends 'SyliusWebBundle:Backend:layout.html.twig' %}
+
+{% import 'SyliusResourceBundle:Macros:buttons.html.twig' as buttons %}
+{% from 'SyliusWebBundle:Backend/Macros:misc.html.twig' import pagination %}
+{% from 'SyliusWebBundle:Backend/Noticia:macros.html.twig' import list  %}
+
+{% block topbar %}
+<ol class="breadcrumb">
+    <li>{{ 'sylius.breadcrumb.content'|trans }}</li>
+    <li>{{ 'sylius.breadcrumb.noticia.index'|trans }}</li>
+</ol>
+{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <div class="actions-menu">
+        {{ buttons.create(path('sylius_backend_noticia_create'), 'sylius.noticia.create'|trans) }}
+        {{ buttons.manage(path('sylius_backend_user_index'), 'sylius.user.manage'|trans) }}
+    </div>
+    <h1><i class="glyphicon glyphicon-home"></i> {{ 'sylius.noticia.index_header'|trans|raw }}</h1>
+</div>
+
+{{ pagination(noticias) }}
+{{ list(noticias)  }}
+{{ pagination(noticias) }}
+
+{% endblock %}

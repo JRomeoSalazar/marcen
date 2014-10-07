@@ -1,0 +1,23 @@
+# This file is part of the Sylius package.
+# (c) Paweł Jędrzejewski
+
+sylius_noticia_index:
+    pattern: /
+    methods: [GET]
+    defaults:
+        _controller: sylius.controller.noticia:indexAction
+        _sylius:
+            template: SyliusWebBundle:Frontend/Noticia:index.html.twig
+            sortable: true
+            sorting:
+                createdAt: desc
+            paginate: 5
+
+sylius_noticia_show:
+    pattern: /{slug}
+    methods: [GET]
+    defaults:
+        _controller: sylius.controller.noticia:showAction
+        _sylius:
+            template: SyliusWebBundle:Frontend/Noticia:show.html.twig
+            criteria: {slug: $slug}

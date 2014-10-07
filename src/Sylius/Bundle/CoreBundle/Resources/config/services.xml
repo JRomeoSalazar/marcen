@@ -97,6 +97,9 @@
         <parameter key="sylius.twig.restricted_zone_extension.class">Sylius\Bundle\CoreBundle\Twig\SyliusRestrictedZoneExtension</parameter>
         <parameter key="sylius.twig.money.class">Sylius\Bundle\CoreBundle\Twig\SyliusMoneyExtension</parameter>
         <parameter key="sylius.twig.states.class">Sylius\Bundle\CoreBundle\Twig\SyliusStatesExtension</parameter>
+
+
+        <parameter key="sylius.form.type.noticia.class">Sylius\Bundle\CoreBundle\Form\Type\NoticiaType</parameter>
     </parameters>
 
     <services>
@@ -484,6 +487,11 @@
             <argument>%sylius.validation_group.promotion_action_add_product_configuration%</argument>
             <argument type="service" id="sylius.repository.product_variant" />
             <tag name="form.type" alias="sylius_promotion_action_add_product_configuration" />
+        </service>
+
+        <!-- noticias -->
+        <service id="sylius.form.type.noticia" class="%sylius.form.type.noticia.class%">
+            <tag name="form.type" alias="sylius_noticia" />
         </service>
 
         <!-- money -->

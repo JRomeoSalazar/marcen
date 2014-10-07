@@ -1,0 +1,11 @@
+{% macro list(noticias) %}
+
+{% import 'SyliusWebBundle:Backend/Macros:alerts.html.twig' as alerts %}
+
+{% for noticia in noticias %}
+{% include 'SyliusWebBundle:Frontend/Noticia:_single.html.twig' %}
+{% else %}
+{{ alerts.info('sylius.noticia.no_results'|trans) }}
+{% endfor %}
+
+{% endmacro %}

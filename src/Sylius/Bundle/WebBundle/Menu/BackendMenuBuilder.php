@@ -164,6 +164,10 @@ class BackendMenuBuilder extends MenuBuilder
             'route' => 'sylius_backend_page_index',
             'labelAttributes' => array('icon' => 'glyphicon glyphicon-th-list'),
         ))->setLabel($this->translate(sprintf('sylius.backend.menu.%s.pages', $section)));
+        $child->addChild('Noticias', array(
+            'route' => 'sylius_backend_noticia_index',
+            'labelAttributes' => array('icon' => 'glyphicon glyphicon-globe'),
+        ))->setLabel($this->translate(sprintf('sylius.backend.menu.%s.noticias', $section)));
     }
 
     /**

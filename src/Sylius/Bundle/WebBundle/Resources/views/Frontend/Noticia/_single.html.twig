@@ -1,0 +1,13 @@
+<div class="noticia" id="noticia-{{ noticia.id }}">
+    <div class="page-header">
+        <h1>
+            <a href="{{ path('sylius_noticia_show', {'slug': noticia.slug}) }}" class="noticia-header">
+                {{ noticia.titulo }}
+            </a>
+            <small>{{ noticia.createdAt|date('d-m-Y') }}</small>
+        </h1>
+    </div>
+    <div class="contenido">
+        {{ noticia.contenido|raw }}
+    </div>
+</div>

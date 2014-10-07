@@ -1,0 +1,42 @@
+{% extends 'SyliusWebBundle:Backend:layout.html.twig' %}
+
+{% import 'SyliusResourceBundle:Macros:buttons.html.twig' as buttons %}
+
+{% block topbar %}
+<ol class="breadcrumb">
+    <li>{{ 'sylius.breadcrumb.content'|trans }}</li>
+    <li><a href="{{ path('sylius_backend_noticia_index') }}">{{ 'sylius.breadcrumb.noticia.index'|trans }}</a></li>
+    <li>{{ noticia.titulo }}</li>
+</ol>
+{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>{{ 'sylius.noticia.show_header'|trans|raw }}</h1>
+</div>
+
+<div class="well">
+    {{ buttons.manage(path('sylius_backend_noticia_index'), 'sylius.noticia.manage'|trans) }}
+    {{ buttons.edit(path('sylius_backend_noticia_update', {'id': noticia.id})) }}
+    {{ buttons.delete(path('sylius_backend_noticia_delete', {'id': noticia.id}), null, false, false) }}
+</div>
+
+<table class="table table-bordered table-condensed">
+    <thead>
+        <tr>
+            <th>{{ 'sylius.noticia.updatedAt'|trans }}</th>
+            <th>{{ 'sylius.noticia.titulo'|trans }}</th>
+            <th>{{ 'sylius.noticia.contenido'|trans }}</th>
+            <th>{{ 'sylius.noticia.createdAt'|trans }}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ noticia.updatedAt|date('d-m-Y') }}</td>
+            <td>{{ noticia.titulo }}</td>
+            <td>{{ noticia.contenido|raw }}</td>
+            <td>{{ noticia.createdAt|date('d-m-Y') }}</td>
+        </tr>
+    </tbody>
+</table>
+{% endblock %}

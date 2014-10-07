@@ -1,0 +1,42 @@
+{% macro list(noticias) %}
+
+{% import 'SyliusResourceBundle:Macros:buttons.html.twig' as buttons %}
+{% import 'SyliusWebBundle:Backend/Macros:alerts.html.twig' as alerts %}
+
+{% if noticias|length > 0 %}
+<table id="noticias" class="table">
+    <thead>
+        <tr>
+            <th>{{ sylius_resource_sort('updatedAt', 'sylius.noticia.updatedAt'|trans) }}</th>
+            <th>{{ sylius_resource_sort('id', 'sylius.noticia.id'|trans) }}</th>
+            <th>{{ sylius_resource_sort('titulo', 'sylius.noticia.titulo'|trans) }}</th>
+            <th>{{ sylius_resource_sort('createdAt', 'sylius.noticia.createdAt'|trans) }}</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for noticia in noticias %}
+        <tr id="{{ noticia.id }}">
+            <td>{{ noticia.createdAt|date('d-m-Y') }}</td>
+            <td>{{ noticia.id }}</td>
+            <td>
+                <a href="{{ path('sylius_backend_noticia_show', {'id': noticia.id}) }}" title="{{ noticia.titulo }}">
+                    {{ noticia.titulo }}
+                </a>
+            </td>
+            <td>{{ noticia.updatedAt|date('d-m-Y') }}</td>
+            <td>
+                <div class="pull-right">
+                    {{ buttons.edit(path('sylius_backend_noticia_update', {'id': noticia.id})) }}
+                    {{ buttons.delete(path('sylius_backend_noticia_delete', {'id': noticia.id})) }}
+                </div>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+{{ alerts.info('sylius.noticia.no_results'|trans) }}
+</div>
+{% endif %}
+{% endmacro %}

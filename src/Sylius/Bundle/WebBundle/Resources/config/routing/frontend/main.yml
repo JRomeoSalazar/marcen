@@ -34,6 +34,10 @@ sylius_page:
     resource: @SyliusWebBundle/Resources/config/routing/frontend/page.yml
     prefix: /contenido
 
+sylius_noticia:
+    resource: @SyliusWebBundle/Resources/config/routing/frontend/noticia.yml
+    prefix: /noticias
+
 sylius_checkout:
     resource: @SyliusWebBundle/Resources/config/routing/frontend/checkout.yml
     prefix: /checkout

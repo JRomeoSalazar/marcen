@@ -20,6 +20,10 @@ sylius_backend_group:
     resource: @SyliusWebBundle/Resources/config/routing/backend/group.yml
     prefix: /groups
 
+sylius_backend_noticia:
+    resource: @SyliusWebBundle/Resources/config/routing/backend/noticia.yml
+    prefix: /noticias
+
 sylius_backend_product:
     resource: @SyliusWebBundle/Resources/config/routing/backend/product.yml
     prefix: /products
