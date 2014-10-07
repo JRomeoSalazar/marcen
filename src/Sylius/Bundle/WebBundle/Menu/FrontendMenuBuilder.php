@@ -477,10 +477,8 @@ class FrontendMenuBuilder extends MenuBuilder
 
         // Noticias
         $menu->addChild('noticias', array(
-            'route' => 'sylius_page_show',
-            'routeParameters' => array('id' => 'noticias'),
-            'linkAttributes' => array('title' => 'Noticias'),
-            'labelAttributes' => array('iconOnly' => false)
+            'route' => 'sylius_noticia_index',
+            'linkAttributes' => array('title' => 'Noticias')
         ))->setLabel('Noticias');
 
         // Tienda

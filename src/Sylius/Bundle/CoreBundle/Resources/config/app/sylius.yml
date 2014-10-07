@@ -143,6 +143,10 @@ sylius_resource:
             classes:
                 model: Sylius\Component\Core\Model\Locale
                 controller: Sylius\Bundle\ResourceBundle\Controller\ResourceController
+        sylius.noticia:
+            driver: doctrine/orm
+            classes:
+                model: Sylius\Component\Core\Model\Noticia
         sylius.block:
             driver: doctrine/phpcr-odm
             classes:

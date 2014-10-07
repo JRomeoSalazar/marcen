@@ -1,0 +1,12 @@
+{% extends 'SyliusWebBundle:Frontend:layout.html.twig' %}
+
+{% from 'SyliusWebBundle:Frontend/Macros:misc.html.twig' import pagination %}
+{% from 'SyliusWebBundle:Frontend/Noticia:macros.html.twig' import list %}
+
+{% block content %}
+
+{{ pagination(noticias) }}
+{{ list(noticias) }}
+{{ pagination(noticias) }}
+
+{% endblock %}

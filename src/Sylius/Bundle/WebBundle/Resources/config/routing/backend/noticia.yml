@@ -1,0 +1,49 @@
+# This file is part of the Sylius package.
+# (c) Paweł Jędrzejewski
+
+sylius_backend_noticia_index:
+    pattern: /
+    methods: [GET]
+    defaults:
+        _controller: sylius.controller.noticia:indexAction
+        _sylius:
+            template: SyliusWebBundle:Backend/Noticia:index.html.twig
+            sortable: true
+            sorting:
+                updatedAt: desc
+            paginate: 20
+
+sylius_backend_noticia_create:
+    pattern: /new
+    methods: [GET, POST]
+    defaults:
+        _controller: sylius.controller.noticia:createAction
+        _sylius:
+            template: SyliusWebBundle:Backend/Noticia:create.html.twig
+            redirect: sylius_backend_noticia_show
+
+sylius_backend_noticia_update:
+    pattern: /{id}/edit
+    methods: [GET, PUT]
+    defaults:
+        _controller: sylius.controller.noticia:updateAction
+        _sylius:
+            template: SyliusWebBundle:Backend/Noticia:update.html.twig
+            redirect: sylius_backend_noticia_show
+
+sylius_backend_noticia_delete:
+    pattern: /{id}
+    methods: [DELETE]
+    defaults:
+        _controller: sylius.controller.noticia:deleteAction
+        _sylius:
+            template: SyliusWebBundle:Backend/Misc:delete.html.twig
+            redirect: sylius_backend_noticia_index
+
+sylius_backend_noticia_show:
+    pattern: /{id}
+    methods: [GET]
+    defaults:
+        _controller: sylius.controller.noticia:showAction
+        _sylius:
+            template: SyliusWebBundle:Backend/Noticia:show.html.twig
