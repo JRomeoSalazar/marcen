@@ -1,0 +1,9 @@
+{% extends 'SyliusWebBundle:Frontend:layout.html.twig' %}
+
+{% from 'SyliusWebBundle:Frontend/Page:macros.html.twig' import list %}
+
+{% block content %}
+
+{{ list(pages) }}
+
+{% endblock %}

@@ -154,5 +154,6 @@ sylius_resource:
         sylius.page:
             driver: doctrine/phpcr-odm
             classes:
+                controller: Sylius\Bundle\CoreBundle\Controller\PageController
                 model: Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent
                 repository: Sylius\Bundle\CoreBundle\Doctrine\ODM\PHPCR\PageRepository
