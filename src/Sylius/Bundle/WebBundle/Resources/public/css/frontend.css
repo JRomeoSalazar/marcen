@@ -461,6 +461,7 @@ div.page-header:first-child {
 div.page-header:first-child h1 {
   margin-top: 0px;
 }
+div.page,
 div.noticia {
   background: white;
   padding: 10px;
@@ -471,23 +472,29 @@ div.noticia {
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
 }
+div.page:not(:first-child),
 div.noticia:not(:first-child) {
   margin-top: 2em;
 }
+div.page div.page-header,
 div.noticia div.page-header {
   border-bottom: solid 1px #ececec;
   padding-bottom: 0px;
 }
+div.page div.page-header a,
 div.noticia div.page-header a {
   color: #555555;
   font-weight: bold;
   text-transform: uppercase;
 }
+div.page div.page-header a:focus,
 div.noticia div.page-header a:focus,
+div.page div.page-header a:hover,
 div.noticia div.page-header a:hover {
   color: #91c300;
   text-decoration: none;
 }
+div.page div.page-header small,
 div.noticia div.page-header small {
   display: block;
   font-size: 40%;

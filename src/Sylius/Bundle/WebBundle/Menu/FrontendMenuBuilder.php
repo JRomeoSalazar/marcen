@@ -483,14 +483,14 @@ class FrontendMenuBuilder extends MenuBuilder
 
         // Tienda
         $menu->addChild('tienda', array(
-            'route' => 'sylius_page_show',
+            'route' => 'sylius_page_showPage',
             'routeParameters' => array('id' => 'tienda'),
             'linkAttributes' => array('title' => 'Tienda')
         ))->setLabel('Tienda');
 
         // Tienda
         $menu->addChild('servicioTaller', array(
-            'route' => 'sylius_page_show',
+            'route' => 'sylius_page_showPage',
             'routeParameters' => array('id' => 'servicio-taller'),
             'linkAttributes' => array('title' => 'Servicio Taller')
         ))->setLabel('Servicio Taller');
@@ -508,14 +508,14 @@ class FrontendMenuBuilder extends MenuBuilder
         ))->setLabel('Ocasión');
             // Bicicletas ocasión
             $child->addChild('bicicletasOcasion', array(
-                'route' => 'sylius_page_show',
-                'routeParameters' => array('id' => 'ocasion/bicicletas-ocasion'),
+                'route' => 'sylius_page_showPage',
+                'routeParameters' => array('id' => 'ocasion/bicicletas-ocasion/indice'),
                 'linkAttributes' => array('title' => 'Bicicletas ocasión')
             ))->setLabel('Bicicletas Ocasión');
             // Componentes ocasión
             $child->addChild('componentesOcasion', array(
-                'route' => 'sylius_page_show',
-                'routeParameters' => array('id' => 'ocasion/componentes-ocasion'),
+                'route' => 'sylius_page_showPage',
+                'routeParameters' => array('id' => 'ocasion/componentes-ocasion/indice'),
                 'linkAttributes' => array('title' => 'Componentes ocasión')
             ))->setLabel('Componentes Ocasión');
 
@@ -532,20 +532,20 @@ class FrontendMenuBuilder extends MenuBuilder
         ))->setLabel('Ver y saber más');
             // Merida Bikes
             $child->addChild('meridaBikes', array(
-                'route' => 'sylius_page_show',
+                'route' => 'sylius_page_showPage',
                 'routeParameters' => array('id' => 'ver-y-saber-mas/merida-bikes'),
                 'linkAttributes' => array('title' => '¿Qué es Merida Bikes?')
             ))->setLabel('¿Qué es Merida Bikes?');
             // Tienda MSD
             $child->addChild('tiendaMSD', array(
-                'route' => 'sylius_page_show',
+                'route' => 'sylius_page_showPage',
                 'routeParameters' => array('id' => 'ver-y-saber-mas/tienda-msd'),
                 'linkAttributes' => array('title' => 'Tienda MSD')
             ))->setLabel('Tienda MSD');
 
         // Enlaces
         $menu->addChild('enlaces', array(
-            'route' => 'sylius_page_show',
+            'route' => 'sylius_page_showPage',
             'routeParameters' => array('id' => 'enlaces'),
             'linkAttributes' => array('title' => 'Enlaces'),
             'labelAttributes' => array('iconOnly' => false)

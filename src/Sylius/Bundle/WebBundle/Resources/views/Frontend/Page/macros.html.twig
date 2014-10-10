@@ -1,0 +1,11 @@
+{% macro list(pages) %}
+
+{% import 'SyliusWebBundle:Backend/Macros:alerts.html.twig' as alerts %}
+
+{% for page in pages %}
+{% include 'SyliusWebBundle:Frontend/Page:_single.html.twig' %}
+{% else %}
+{{ alerts.info('sylius.page.no_results'|trans) }}
+{% endfor %}
+
+{% endmacro %}

@@ -427,7 +427,7 @@ sylius:
     create_header: Creando nuevo contenido estático
     id: ID
     index_header: Páginas
-    no_results: No hay páginas estáticas para mostrar.
+    no_results: No hay páginas para mostrar.
     title: Título
     update_header: Última actualización
   password: Contraseña

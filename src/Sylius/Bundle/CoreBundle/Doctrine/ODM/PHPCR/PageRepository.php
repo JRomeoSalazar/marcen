@@ -24,4 +24,10 @@ class PageRepository extends DocumentRepository
     {
         return $this->find("/".$id);
     }
+
+    public function findChildren($id)
+    {
+    	$page = $this->find("/".$id);
+        return $this->dm->getChildren($page);
+    }
 }
