@@ -21,15 +21,7 @@
 		$.cookieCuttr({
 			cookieAnalytics: false,
 			cookieMessage: 'Nosotros utilizamos cookies para brindarle la mejor experiencia posible en nuestro sitio. Al seguir utilizando nuestro sitio usted acepta nuestra <a href="{{cookiePolicyLink}}" title="Política de cookies">Política de cookies</a> y el uso de las mismas.',
-<<<<<<< HEAD
-<<<<<<< HEAD
-			cookiePolicyLink: '/disclaimer',
-=======
-			cookiePolicyLink: $cookies,
->>>>>>> marcen
-=======
 			cookiePolicyLink: cookies,
->>>>>>> marcen
 			cookieAcceptButtonText: 'Aceptar cookies'
 		});
 
