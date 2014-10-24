@@ -6,6 +6,8 @@ sylius:
   checkout:
     shipping_method:
       not_blank: Por favor seleccione el método de envío.
+    finalize:
+      info: "Estás a punto de <strong>completar tu pedido</strong>. Si elegiste PayPal como método de pago serás redirigido a su plataforma para finalizar el proceso de compra."
   form:
     action:
       add_product_configuration:
