@@ -117,6 +117,8 @@
 
 {{ form_widget(form._token) }}
 
+<div class="alert alert-info" role="alert">{{ 'sylius.checkout.finalize.info'|trans|raw }}</div>
+
 <div class="form-actions">
     <a href="{{ path('sylius_checkout_display', {'stepName': context.previousStep.name}) }}" class="btn btn-lg"><i class="icon-chevron-left"></i> {{ 'sylius.checkout.back'|trans }}</a> &nbsp;
     <button type="submit" class="btn btn-lg btn-success">
