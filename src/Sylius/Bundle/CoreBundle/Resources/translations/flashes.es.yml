@@ -11,7 +11,7 @@ sylius:
     pending: Tu pago está pendiente actualmente.
     processing: Tu pago se está procesando.
     restricted_zone: Este producto no está disponible en su país.
-    success: ¡Gracias por su pedido!
+    success: "Su pedido se ha realizado correctamente, en breve recibirá un correo electrónico de confirmación de pedido ¡Gracias por confiar en Ciclos Marcen!"
     unknown: Error de pago desconocido.
   payment:
-    success: Pago completado correctamente
+    success: Su pago se ha completado correctamente.

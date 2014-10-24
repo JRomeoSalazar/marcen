@@ -17,6 +17,12 @@ sylius_disclaimer:
         _controller: FrameworkBundle:Template:template
         template: SyliusWebBundle:Frontend/Homepage:disclaimer.html.twig
 
+sylius_cookies_policy:
+    pattern:  /politica-cookies
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template: SyliusWebBundle:Frontend/Homepage:cookies.html.twig
+
 sylius_condiciones_generales:
     pattern:  /condiciones-generales
     defaults:
