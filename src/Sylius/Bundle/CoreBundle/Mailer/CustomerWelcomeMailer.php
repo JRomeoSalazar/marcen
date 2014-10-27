@@ -43,7 +43,7 @@ class CustomerWelcomeMailer extends AbstractMailer implements CustomerWelcomeMai
      */
     public function sendCustomerWelcome(UserInterface $user)
     {	
-    	$linkNoticias = $this->router->generate('sylius_page_show', array('id' => 'noticias'), true);
+    	$linkNoticias = $this->router->generate('sylius_noticia_index', null, true);
 
         $this->sendEmail(array('user' => $user, 'linkNoticias' => $linkNoticias), array($user->getEmail() => $user->getFirstName()));
     }
