@@ -5,7 +5,8 @@
         {{ include('SyliusWebBundle:Frontend/Product:_variant.html.twig', {'variant': item.variant}) }}
     </td>
     <td class="col-md-2">
-        {{ form_row(form.items[loop.index0].quantity, {'label': false}) }}
+        {% set content = 'sylius.cart.save_alert'|trans %}
+        {{ form_row(form.items[loop.index0].quantity, {'label': false, 'attr': {'data-toggle': 'popover', 'data-content': content}}) }}
     </td>
     <td class="col-md-1">
         <a href="{{ path('sylius_cart_item_remove', {'id': item.id}) }}" class="btn btn-danger"><i class="icon-trash icon-white"></i></a>

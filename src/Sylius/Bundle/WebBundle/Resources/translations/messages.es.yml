@@ -178,6 +178,7 @@ sylius:
       save: Guardar
       total: Total
       unit_price: Precio
+    save_alert: "Recuerda darle al botón 'Guardar' después de actualizar la cantidad"
     summary_header: Resumen
     total_items: Total de articulos
   checkout:
