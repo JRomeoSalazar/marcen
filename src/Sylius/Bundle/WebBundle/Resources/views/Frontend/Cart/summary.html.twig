@@ -101,3 +101,13 @@
 {{ parent() }}
 {% block form_message %}{% endblock %}
 {% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript">
+        $('[data-toggle="popover"]').popover({
+            trigger: 'focus',
+                'placement': 'top'
+        });
+    </script>
+{% endblock %}
