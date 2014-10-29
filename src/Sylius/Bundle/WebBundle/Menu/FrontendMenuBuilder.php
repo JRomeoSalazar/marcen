@@ -387,10 +387,10 @@ class FrontendMenuBuilder extends MenuBuilder
         ))->setLabel('976 426 040');
 
         $menu->addChild('mail', array(
-            'uri' => 'mailto:info@ciclosmarcen.com',
+            'uri' => 'mailto:info@ciclosmarcenonline.com',
             'linkAttributes' => array('title' => 'Email Ciclos Marcen'),
             'labelAttributes' => array('icon' => 'icon-fixed-width icon-envelope icon-large', 'iconOnly' => false)
-        ))->setLabel('info@ciclosmarcen.com');
+        ))->setLabel('info@ciclosmarcenonline.com');
 
         $menu->addChild('address', array(
             'labelAttributes' => array('icon' => 'icon-fixed-width icon-home icon-large', 'iconOnly' => false)
