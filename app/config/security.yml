@@ -61,7 +61,7 @@ security:
 
     access_control:
         ### OJO QUE EL BRANCH MASTER ES DIFERENTE Y CONTIENE LA SIGUIENTE LINEA ###
-        #- { path: ^/, role: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
+        - { path: ^/, role: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
         - { path: ^/login.*, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/connect.*, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
