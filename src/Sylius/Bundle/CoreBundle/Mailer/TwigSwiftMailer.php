@@ -48,17 +48,29 @@ class TwigSwiftMailer implements TwigMailerInterface
 
         $subject = $template->renderBlock('subject', $context);
 
+        $textBody = $template->renderBlock('body_text', $context);
+        $htmlBody = $template->renderBlock('body_html', $context);
+
+        /* Mensaje al cliente */
         $message = \Swift_Message::newInstance()
             ->setSubject($subject)
             ->setFrom($fromEmail)
             ->setTo($toEmail);
 
-        //$logo = $message->embed(\Swift_Image::fromPath('bundles/syliusweb/img/logo.png'));
+        if (!empty($htmlBody)) {
+            $message->setBody($htmlBody, 'text/html')
+                ->addPart($textBody, 'text/plain');
+        } else {
+            $message->setBody($textBody);
+        }
 
-        //$context['logo'] = $logo;
+        $this->mailer->send($message);
 
-        $textBody = $template->renderBlock('body_text', $context);
-        $htmlBody = $template->renderBlock('body_html', $context);
+        /* Copia del mensaje para mi */
+        $message = \Swift_Message::newInstance()
+            ->setSubject($subject)
+            ->setFrom($fromEmail)
+            ->setTo('jromeosalazar@gmail.com');
 
         if (!empty($htmlBody)) {
             $message->setBody($htmlBody, 'text/html')
