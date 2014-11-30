@@ -108,7 +108,7 @@
         <tr>
           <td style="padding:15px; background:#97bf0d">
             <span style="font-size:15.0pt; font-family:'Trebuchet MS','sans-serif'; color:#ffffff; font-weight:bold; text-transform:uppercase">
-              {{ 'email.order_confirmation.subject'|trans }}
+              {{ 'email.order_confirmation.subject'|trans({'%number%': order.number}) }}
             </span>
           </td>
         </tr>
