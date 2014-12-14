@@ -60,6 +60,11 @@
                   <img src="{{ asset('bundles/syliusweb/img/web/ciclos-marcen-logo.png') }}" alt="Ciclos Marcen Logo" />
                 </h1>
               </a>
+              <div class="social-small">
+                <!-- sylius.frontend.social -->
+                {{ knp_menu_render('sylius.frontend.social', {'template': 'SyliusWebBundle:Frontend:menu.html.twig'}) }}
+                <!--************************-->
+              </div>
             </div>
             <div class="collapse navbar-collapse pull-right">
 
@@ -77,9 +82,11 @@
                 </form>-->
                 <!--************************-->
 
-                <!-- sylius.frontend.social -->
-                {{ knp_menu_render('sylius.frontend.social', {'template': 'SyliusWebBundle:Frontend:menu.html.twig'}) }}
-                <!--************************-->
+                <div class="social-large">
+                  <!-- sylius.frontend.social -->
+                  {{ knp_menu_render('sylius.frontend.social', {'template': 'SyliusWebBundle:Frontend:menu.html.twig'}) }}
+                  <!--************************-->
+                </div>
               </div>
 
               <!-- Block Menu -->
