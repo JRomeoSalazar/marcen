@@ -61,6 +61,8 @@ div.navbar {
           }
         }
       }
+
+      div.social-small { display: none; }
     }
 
     div.navbar-collapse {
@@ -118,21 +120,26 @@ div.navbar {
         }
       }
 
-      ul.sylius-frontend-social {
-        li > a.facebook {
-          color: @facebook-color;
-          padding-right: 10px;
-          &:hover,
-          &:focus {
-            color: darken(@facebook-color, 10%);
+      div.social-large {
+        display: inline-block;
+        *display: inline;
+        zoom: 1;
+        ul.sylius-frontend-social {
+          li > a.facebook {
+            color: @facebook-color;
+            padding-right: 10px;
+            &:hover,
+            &:focus {
+              color: darken(@facebook-color, 10%);
+            }
           }
-        }
-        li > a.twitter {
-          color: @twitter-color;
-          padding-left: 10px; 
-          &:hover,
-          &:focus {
-            color: darken(@twitter-color, 10%);
+          li > a.twitter {
+            color: @twitter-color;
+            padding-left: 10px; 
+            &:hover,
+            &:focus {
+              color: darken(@twitter-color, 10%);
+            }
           }
         }
       }
@@ -523,6 +530,35 @@ a.nounderline {
 
   div.navbar {
     div.container {
+
+      div.navbar-header {
+        div.social-small {
+          margin-left: 20px;
+          display: inline-block;
+          *display: inline;
+          zoom: 1;
+          ul.sylius-frontend-social {
+            li {
+              display: inline-block;
+              *display: inline;
+              zoom: 1;
+              a {
+                display: inline-block;
+                *display: inline;
+                zoom: 1;
+              }
+            }
+            li > a.facebook {
+              color: @facebook-color;
+              &:hover, &:focus { color: darken(@facebook-color, 10%); }
+            }
+            li > a.twitter {
+              color: @twitter-color;
+              &:hover, &:focus { color: darken(@twitter-color, 10%); }
+            }
+          }
+        }
+      }
       div.navbar-collapse {
         width: 100%;
         float: none;
@@ -549,20 +585,7 @@ a.nounderline {
             }
           }
         }
-
-        ul.sylius-frontend-social {
-          float: right;
-          li {
-            display: inline-block;
-            *display: inline;
-            zoom: 1;
-            a {
-              display: inline-block;
-              *display: inline;
-              zoom: 1;
-            }
-          }
-        }
+        div.social-large { display: none; }
       }
     }
   }

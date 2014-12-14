@@ -157,6 +157,9 @@ div.navbar div.container div.navbar-header a.ciclos-marcen-logo h1 {
 div.navbar div.container div.navbar-header a.ciclos-marcen-logo h1 img {
   max-width: 130px;
 }
+div.navbar div.container div.navbar-header div.social-small {
+  display: none;
+}
 div.navbar div.container div.navbar-collapse div.blockMenu {
   text-align: center;
 }
@@ -216,20 +219,25 @@ div.navbar div.container div.navbar-collapse form.navbar-form button {
   background: none;
   color: white;
 }
-div.navbar div.container div.navbar-collapse ul.sylius-frontend-social li > a.facebook {
+div.navbar div.container div.navbar-collapse div.social-large {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+}
+div.navbar div.container div.navbar-collapse div.social-large ul.sylius-frontend-social li > a.facebook {
   color: #47639e;
   padding-right: 10px;
 }
-div.navbar div.container div.navbar-collapse ul.sylius-frontend-social li > a.facebook:hover,
-div.navbar div.container div.navbar-collapse ul.sylius-frontend-social li > a.facebook:focus {
+div.navbar div.container div.navbar-collapse div.social-large ul.sylius-frontend-social li > a.facebook:hover,
+div.navbar div.container div.navbar-collapse div.social-large ul.sylius-frontend-social li > a.facebook:focus {
   color: #374d7b;
 }
-div.navbar div.container div.navbar-collapse ul.sylius-frontend-social li > a.twitter {
+div.navbar div.container div.navbar-collapse div.social-large ul.sylius-frontend-social li > a.twitter {
   color: #428bca;
   padding-left: 10px;
 }
-div.navbar div.container div.navbar-collapse ul.sylius-frontend-social li > a.twitter:hover,
-div.navbar div.container div.navbar-collapse ul.sylius-frontend-social li > a.twitter:focus {
+div.navbar div.container div.navbar-collapse div.social-large ul.sylius-frontend-social li > a.twitter:hover,
+div.navbar div.container div.navbar-collapse div.social-large ul.sylius-frontend-social li > a.twitter:focus {
   color: #3071a9;
 }
 div#main {
@@ -597,6 +605,36 @@ a.nounderline {
   body {
     padding-top: 75px;
   }
+  div.navbar div.container div.navbar-header div.social-small {
+    margin-left: 20px;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+  }
+  div.navbar div.container div.navbar-header div.social-small ul.sylius-frontend-social li {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+  }
+  div.navbar div.container div.navbar-header div.social-small ul.sylius-frontend-social li a {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+  }
+  div.navbar div.container div.navbar-header div.social-small ul.sylius-frontend-social li > a.facebook {
+    color: #47639e;
+  }
+  div.navbar div.container div.navbar-header div.social-small ul.sylius-frontend-social li > a.facebook:hover,
+  div.navbar div.container div.navbar-header div.social-small ul.sylius-frontend-social li > a.facebook:focus {
+    color: #374d7b;
+  }
+  div.navbar div.container div.navbar-header div.social-small ul.sylius-frontend-social li > a.twitter {
+    color: #428bca;
+  }
+  div.navbar div.container div.navbar-header div.social-small ul.sylius-frontend-social li > a.twitter:hover,
+  div.navbar div.container div.navbar-header div.social-small ul.sylius-frontend-social li > a.twitter:focus {
+    color: #3071a9;
+  }
   div.navbar div.container div.navbar-collapse {
     width: 100%;
     float: none;
@@ -620,18 +658,8 @@ a.nounderline {
   div.navbar div.container div.navbar-collapse form.navbar-form div.form-group input {
     width: 350px;
   }
-  div.navbar div.container div.navbar-collapse ul.sylius-frontend-social {
-    float: right;
-  }
-  div.navbar div.container div.navbar-collapse ul.sylius-frontend-social li {
-    display: inline-block;
-    *display: inline;
-    zoom: 1;
-  }
-  div.navbar div.container div.navbar-collapse ul.sylius-frontend-social li a {
-    display: inline-block;
-    *display: inline;
-    zoom: 1;
+  div.navbar div.container div.navbar-collapse div.social-large {
+    display: none;
   }
   div#sidebar {
     margin-bottom: 1em;
