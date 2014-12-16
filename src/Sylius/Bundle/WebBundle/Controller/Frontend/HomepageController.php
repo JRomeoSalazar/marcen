@@ -30,4 +30,14 @@ class HomepageController extends Controller
     {
         return $this->render('SyliusWebBundle:Frontend/Homepage:main.html.twig');
     }
+
+    /**
+     * Facebook landing page.
+     *
+     * @return Response
+     */
+    public function lanzamientoAction()
+    {
+        return $this->render('SyliusWebBundle:Frontend/Homepage:lanzamiento.html.twig');
+    }
 }
