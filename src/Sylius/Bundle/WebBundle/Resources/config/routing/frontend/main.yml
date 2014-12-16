@@ -5,6 +5,11 @@ sylius_homepage:
     pattern: /
     defaults: { _controller: sylius.controller.frontend.homepage:mainAction }
 
+# FACEBOOK LANDING PAGE #
+sylius_lanzamiento:
+    pattern: /lanzamiento
+    defaults: { _controller: sylius.controller.frontend.homepage:lanzamientoAction }
+
 sylius_quienes_somos:
     pattern:  /quienes-somos
     defaults:
