@@ -28,7 +28,7 @@ class ProductPromotion
     /**
      * Product
      *
-     * @var integer $product
+     * @var float $product
      */
     protected $product;
 
@@ -108,7 +108,7 @@ class ProductPromotion
     /**
      * Get porcentaje
      *
-     * @return integer 
+     * @return float 
      */
     public function getPorcentaje()
     {
@@ -118,7 +118,7 @@ class ProductPromotion
     /**
      * Set porcentaje
      *
-     * @param integer $porcentaje
+     * @param float $porcentaje
      * @return ProductPromotion
      */
     public function setPorcentaje($porcentaje)
