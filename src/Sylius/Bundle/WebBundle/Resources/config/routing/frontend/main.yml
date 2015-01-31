@@ -6,9 +6,9 @@ sylius_homepage:
     defaults: { _controller: sylius.controller.frontend.homepage:mainAction }
 
 # FACEBOOK LANDING PAGE #
-sylius_lanzamiento:
-    pattern: /lanzamiento
-    defaults: { _controller: sylius.controller.frontend.homepage:lanzamientoAction }
+sylius_promocion:
+    pattern: /promocion-garmin-edge-1000-pack
+    defaults: { _controller: sylius.controller.frontend.homepage:promocionAction }
 
 sylius_quienes_somos:
     pattern:  /quienes-somos
