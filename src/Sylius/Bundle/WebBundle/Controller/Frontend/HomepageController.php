@@ -38,7 +38,7 @@ class HomepageController extends Controller
      */
     public function promocionAction()
     {
-        $product = $this->get('sylius.repository.product')->find(124);
+        $product = $this->get('sylius.repository.product')->find(208);
         return $this->render('SyliusWebBundle:Frontend/Homepage:promocion.html.twig', array('product' => $product));
     }
 }
