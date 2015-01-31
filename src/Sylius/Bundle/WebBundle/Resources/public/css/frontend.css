@@ -244,6 +244,21 @@ div#main {
   min-height: 1030px;
   margin-bottom: 3em;
 }
+div.promocion {
+  background-image: url('../img/promocion/garmin-edge-1000-pack.jpg');
+  background-size: cover;
+  min-height: 615px;
+  text-align: center;
+}
+div.promocion div.add-to-cart {
+  padding: 515px 0 40px;
+}
+div.promocion ul {
+  padding-bottom: 20px;
+  padding-left: 0px;
+  list-style-type: none;
+  font-weight: bold;
+}
 div#sidebar div.panel-contact {
   border-color: #7fab00;
   background-color: #91c300;

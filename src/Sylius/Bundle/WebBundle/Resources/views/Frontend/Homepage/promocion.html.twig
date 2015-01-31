@@ -1,0 +1,19 @@
+{% extends 'SyliusWebBundle:Frontend:layout.html.twig' %}
+
+{% block content %}
+  <div class="promocion">
+
+    <!-- Añadir al carrito -->
+    <div class="add-to-cart">
+      <a href="{{ path('sylius_product_show', {'slug': product.slug}) }}">
+        <button class="btn btn-special btn-lg">
+          <i class="icon-shopping-cart icon-white"></i> {{ 'sylius.add_to_cart'|trans }}
+        </button>
+      </a>
+    </div>
+    
+    <!-- Descripción del producto -->
+    {{ product.description|raw }}
+
+  </div>
+{% endblock %}
